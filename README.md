@@ -1,2 +1,4 @@
-# imhere
-This is a server app
+# I'm Here
+
+## Entity Relationship Diagram
+![ERD](erd.png)
