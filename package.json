@@ -1,0 +1,25 @@
+{
+  "name": "imhere",
+  "version": "1.0.0",
+  "description": "This is a server app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelicityZhang/imhere.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelicityZhang/imhere/issues"
+  },
+  "homepage": "https://github.com/FelicityZhang/imhere#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pg": "^7.9.0",
+    "sequelize": "^5.3.0"
+  }
+}
