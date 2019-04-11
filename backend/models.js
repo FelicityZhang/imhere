@@ -9,9 +9,122 @@ const sequelize = new Sequelize( {
     }
 } );
 
-const Example = sequelize.define( 'example', {} )
+const Seekers = sequelize.define('seekers', {
+    name: {
+        type:Sequelize.STRING
+    },
+    password_digest: {
+        type:Sequelize.STRING
+    },
+    picture_url: {
+        type: Sequelize.TEXT
+    },
+    description: {
+        type: Sequelize.TEXT
+    },
+    email: {
+        type: Sequelize.TEXT
+    }
+  });
+
+const Givers = sequelize.define('givers', {
+name: {
+    type:Sequelize.STRING
+},
+password_digest: {
+    type:Sequelize.STRING
+},
+picture_url: {
+    type: Sequelize.TEXT
+},
+description: {
+    type: Sequelize.TEXT
+},
+});
+
+
+
+const Messages = sequelize.define('messages', {
+    sender_id: {
+        type:Sequelize.INTEGER
+    },
+    receiver_id: {
+        type:Sequelize.INTEGER
+    },
+    content: {
+        type:Sequelize.TEXT
+    },
+});
+
+const Requests = sequelize.define('requests', {
+    giver_id: {
+        type: Sequelize.INTEGER
+    },
+    seeker_id: {
+        type: Sequelize.INTEGER
+    },
+    approval: {
+        type: Sequelize.BIT
+    },
+    title: {
+        type: Sequelize.VARCHAR
+    },
+    start_time: {
+        type: Sequelize.DATETIME
+    },
+    end_time: {
+        type: Sequelize.DATETIME
+    },
+    pay: {
+        type: Sequelize.DECIMAL
+    },
+    description: {
+        type: Sequelize.TEXT
+    },
+    });
+
+const Reviews = sequelize.define('reviews', {
+    request_id: {
+        type: Sequelize.INTEGER
+    },
+    rating: {
+        type: Sequelize.TINYINT
+    },
+    rating: {
+        type: Sequelize.TEXT
+    },
+    });  
+
+    
+    Givers.hasMany(Messages, { onDelete: 'cascade' })
+    Messages.belongsTo(Givers);
+
+    Givers.hasMany(Requests, {through: 'user_style_xref',
+                                foreignKey: 'giverId' })
+    Requests.belongsTo(Givers);
+
+    Seekers.hasMany(Messages, { onDelete: 'cascade' })
+    Messages.belongsTo(Seekers);
+
+    Seekers.hasMany(Requests, {through: 'user_style_xref',
+                                foreignKey: 'seekerId' })
+    Requests.belongsTo(Seekers);
+
+
+    Requests.belongsTo(Reviews, {through: 'users_style_xref',
+                                foreignKey: 'giverId' })
+
+    Reviews.belongsTo(Requests, {through: 'users_style_xref',
+                                foreignKey: 'userId' })
+    
+
+    
 
 module.exports = {
     sequelize,
-    Example
+    Seekers,
+    Givers,
+    Messages,
+    Requests,
+    Reviews
 }
