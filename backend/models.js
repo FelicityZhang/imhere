@@ -9,7 +9,7 @@ const sequelize = new Sequelize( {
     }
 } );
 
-const Seekers = sequelize.define('seekers', {
+const Seeker = sequelize.define('seeker', {
     name: {
         type:Sequelize.STRING
     },
@@ -27,7 +27,7 @@ const Seekers = sequelize.define('seekers', {
     }
   });
 
-const Givers = sequelize.define('givers', {
+const Giver = sequelize.define('giver', {
 name: {
     type:Sequelize.STRING
 },
@@ -44,7 +44,7 @@ description: {
 
 
 
-const Messages = sequelize.define('messages', {
+const Message = sequelize.define('message', {
     sender_id: {
         type:Sequelize.INTEGER
     },
@@ -56,7 +56,7 @@ const Messages = sequelize.define('messages', {
     },
 });
 
-const Requests = sequelize.define('requests', {
+const Request = sequelize.define('request', {
     giver_id: {
         type: Sequelize.INTEGER
     },
@@ -83,7 +83,7 @@ const Requests = sequelize.define('requests', {
     },
     });
 
-const Reviews = sequelize.define('reviews', {
+const Review = sequelize.define('review', {
     request_id: {
         type: Sequelize.INTEGER
     },
@@ -122,9 +122,9 @@ const Reviews = sequelize.define('reviews', {
 
 module.exports = {
     sequelize,
-    Seekers,
-    Givers,
-    Messages,
-    Requests,
-    Reviews
+    Seeker,
+    Giver,
+    Message,
+    Request,
+    Review
 }
