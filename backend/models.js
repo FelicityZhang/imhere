@@ -28,18 +28,18 @@ const Seeker = sequelize.define('seeker', {
   });
 
 const Giver = sequelize.define('giver', {
-name: {
-    type:Sequelize.STRING
-},
-password_digest: {
-    type:Sequelize.STRING
-},
-picture_url: {
-    type: Sequelize.TEXT
-},
-description: {
-    type: Sequelize.TEXT
-},
+    name: {
+        type:Sequelize.STRING
+    },
+    password_digest: {
+        type:Sequelize.STRING
+    },
+    picture_url: {
+        type: Sequelize.TEXT
+    },
+    description: {
+        type: Sequelize.TEXT
+    },
 });
 
 
