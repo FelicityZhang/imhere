@@ -39,19 +39,19 @@ class App extends Component {
             path='/seeker/signin'
             render={(props)=><SeekerSign {...props}/>}/>
           <Route
-            path='/seeker/browse'
+            path='/seeker/:seekerid/browse'
             render={(props)=><ListGiver {...props}/>}/>
           <Route
-            exact path='/seeker/search'
+            exact path='/seeker/:seekerid/search'
             render={(props)=><SearchGiver {...props}/>}/>
           <Route
-            exact path='/seeker/search/:id'
+            exact path='/seeker/:seekerid/search/:giverid'
             render={(props)=><RenderGiver {...props}/>}/>
           <Route
-            path='/seeker/search/:id/request'
+            path='/seeker/:seekerid/search/:giverid/request'
             render={(props)=><Request {...props}/>}/>
           <Route
-            path='/seeker/:id'
+            path='/seeker/:seekerid/status'
             render={(props)=><SeekerStatus {...props}/>}/>
           <Route
             path='/seeker/complete'
@@ -59,7 +59,7 @@ class App extends Component {
 
           {/*Giver*/}
           <Route
-            path='/giver'
+            exact path='/giver'
             render={(props)=><GiverLogin {...props}/>}/>
           <Route
             path='/giver/registration'
@@ -71,7 +71,7 @@ class App extends Component {
             path='/giver/complete'
             render={(props)=><GiverThank {...props}/>}/>
           <Route
-            path='/giver/:id'
+            path='/giver/:giverid/status'
             render={(props)=><GiverStatus {...props}/>}/>
         </Switch>
       </div>

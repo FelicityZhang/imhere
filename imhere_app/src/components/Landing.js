@@ -7,7 +7,7 @@ export default class Landing extends Component {
       <div>
         <h2>I'm a...</h2>
         <Link to='/seeker'>Seeker</Link>
-        <Link to='/seeker'>Giver</Link>
+        <Link to='/giver'>Giver</Link>
       </div>
     )
   }
