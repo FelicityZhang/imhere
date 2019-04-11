@@ -40,6 +40,9 @@ picture_url: {
 description: {
     type: Sequelize.TEXT
 },
+rate: {
+    type: Sequelize.DECIMAL
+}
 });
 
 
@@ -74,9 +77,6 @@ const Request = sequelize.define('request', {
     },
     end_time: {
         type: Sequelize.DATETIME
-    },
-    pay: {
-        type: Sequelize.DECIMAL
     },
     description: {
         type: Sequelize.TEXT
