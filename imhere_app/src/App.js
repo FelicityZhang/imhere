@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import Live from './components/Live';
 import GiverLogin from './components/giverpages/GiverLogin';
@@ -26,53 +26,53 @@ class App extends Component {
         <Switch>
           <Route
             exact path='/'
-            render={(props)=><Landing {...props}/>}/>
+            render={ ( props ) => <Landing { ...props } /> } />
 
-          {/*Seekers*/}
+          {/*Seekers*/ }
           <Route
             exact path='/seeker'
-            render={(props)=><SeekerLogin {...props}/>}/>
+            render={ ( props ) => <SeekerLogin { ...props } /> } />
           <Route
             path='/seeker/registration'
-            render={(props)=><SeekerReg {...props}/>}/>
+            render={ ( props ) => <SeekerReg { ...props } /> } />
           <Route
             path='/seeker/signin'
-            render={(props)=><SeekerSign {...props}/>}/>
+            render={ ( props ) => <SeekerSign { ...props } /> } />
           <Route
             path='/seeker/:seekerid/browse'
-            render={(props)=><ListGiver {...props}/>}/>
+            render={ ( props ) => <ListGiver { ...props } /> } />
           <Route
             exact path='/seeker/:seekerid/search'
-            render={(props)=><SearchGiver {...props}/>}/>
+            render={ ( props ) => <SearchGiver { ...props } /> } />
           <Route
             exact path='/seeker/:seekerid/search/:giverid'
-            render={(props)=><RenderGiver {...props}/>}/>
+            render={ ( props ) => <RenderGiver { ...props } /> } />
           <Route
             path='/seeker/:seekerid/search/:giverid/request'
-            render={(props)=><Request {...props}/>}/>
+            render={ ( props ) => <Request { ...props } /> } />
           <Route
             path='/seeker/:seekerid/status'
-            render={(props)=><SeekerStatus {...props}/>}/>
+            render={ ( props ) => <SeekerStatus { ...props } /> } />
           <Route
             path='/seeker/complete'
-            render={(props)=><SeekerThank {...props}/>}/>
+            render={ ( props ) => <SeekerThank { ...props } /> } />
 
-          {/*Giver*/}
+          {/*Giver*/ }
           <Route
             exact path='/giver'
-            render={(props)=><GiverLogin {...props}/>}/>
+            render={ ( props ) => <GiverLogin { ...props } /> } />
           <Route
             path='/giver/registration'
-            render={(props)=><GiverReg {...props}/>}/>
+            render={ ( props ) => <GiverReg { ...props } /> } />
           <Route
             path='/giver/signin'
-            render={(props)=><GiverSign {...props}/>}/>
+            render={ ( props ) => <GiverSign { ...props } /> } />
           <Route
             path='/giver/complete'
-            render={(props)=><GiverThank {...props}/>}/>
+            render={ ( props ) => <GiverThank { ...props } /> } />
           <Route
             path='/giver/:giverid/status'
-            render={(props)=><GiverStatus {...props}/>}/>
+            render={ ( props ) => <GiverStatus { ...props } /> } />
         </Switch>
       </div>
     );
