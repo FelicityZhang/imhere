@@ -10,8 +10,16 @@ const PORT = process.env.PORT || 1234
 // app.use( cors() )
 app.use( "/", express.static( "./build/" ) );
 app.use( bodyParser.json() )
+app.use((e, req, res, next) => {
+    if (e) {
+      console.log(e);
+      res.status(500).send(e.message)
+    }
+  })
 
-app.get( '/seeker/:seekerid/browse', async ( req, res ) => {
+
+
+app.get( '/seeker/browse', async ( req, res ) => {
     try {
         const givers = await Giver.findAll( { raw: true } )
         res.json( {
@@ -40,7 +48,7 @@ app.get( '/seeker/:seekerid/browse', async ( req, res ) => {
 // } )
 
 
-app.get( '/seeker/:seekerid/search/:giverid/request', async ( req, res ) => {
+app.get( '/seeker/:giverid/request', async ( req, res ) => {
     try {
         const requests = await Request.findAll( {
             where: {
@@ -58,7 +66,7 @@ app.get( '/seeker/:seekerid/search/:giverid/request', async ( req, res ) => {
     }
 } )
 
-app.get( '/seeker/:seekerid/status', async ( req, res ) => {
+app.get( '/seeker/status', async ( req, res ) => {
     try {
         const requests = await Request.findAll( {
             where: {
@@ -75,7 +83,7 @@ app.get( '/seeker/:seekerid/status', async ( req, res ) => {
     }
 } )
 
-app.get( '/giver/:giverid/status', async ( req, res ) => {
+app.get( '/giver/status', async ( req, res ) => {
     try {
         const requests = await Request.findAll( {
             where: {
@@ -181,3 +189,8 @@ app.post( '/messages', async ( req, res ) => {
     }
 } )
 
+
+
+app.listen(PORT, () => {
+    console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
+  })

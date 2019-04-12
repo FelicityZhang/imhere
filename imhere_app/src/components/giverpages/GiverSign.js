@@ -63,4 +63,3 @@ class GiverSign extends Component {
 
 
 }
-export default GiverSign;

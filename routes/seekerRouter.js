@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { Seeker } = require('../backend/models');
 const { hashPassword, genToken, checkPassword } = require('../backend/auth');
 
+
 const seekerRouter = Router();
 
 // data seeker just typed in
