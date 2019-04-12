@@ -164,6 +164,14 @@ class App extends Component {
       }
     }
 
+    this.handleSeekerLoginButton = this.handleSeekerLoginButton.bind( this )
+    this.handleGiverLoginButton = this.handleGiverLoginButton.bind( this )
+    this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
+    this.handleGiverLogin = this.handleGiverLogin.bind( this )
+    this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
+    this.handleGiverRegister = this.handleGiverRegister.bind( this )
+    this.authHandleChange = this.authHandleChange.bind( this )
+
   }
   postGiver(data){
     console.log("posting giver")
@@ -177,9 +185,14 @@ class App extends Component {
     return true;
   }
 
-  handleLoginButton() {
-    this.props.history.push( "/login" )
+  handleSeekerLoginButton() {
+    this.props.history.push( "/seeker" )
   }
+
+  handleGiverLoginButton() {
+    this.props.history.push( "/giver" )
+  }
+
 
   async handleSeekerLogin() {
     const userData = await seekerLogin(this.state.authFormData);
@@ -206,7 +219,7 @@ class App extends Component {
   async handleGiverRegister( e ) {
     e.preventDefault();
     await giverRegister( this.state.authFormData );
-    this.handleSeekerLogin();
+    this.handleGiverLogin();
   }
 
   authHandleChange( e ) {
