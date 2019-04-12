@@ -5,7 +5,7 @@ export default class GiverSign extends Component {
   render() {
     return (
       <div>
-        
+        <Link to='/giver/'>Sign In</Link>
       </div>
     )
   }
