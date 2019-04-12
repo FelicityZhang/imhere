@@ -177,7 +177,9 @@ class App extends Component {
     return true;
   }
 
-  
+  handleLoginButton() {
+    this.props.history.push( "/login" )
+  }
 
   async handleSeekerLogin() {
     const userData = await seekerLogin(this.state.authFormData);
@@ -226,12 +228,9 @@ class App extends Component {
             render={ ( props ) => <Landing { ...props } /> } />
 
           {/*Seekers*/ }
-          <Route exact path='/seeker' render={ ( props ) => (
-            <SeekerLogin 
-              { ...props }
-              handleLogin={ this.handleSeekerLogin }
-              handleChange={ this.authHandleChange }
-              formData={ this.state.authFormData } />)} />
+          <Route 
+          exact path='/seeker' 
+          render={ ( props ) => < SeekerLogin {...props}/>}/>
           <Route path='/seeker/registration'render={ ( props ) => (
             <SeekerReg 
              { ...props } 
@@ -241,7 +240,12 @@ class App extends Component {
              formData={ this.state.authFormData } />)} />
           <Route
             path='/seeker/signin'
-            render={ ( props ) => <SeekerSign { ...props } /> } />
+            render={ ( props ) => (
+              <SeekerSign 
+              { ...props }
+              handleLogin={ this.handleSeekerLogin }
+              handleChange={ this.authHandleChange }
+              formData={ this.state.authFormData } />)} />
           <Route
             path='/seeker/browse'
             render={ ( props ) => <ListGiver { ...props } givers={users}/> } />
@@ -262,12 +266,9 @@ class App extends Component {
             render={ ( props ) => <SeekerThank { ...props } /> } />
 
           {/*Giver*/ }
-          <Route exact path='/giver'render={ ( props ) => (
-              <GiverLogin 
-              { ...props }
-              handleLogin={ this.handleGiverLogin }
-              handleChange={ this.authHandleChange }
-              formData={ this.state.authFormData } />)} />
+          <Route 
+            exact path='/giver'
+            render={ ( props ) => <GiverLogin {...props} /> } />
           <Route path='/giver/registration'render={ ( props ) => (
               <GiverReg 
               { ...props } 
@@ -277,8 +278,12 @@ class App extends Component {
               formData={ this.state.authFormData } />)} />
           <Route
             path='/giver/signin'
-            render={ ( props ) => <GiverSign { ...props } /> } />
-          <Route
+            render={ ( props ) => (
+             <GiverSign
+              { ...props }
+              handleLogin={ this.handleGiverLogin }
+              handleChange={ this.authHandleChange }
+              formData={ this.state.authFormData } />)} />             <Route
             path='/giver/complete'
             render={ ( props ) => <GiverThank { ...props } /> } />
           <Route
