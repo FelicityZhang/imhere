@@ -1,6 +1,7 @@
 const { Router } = require('express');
-const { Seeker } = require('../models');
-const { hashPassword, genToken, checkPassword } = require('../auth');
+const { Seeker } = require('../backend/models');
+const { hashPassword, genToken, checkPassword } = require('../backend/auth');
+
 
 const seekerRouter = Router();
 
