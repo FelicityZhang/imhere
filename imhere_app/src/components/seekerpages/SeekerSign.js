@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
+const seekerid= 1;
 export default class SeekerSign extends Component {
   constructor ( props ) {
     super( props )
@@ -56,6 +57,7 @@ export default class SeekerSign extends Component {
             Submit
           </button>
         </form>
+        <Link to={`/seeker/${seekerid}/browse`}>Sign In</Link>
       </div>
     )
   }

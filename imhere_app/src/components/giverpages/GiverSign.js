@@ -56,6 +56,7 @@ export default class GiverSign extends Component {
             Submit
           </button>
         </form>
+        <Link to='/giver/'>Sign In</Link>
       </div>
     )
   }

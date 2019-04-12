@@ -31,6 +31,18 @@ const Giver = sequelize.define('giver', {
 name: {
     type:Sequelize.STRING
 },
+age: {
+    type:Sequelize.INTEGER
+},
+gender: {
+     type:Sequelize.STRING
+},
+skill: {
+    type:Sequelize.TEXT
+},
+rates: {
+    type:Sequelize.INTEGER
+},
 password_digest: {
     type:Sequelize.STRING
 },
@@ -39,7 +51,7 @@ picture_url: {
 },
 description: {
     type: Sequelize.TEXT
-},
+}
 });
 
 
@@ -64,19 +76,16 @@ const Request = sequelize.define('request', {
         type: Sequelize.INTEGER
     },
     approval: {
-        type: Sequelize.BIT
+        type: Sequelize.INTEGER
     },
     title: {
-        type: Sequelize.VARCHAR
+        type: Sequelize.TEXT
     },
     start_time: {
-        type: Sequelize.DATETIME
+        type: Sequelize.INTEGER
     },
     end_time: {
-        type: Sequelize.DATETIME
-    },
-    pay: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.INTEGER
     },
     description: {
         type: Sequelize.TEXT
@@ -88,36 +97,37 @@ const Review = sequelize.define('review', {
         type: Sequelize.INTEGER
     },
     rating: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER
     },
-    rating: {
+    content: {
         type: Sequelize.TEXT
     },
     });  
 
     
-    Givers.hasMany(Messages, { onDelete: 'cascade' })
-    Messages.belongsTo(Givers);
+    Giver.hasMany(Message, { onDelete: 'cascade' })
+    Message.belongsTo(Giver);
 
-    Givers.hasMany(Requests, {through: 'user_style_xref',
+    Giver.belongsToMany(Request, {through: 'user_style_xref',
                                 foreignKey: 'giverId' })
-    Requests.belongsTo(Givers);
+    Request.belongsTo(Giver);
 
-    Seekers.hasMany(Messages, { onDelete: 'cascade' })
-    Messages.belongsTo(Seekers);
+    Seeker.belongsToMany(Message, {through: 'user_style_xref',
+                                     onDelete: 'cascade' })
+    Message.belongsTo(Seeker);
 
-    Seekers.hasMany(Requests, {through: 'user_style_xref',
+    Seeker.belongsToMany(Request, {through: 'user_style_xref',
                                 foreignKey: 'seekerId' })
-    Requests.belongsTo(Seekers);
+    Request.belongsTo(Seeker);
 
 
-    Requests.belongsTo(Reviews, {through: 'users_style_xref',
+    Request.belongsTo(Review, {through: 'users_style_xref',
                                 foreignKey: 'giverId' })
 
-    Reviews.belongsTo(Requests, {through: 'users_style_xref',
+    Review.belongsTo(Request, {through: 'users_style_xref',
                                 foreignKey: 'userId' })
     
-
+sequelize.sync();
     
 
 module.exports = {
