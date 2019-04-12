@@ -14,7 +14,7 @@ const main = async () => {
   // Add seed data here -- seeker
 
   const seeker1 = await Seeker.create({
-    name: 'Brandon P',
+    name: 'Brandon Pabon',
     password_digest: 123,
     picture_url: 'https://randomuser.me/api/portraits/men/1.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -22,7 +22,7 @@ const main = async () => {
   });
 
   const seeker2 = await Seeker.create({
-    name: 'Wendy A',
+    name: 'Wendy Applebottom',
     password_digest: 234,
     picture_url: 'https://randomuser.me/api/portraits/women/1.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -30,7 +30,7 @@ const main = async () => {
   });
 
   const seeker3 = await Seeker.create({
-    name: 'Ellen B',
+    name: 'Ellen Benice',
     password_digest: 345,
     picture_url: 'https://randomuser.me/api/portraits/women/2.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -38,7 +38,7 @@ const main = async () => {
   });
 
   const seeker4 = await Seeker.create({
-    name: 'Ken Q',
+    name: 'Ken Quarters',
     password_digest: 456,
     picture_url: 'https://randomuser.me/api/portraits/men/2.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -46,7 +46,7 @@ const main = async () => {
   });
 
   const seeker5 = await Seeker.create({
-    name: 'Allen W',
+    name: 'Allen Windell',
     password_digest: 567,
     picture_url: 'https://randomuser.me/api/portraits/men/3.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -54,7 +54,7 @@ const main = async () => {
   });
 
   const seeker6 = await Seeker.create({
-    name: 'Randy E',
+    name: 'Randy Earnst',
     password_digest: 678,
     picture_url: 'https://randomuser.me/api/portraits/men/4.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -62,7 +62,7 @@ const main = async () => {
   });
 
   const seeker7 = await Seeker.create({
-    name: 'Steven R',
+    name: 'Steven Rodgers',
     password_digest: 789,
     picture_url: 'https://randomuser.me/api/portraits/men/5.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -71,7 +71,7 @@ const main = async () => {
 
 
   const seeker8 = await Seeker.create({
-    name: 'Maggie Q',
+    name: 'Maggie Simpson',
     password_digest: 987,
     picture_url: 'https://randomuser.me/api/portraits/women/3.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -80,7 +80,7 @@ const main = async () => {
 
 
   const seeker9 = await Seeker.create({
-    name: 'Karen T',
+    name: 'Karen Tonelle',
     password_digest: 876,
     picture_url: 'https://randomuser.me/api/portraits/women/4.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -88,7 +88,7 @@ const main = async () => {
   });
 
   const seeker10 = await Seeker.create({
-    name: 'Frances Y',
+    name: 'Frances Yancy',
     password_digest: 765,
     picture_url: 'https://randomuser.me/api/portraits/women/5.jpg',
     description: 'Needs someone who is skilled for mounting TV',
@@ -100,7 +100,7 @@ const main = async () => {
   // giver
 
   const giver1 = await Giver.create({
-    name: 'Peter W',
+    name: 'Peter Williamson',
     gender: 'Male',
     skill: 'Mounting',
     rates: 200,
@@ -111,7 +111,7 @@ const main = async () => {
   });
 
   const giver2 = await Giver.create({
-    name: 'Tommy T',
+    name: 'Tommy Tales',
     gender: 'Male',
     skill: 'Moving',
     rates: 200,
@@ -122,7 +122,7 @@ const main = async () => {
   });
 
   const giver3 = await Giver.create({
-    name: 'Chris M',
+    name: 'Chris Mumford',
     gender: 'Male',
     skill: 'Furniture assembly',
     rates: 200,
@@ -133,7 +133,7 @@ const main = async () => {
   });
 
   const giver4 = await Giver.create({
-    name: 'Amin A',
+    name: 'Amin Allah',
     gender: 'Male',
     skill: 'Home repaires',
     rates: 200,
@@ -144,7 +144,7 @@ const main = async () => {
   });
 
   const giver5 = await Giver.create({
-    name: 'Andrew T',
+    name: 'Andrew Borchinski',
     gender: 'Male',
     skill: 'Cleaning',
     rates: 200,
@@ -155,7 +155,7 @@ const main = async () => {
   });
 
   const giver6 = await Giver.create({
-    name: 'John N',
+    name: 'John Ngyun',
     gender: 'Male',
     skill: 'Heavy lifting',
     rates: 200,
@@ -166,7 +166,7 @@ const main = async () => {
   });
 
   const giver7 = await Giver.create({
-    name: 'Ivan S',
+    name: 'Ivan Sanderhoff',
     gender: 'Male',
     skill: 'Delivery',
     rates: 200,
@@ -177,7 +177,7 @@ const main = async () => {
   });
 
   const giver8 = await Giver.create({
-    name: 'Anthony F',
+    name: 'Anthony Ferdinand',
     gender: 'Male',
     skill: 'Yark work',
     rates: 200,
@@ -188,7 +188,7 @@ const main = async () => {
   });
 
   const giver9 = await Giver.create({
-    name: 'Medhi F',
+    name: 'Medhi Fidelah',
     gender: 'Male',
     skill: 'Personal assistant',
     rates: 200,
@@ -199,7 +199,7 @@ const main = async () => {
   });
 
   const giver10 = await Giver.create({
-    name: 'Eddie S',
+    name: 'Eddie Scores',
     gender: 'Male',
     skill: 'Packing & Unpacking',
     rates: 200,
@@ -210,7 +210,7 @@ const main = async () => {
   });
 
   const giver11 = await Giver.create({
-    name: 'Amanda D',
+    name: 'Amanda Diamond',
     gender: 'Female',
     skill: 'Painting',
     rates: 200,
@@ -221,7 +221,7 @@ const main = async () => {
   });
 
   const giver12 = await Giver.create({
-    name: 'Helen J',
+    name: 'Helen Jacobs',
     gender: 'Female',
     skill: 'Plumbing',
     rates: 200,
@@ -232,7 +232,7 @@ const main = async () => {
   });
 
   const giver13 = await Giver.create({
-    name: 'Jennifer U',
+    name: 'Jennifer Lopeza',
     gender: 'Female',
     skill: 'Electrical',
     rates: 200,
@@ -243,7 +243,7 @@ const main = async () => {
   });
 
   const giver14 = await Giver.create({
-    name: 'Lillian J',
+    name: 'Lucy Lineal',
     gender: 'Female',
     skill: 'Deep clean',
     rates: 200,
@@ -254,7 +254,7 @@ const main = async () => {
   });
 
   const giver15 = await Giver.create({
-    name: 'Juniper E',
+    name: 'Juniper Evers',
     gender: 'Female',
     skill: 'Organization',
     rates: 200,
@@ -265,7 +265,7 @@ const main = async () => {
   });
 
   const giver16 = await Giver.create({
-    name: 'Imani C',
+    name: 'Indie Cortez',
     gender: 'Female',
     skill: 'Event staffing',
     rates: 200,
@@ -276,7 +276,7 @@ const main = async () => {
   });
 
   const giver17 = await Giver.create({
-    name: 'Eliz I',
+    name: 'Eliz Inez',
     gender: 'Female',
     skill: 'Run errands',
     rates: 200,
@@ -287,7 +287,7 @@ const main = async () => {
   });
 
   const giver18 = await Giver.create({
-    name: 'Teigan W',
+    name: 'Teigan Wonderful',
     gender: 'Female',
     skill: 'Wait in line',
     rates: 200,
@@ -298,7 +298,7 @@ const main = async () => {
   });
 
   const giver19 = await Giver.create({
-    name: 'Maddy K',
+    name: 'Maddy Kilawatz',
     gender: 'Female',
     skill: 'Carpentry',
     rates: 200,
@@ -309,7 +309,7 @@ const main = async () => {
   });
 
   const giver20 = await Giver.create({
-    name: 'Nancy G',
+    name: 'Nancy Grabowski',
     gender: 'Female',
     skill: 'Plumbing',
     rates: 200,
