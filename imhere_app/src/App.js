@@ -52,6 +52,97 @@ const users = [
     email: 'kenq@gmail.com'
   }
 ]
+const requests =[{
+    giver_id: 1,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Mounting needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to mount my TV.'
+  },
+  {
+    giver_id: 2,
+    seeker_id: 2,
+    approval: 0,
+    title: 'Painting needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to paint my apartment.'
+  },
+  {
+    giver_id: 3,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Moving needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to assist me to move.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Deep clean needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to clean my bathroom.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Plumbing needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 6,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Electrical needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need a electrical technicial.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Packing & unpacking needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to pack my clothings.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Organization needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to organize my stuff.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Plumbing needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    title: 'Deep clean needed',
+    start_time: 0900,
+    end_time: 1100,
+    description: 'I need someone to clean up my bedroom.'
+  }
+];
 
 class App extends Component {
   constructor(props){
@@ -125,7 +216,7 @@ class App extends Component {
             render={ ( props ) => <GiverThank { ...props } /> } />
           <Route
             path='/giver/status'
-            render={ ( props ) => <GiverStatus { ...props } /> } />
+            render={ ( props ) => <GiverStatus { ...props} requests={requests} /> } />
         </Switch>
       </div>
     );

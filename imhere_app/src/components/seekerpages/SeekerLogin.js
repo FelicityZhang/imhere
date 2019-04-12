@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
-export default class SeekerLogin extends Component {
+class SeekerLogin extends Component {
   render() {
     return (
       <div>
@@ -11,3 +12,4 @@ export default class SeekerLogin extends Component {
     )
   }
 }
+export default withRouter(SeekerLogin);
