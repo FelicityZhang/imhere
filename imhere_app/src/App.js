@@ -57,8 +57,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Mounting needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to mount my TV.'
   },
   {
@@ -66,8 +66,8 @@ const requests =[{
     seeker_id: 2,
     approval: 0,
     title: 'Painting needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to paint my apartment.'
   },
   {
@@ -75,8 +75,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Moving needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to assist me to move.'
   },
   {
@@ -84,8 +84,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to clean my bathroom.'
   },
   {
@@ -93,8 +93,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need a plumber asap.'
   },
   {
@@ -102,8 +102,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Electrical needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need a electrical technicial.'
   },
   {
@@ -111,8 +111,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Packing & unpacking needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to pack my clothings.'
   },
   {
@@ -120,8 +120,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Organization needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to organize my stuff.'
   },
   {
@@ -129,8 +129,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need a plumber asap.'
   },
   {
@@ -138,8 +138,8 @@ const requests =[{
     seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: 0900,
-    end_time: 1100,
+    start_time: "0900",
+    end_time: "1100",
     description: 'I need someone to clean up my bedroom.'
   }
 ];
