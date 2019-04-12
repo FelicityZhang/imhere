@@ -1,14 +1,14 @@
-#giverLogin{
+#seekerLogin{
     position: fixed;
     width:100%;
     height:100%;
-    background:#593780;
+    background:#e6b7c1;
     z-index:-1;
 }
-#giverLoginReg{
+#seekerLoginReg{
     position: fixed;
     font-size: 30px;
-    left: 30%;
+    right: 30%;
     top: 35%;
     margin-top: -15px;
     width: 250px;
@@ -16,10 +16,10 @@
     transition: top 0.5s ease-out, opacity 0.5s ease-out;
     animation: fadein 0.5s ease-in;
 }
-#giverLoginSign{
+#seekerLoginSign{
     position: fixed;
     font-size: 30px;
-    left: 30%;
+    right: 30%;
     top: 50%;
     margin-top: -15px;
     width: 250px;
@@ -32,7 +32,7 @@
         opacity: 0;
     }
 }
-#giverLoginGiverWord{
+#seekerLoginSeekerWord{
     position:fixed;
     width:200px;
     height:200px;
@@ -41,5 +41,5 @@
     font-size: 40px;
     margin-bottom: -70px;
     bottom: 45%;
-    right: 20%;
+    left: 20%;
 }

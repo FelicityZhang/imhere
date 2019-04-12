@@ -45,7 +45,6 @@ class SeekerReg extends Component {
   render(){
     return (
       <div className="giverReg">
-        <h1>Start Looking!</h1>
         <form>
           <input 
             name='first'
@@ -105,7 +104,7 @@ class SeekerReg extends Component {
            <br />
           <button
             onClick={(event) => this.handleSubmitbyPost(event)}>
-            Submit
+            Start Looking!
           </button>
         </form>
       </div>

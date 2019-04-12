@@ -1,0 +1,43 @@
+#giverThank{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background:#593780;
+    z-index:-1;
+}
+#giverThankMessage{
+    position: fixed;
+    font-size: 40px;
+    top: 35%;
+    left: 50%;
+    margin-left: -230px;
+    color: white;
+    font-weight: 100;
+    transition: left 1.5s ease-in, opacity 1s ease-in;
+    animation: fadein 0.5s ease-in;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+}
+#giverThankStatus{
+    position: fixed;
+    font-size: 30px;
+    color:#7cb2d1;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    font-weight: 100;
+    opacity:1;
+    transition: left 1.5s ease-in, opacity 1s ease-in;
+    animation: fadeinwait 2s ease-in;
+}
+@keyframes fadeinwait{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+}
