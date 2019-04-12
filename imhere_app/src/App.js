@@ -18,6 +18,40 @@ import SeekerStatus from './components/seekerpages/SeekerStatus';
 import SeekerThank from './components/seekerpages/SeekerThank';
 
 import './App.css';
+const users = [
+  {
+    id: 1,
+    name: 'Brandon P',
+    password_digest: 123,
+    picture_url: 'https://randomuser.me/api/portraits/men/1.jpg',
+    description: 'Needs someone who is skilled for mounting TV',
+    email: 'brandonp@gmail.com'
+  },
+  {
+    id: 2,
+    name: 'Wendy A',
+    password_digest: 234,
+    picture_url: 'https://randomuser.me/api/portraits/women/1.jpg',
+    description: 'Needs someone who is skilled for mounting TV',
+    email: 'wendya@gmail.com'
+  },
+  {
+    id: 3,
+    name: 'Ellen B',
+    password_digest: 345,
+    picture_url: 'https://randomuser.me/api/portraits/women/2.jpg',
+    description: 'Needs someone who is skilled for mounting TV',
+    email: 'ellenb@gmail.com'
+  },
+  {
+    id: 4,
+    name: 'Ken Q',
+    password_digest: 456,
+    picture_url: 'https://randomuser.me/api/portraits/men/2.jpg',
+    description: 'Needs someone who is skilled for mounting TV',
+    email: 'kenq@gmail.com'
+  }
+]
 
 class App extends Component {
   constructor(props){
@@ -27,7 +61,18 @@ class App extends Component {
     }
 
   }
-  
+  postGiver(data){
+    console.log("posting giver")
+    console.log(data)
+    return true;
+  }
+
+  postSeeker(data){
+    console.log("posting seeker")
+    console.log(data)
+    return true;
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,24 +87,24 @@ class App extends Component {
             render={ ( props ) => <SeekerLogin { ...props } /> } />
           <Route
             path='/seeker/registration'
-            render={ ( props ) => <SeekerReg { ...props } /> } />
+            render={ ( props ) => <SeekerReg { ...props } postSeeker={this.postSeeker}/> } />
           <Route
             path='/seeker/signin'
             render={ ( props ) => <SeekerSign { ...props } /> } />
           <Route
-            path='/seeker/:seekerid/browse'
-            render={ ( props ) => <ListGiver { ...props } /> } />
+            path='/seeker/browse'
+            render={ ( props ) => <ListGiver { ...props } givers={users}/> } />
           <Route
-            exact path='/seeker/:seekerid/search'
+            exact path='/seeker/search'
             render={ ( props ) => <SearchGiver { ...props } /> } />
           <Route
-            exact path='/seeker/:seekerid/search/:giverid'
-            render={ ( props ) => <RenderGiver { ...props } /> } />
+            exact path='/seeker/:giverid'
+            render={ ( props ) => <RenderGiver { ...props } givers={users}/> } />
           <Route
-            path='/seeker/:seekerid/search/:giverid/request'
+            path='/seeker/:giverid/request'
             render={ ( props ) => <Request { ...props } /> } />
           <Route
-            path='/seeker/:seekerid/status'
+            path='/seeker/status'
             render={ ( props ) => <SeekerStatus { ...props } /> } />
           <Route
             path='/seeker/complete'
@@ -71,7 +116,7 @@ class App extends Component {
             render={ ( props ) => <GiverLogin { ...props } /> } />
           <Route
             path='/giver/registration'
-            render={ ( props ) => <GiverReg { ...props } /> } />
+            render={ ( props ) => <GiverReg { ...props } postGiver={this.postGiver}/> } />
           <Route
             path='/giver/signin'
             render={ ( props ) => <GiverSign { ...props } /> } />
@@ -79,7 +124,7 @@ class App extends Component {
             path='/giver/complete'
             render={ ( props ) => <GiverThank { ...props } /> } />
           <Route
-            path='/giver/:giverid/status'
+            path='/giver/status'
             render={ ( props ) => <GiverStatus { ...props } /> } />
         </Switch>
       </div>

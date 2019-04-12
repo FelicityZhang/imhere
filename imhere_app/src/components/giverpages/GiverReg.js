@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 
 class GiverReg extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class GiverReg extends Component {
       description:'',
       email: '',
       gender: '',
-      rate:'',
+      rate:''
     }
     this.handleChangebySetState=this.handleChangebySetState.bind(this);
     this.handleSubmitbyPost=this.handleSubmitbyPost.bind(this);
@@ -26,9 +27,9 @@ class GiverReg extends Component {
   handleSubmitbyPost = (event) => {
     event.preventDefault();
     const {first, last, password, picture, description, email, gender, rate} = this.state;
-    const name = first.concat(" ",last)
-    const data = { name, password, picture, description, email, gender, rate }
-    this.props.onSubmit()
+    const name = first.concat(" ",last);
+    const data = { name, password, picture, description, email, gender, rate };
+    const success = this.props.postGiver(data);
     this.setState({
       first:'',
       last:'',
@@ -39,7 +40,7 @@ class GiverReg extends Component {
       gender: '',
       rate: ''
     })
-    // this.props.history.push('/')
+    if(success){this.props.history.push('/giver/complete')}
   }
 
   render(){
@@ -112,5 +113,4 @@ class GiverReg extends Component {
     );
   }
 }
-
-export default GiverReg;
+export default withRouter(GiverReg);

@@ -26,9 +26,9 @@ class SeekerReg extends Component {
   handleSubmitbyPost = (event) => {
     event.preventDefault();
     const {first, last, password, picture, description, email, gender, rate} = this.state;
-    const name = first.concat(" ",last)
-    const data = { name, password, picture, description, email, gender, rate }
-    this.props.onSubmit()
+    const name = first.concat(" ",last);
+    const data = { name, password, picture, description, email, gender, rate };
+    this.props.postSeeker(data);
     this.setState({
       first:'',
       last:'',
@@ -39,13 +39,13 @@ class SeekerReg extends Component {
       gender: '',
       rate: ''
     })
-    // this.props.history.push('/')
+    this.props.history.push('/seeker/browse')
   }
 
   render(){
     return (
       <div className="giverReg">
-        <h1>Become a Giver!</h1>
+        <h1>Start Looking!</h1>
         <form>
           <input 
             name='first'
