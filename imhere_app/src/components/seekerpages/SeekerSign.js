@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 const seekerid= 1;
-export default class SeekerSign extends Component {
+class SeekerSign extends Component {
   constructor ( props ) {
     super( props )
     this.state = {
@@ -30,8 +30,6 @@ export default class SeekerSign extends Component {
       password: ''
     } )
   }
-
-
 
   render() {
     return (
