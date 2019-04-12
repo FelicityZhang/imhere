@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 
 class GiverReg extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name:'',
+      first:'',
+      last:'',
       password:'',
       picture:'',
       description:'',
       email: '',
-      gender: ''
-      // rate:[],
+      gender: '',
+      rate:''
     }
     this.handleChangebySetState=this.handleChangebySetState.bind(this);
     this.handleSubmitbyPost=this.handleSubmitbyPost.bind(this);
@@ -24,81 +26,91 @@ class GiverReg extends Component {
   
   handleSubmitbyPost = (event) => {
     event.preventDefault();
-    this.props.onSubmit()
+    const {first, last, password, picture, description, email, gender, rate} = this.state;
+    const name = first.concat(" ",last);
+    const data = { name, password, picture, description, email, gender, rate };
+    const success = this.props.postGiver(data);
     this.setState({
-      name:'',
+      first:'',
+      last:'',
       password:'',
       picture:'',
       description:'',
       email: '',
       gender: '',
-      rate:null
+      rate: ''
     })
-      // const fullname = concat(first+" "+last);
-      // return fullname;
-    }
-     
-
+    if(success){this.props.history.push('/giver/complete')}
   }
 
-  render() {
+  render(){
     return (
       <div className="giverReg">
+        <h1>Become a Giver!</h1>
         <form>
           <input 
-            name='name'
-            placeholder='Name'
-            value={this.state.name} 
-            onChange={event => this.setState({ name: event.target.value})} 
+            name='first'
+            placeholder='First Name'
+            value={this.state.first} 
+            onChange={this.handleChangebySetState} 
           />
-
+           <br />
+          <input 
+            name='last'
+            placeholder='Last Name'
+            value={this.state.last} 
+            onChange={this.handleChangebySetState} 
+          />
            <br />
           <input 
             name='password'
             placeholder='Password'
             value={this.state.password} 
-            onChange={event => this.setState({ password: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
            <br />
           <input 
             name='picture'
             placeholder='Picture'
             value={this.state.picture} 
-            onChange={event => this.setState({ picture: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
            <br />
           <input 
             name='description'
             placeholder='Description'
             value={this.state.description} 
-            onChange={event => this.setState({ description: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
-
+           <br />
           <input 
             name='email'
-            placeholder='email'
+            placeholder='Email'
             value={this.state.email} 
-            onChange={event => this.setState({ email: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
+           <br />
           <input 
             name='gender'
-            placeholder='gender'
+            placeholder='Gender'
             value={this.state.gender} 
-            onChange={event => this.setState({ gender: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
-
+           <br />
           <input 
             name='rate'
             placeholder='Rate'
             value={this.state.rate} 
-            onChange={event => this.setState({ rate: event.target.value})} 
+            onChange={this.handleChangebySetState} 
           />
            <br />
-          <button onClick={(event) => this.handleSubmitbyPost(event)}>Submit</button>
+          <button
+            onClick={(event) => this.handleSubmitbyPost(event)}>
+            Submit
+          </button>
         </form>
       </div>
     );
   }
 }
-
-export default GiverReg;
+export default withRouter(GiverReg);

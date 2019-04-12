@@ -51,7 +51,7 @@ picture_url: {
 },
 description: {
     type: Sequelize.TEXT
-},
+}
 });
 
 
