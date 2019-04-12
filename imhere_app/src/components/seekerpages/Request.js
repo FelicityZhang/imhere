@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+const url = 'http://localhost/1234'
+
 export default class Request extends Component {
   constructor(props) {
     super(props)
@@ -8,14 +10,23 @@ export default class Request extends Component {
         start_time: '',
         end_time: '',
         descriptions: ''
-  
       }
+  this.handleChangebySetState=this.handleChangebySetState.bind(this);
   }
+
+  handleChangebySetState(){
+       this.setState({
+         [event.target.name]: event.target.value
+        })
+  }
+
+  // getRequest(){
+  //   fetch(${url})
+  // }
+
   render() {
     return (
-
       <div>
-
         <h4>Congratulations, ImHere is here to help you. Please give us a few more details about your project? This is so your Giver can best assist you.
         </h4>
         
