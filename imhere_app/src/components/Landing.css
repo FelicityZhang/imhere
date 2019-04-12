@@ -1,3 +1,32 @@
+#landingTitle{
+    position: fixed;
+    font-size: 30px;
+    left: 50%;
+    margin-left: -50px;
+    top: 30%;
+    color: white;
+}
+
 #selectSeeker{
-    
+    background: #e6b7c1;
+    position: fixed;
+    border-radius: 50%;
+    transition: width 2s ease-out, height 2s ease-out, left 2s ease-out, bottom 2s ease-out;
+}
+
+#selectGiver{
+    background: #593780;
+    position: fixed;
+    border-radius: 50%;
+    transition: width 2s ease-out, height 2s ease-out, right 2s ease-out, bottom 2s ease-out;
+}
+
+#seekerWord,#giverWord{
+    position:fixed;
+    pointer-events: none;
+    color: white;
+    font-size: 40px;
+    margin-bottom: -70px;
+    z-index: 3;
+    transition: right 2s ease-out, left 2s ease-out, bottom 2s ease-out;
 }
