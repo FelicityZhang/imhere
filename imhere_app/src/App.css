@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
 *{
   text-align: center;
-  font-family: 'VT323', monospace;
-  font-weight: 500;
+  font-family: 'Cedarville Cursive', cursive;
+  font-weight: 300;
 }
 body{
   background: #7cb2d1;

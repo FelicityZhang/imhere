@@ -7,21 +7,21 @@
     color: white;
 }
 
-#selectSeeker{
+#landingSelectSeeker{
     background: #e6b7c1;
     position: fixed;
     border-radius: 50%;
     transition: width 2s ease-out, height 2s ease-out, left 2s ease-out, bottom 2s ease-out;
 }
 
-#selectGiver{
+#landingSelectGiver{
     background: #593780;
     position: fixed;
     border-radius: 50%;
     transition: width 2s ease-out, height 2s ease-out, right 2s ease-out, bottom 2s ease-out;
 }
 
-#seekerWord,#giverWord{
+#landingSeekerWord,#landingGiverWord{
     position:fixed;
     pointer-events: none;
     color: white;

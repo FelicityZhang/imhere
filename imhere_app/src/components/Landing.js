@@ -46,7 +46,7 @@ class Landing extends Component {
       <div>
         <div id="landingTitle">I'm a...</div>
           <div 
-            id="selectSeeker"
+            id="landingSelectSeeker"
             style={this.state.seeker?selectedSeekerStyle:defaultSeekerStyle}
             onClick={e=>{
               this.setState({
@@ -59,7 +59,7 @@ class Landing extends Component {
             >
           </div>
           <div
-            id="seekerWord"
+            id="landingSeekerWord"
             style={this.state.seeker?
                     {
                       ...defaultSeekerStyle,
@@ -69,7 +69,7 @@ class Landing extends Component {
                     }:defaultSeekerStyle}
           >Seeker</div>
           <div 
-            id="selectGiver"
+            id="landingSelectGiver"
             style={this.state.giver?selectedGiverStyle:defaultGiverStyle}
             onClick={e=>{
               this.setState({
@@ -82,7 +82,7 @@ class Landing extends Component {
             >
           </div>
           <div
-            id="giverWord"
+            id="landingGiverWord"
             style={this.state.giver?
                     {
                       ...defaultGiverStyle,
