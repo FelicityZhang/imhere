@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import decode from 'jwt-decode';
 import Landing from './components/Landing';
-import Live from './components/Live';
+import Live from './components/livechat/Live';
 import GiverLogin from './components/giverpages/GiverLogin';
 import GiverReg from './components/giverpages/GiverReg';
 import GiverSign from './components/giverpages/GiverSign';
