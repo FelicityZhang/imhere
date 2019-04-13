@@ -1,0 +1,58 @@
+#giverSign{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background:#593780;
+    z-index:-1;
+}
+#giverSignGiverWord{
+    position:fixed;
+    width:200px;
+    height:200px;
+    pointer-events: none;
+    color: white;
+    font-size: 40px;
+    margin-bottom: -70px;
+    bottom: 45%;
+    opacity:1;
+    transition: right 1.5s ease-in, opacity 1s ease-in;
+}
+#giverSignSign{
+    position: fixed;
+    font-size: 30px;
+    left: 30%;
+    top: 25%;
+    margin-top: -15px;
+    width: 250px;
+    transition: left 1.5s ease-in, opacity 1s ease-in;
+    opacity:1;
+}
+#giverSignForm{
+    display: flex;
+    flex-flow: row wrap;
+    position: fixed;
+    top: 31%;
+    left: 30%;
+    margin-left: 25px;
+    width: 200px;
+    transition: left 1.5s ease-in, opacity 1s ease-in;
+    animation: fadein 0.5s ease-in;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+}
+#giverSignForm>*{
+    font-size:20px;
+    padding: 10px;
+    width: 180px;
+    margin: 5px auto;
+    border: none;
+    background: rgba(255,255,255,0.9)
+}
+#giverSignSubmit{
+    margin-top: 20px;
+    width: 200px;
+    background:#7cb2d1;
+}

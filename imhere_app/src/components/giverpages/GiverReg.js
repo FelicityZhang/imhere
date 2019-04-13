@@ -65,7 +65,7 @@ class GiverReg extends Component {
                   opacity:"0"
                 }
               ):(
-                {right:"20%"}
+                {right:"30%"}
               )
             }
           >Giver
