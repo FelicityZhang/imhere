@@ -14,7 +14,7 @@ export default class Request extends Component {
   this.handleChangebySetState=this.handleChangebySetState.bind(this);
   }
 
-  handleChangebySetState(){
+  handleChangebySetState(event){
        this.setState({
          [event.target.name]: event.target.value
         })

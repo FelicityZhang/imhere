@@ -17,7 +17,7 @@ class Landing extends Component {
     const defaultSeekerStyle = {
       width: "200px",
       height: "200px",
-      left: "30%",
+      left: "35%",
       bottom: "40%",
       zIndex:1
     }
@@ -31,7 +31,7 @@ class Landing extends Component {
     const defaultGiverStyle = {
       width: "200px",
       height: "200px",
-      right: "30%",
+      right: "35%",
       bottom: "40%",
       zIndex:1
     }
@@ -65,7 +65,7 @@ class Landing extends Component {
                       ...defaultSeekerStyle,
                       zIndex:"2",
                       bottom: "45%",
-                      left:"20%"
+                      left:"30%"
                     }:defaultSeekerStyle}
           >Seeker</div>
           <div 
@@ -88,7 +88,7 @@ class Landing extends Component {
                       ...defaultGiverStyle,
                       zIndex:"2",
                       bottom: "45%",
-                      right:"20%"
+                      right:"30%"
                     }
                     :
                     defaultGiverStyle}

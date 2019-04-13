@@ -23,7 +23,7 @@ import{
   giverRegister,
   seekerLogin,
   giverLogin
-} from './service/api-helper'
+} from './services/api-helper'
 
 import './App.css';
 const users = [
