@@ -29,7 +29,7 @@ giverRouter.post('/giver/resgistration', async(req, res, next)=>{
     }
 })
 
-giverRouter.post('/giver/signin', async(req, res, next)=>{
+giverRouter.get('/giver/signin', async(req, res, next)=>{
     try{
         const giver = await Giver.findOne({
             where:{
