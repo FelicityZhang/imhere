@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 *{
   text-align: center;
-  font-family: 'Cedarville Cursive', cursive;
-  font-weight: 300;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 body{
   background: #7cb2d1;
