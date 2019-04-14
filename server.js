@@ -1,13 +1,18 @@
 const express = require( 'express' )
+const { Router } = require('express');
 const bodyParser = require( 'body-parser' )
-// const cors = require( 'cors' )
-
+const { hashPassword, genToken, checkPassword } = require('./backend/auth');
+const giverRouter = Router();
 const app = express()
 
 const { Seeker, Giver, Message, Request, Review } = require( './backend/models' );
 const PORT = process.env.PORT || 1234
 
-// app.use( cors() )
+
+const cors = require( 'cors' )
+app.use( cors() )
+
+
 app.use( "/", express.static( "./build/" ) );
 app.use( bodyParser.json() )
 app.use((e, req, res, next) => {
@@ -190,6 +195,52 @@ app.post( '/messages', async ( req, res ) => {
 } )
 
 
+
+
+// data seeker just typed in
+const buildAuthResponse = giver => {
+    const token_data = {
+        id: giver.id,
+        email:giver.email
+    }
+    const jwt = genToken(token_data)
+    return {jwt}
+}
+
+app.post('/giver/registration', async(req, res, next)=>{
+    try{
+        const password_digest = await hashPassword(req.body.password)
+        const giver = await Giver.create({
+            email: req.body.email,
+            password_digest
+          })
+        res.json(giver)
+        //   const respData = buildAuthResponse(giver);
+        //   res.json(respData);
+    }catch(e){
+        res.json({message:e.message})
+    }
+})
+
+app.post('/giver/signin', async(req, res, next)=>{
+    console.log(req)
+    try{
+        const giver = await Giver.findOne({
+            where:{
+                email:req.body.email
+            }
+        })
+        if(await checkPassword(req.body.password, giver.password_digest) ){
+            const respData = buildAuthResponse(giver);
+            res.json({ ...respData })
+        }else {
+            res.json({status:401});
+          }
+    }catch(e){
+        res.json({message:e.message})
+    }
+}
+)
 
 app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);

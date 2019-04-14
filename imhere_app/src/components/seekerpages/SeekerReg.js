@@ -50,6 +50,8 @@ class SeekerReg extends Component {
       setTimeout(()=>{
         this.props.history.push('/seeker/browse')
       },1200);
+    }else{
+      //something
     }
   }
 

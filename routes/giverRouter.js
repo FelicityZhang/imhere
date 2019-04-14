@@ -25,27 +25,27 @@ giverRouter.post('/giver/resgistration', async(req, res, next)=>{
           const respData = buildAuthResponse(giver);
           res.json(respData);
     }catch(e){
-        next(e)
+        res.json({message:e.message})
     }
 })
 
-giverRouter.get('/giver/signin', async(req, res, next)=>{
+giverRouter.post('/giver/signin', async(req, res, next)=>{
+    console.log(req)
     try{
         const giver = await Giver.findOne({
             where:{
                 email:req.body.email
             }
         })
-        if(await checkPassword(req.boby.password, giver.password_digest) ){
+        if(await checkPassword(req.body.password, giver.password_digest) ){
             const respData = buildAuthResponse(giver);
             res.json({ ...respData })
         }else {
-            res.status(401).send('Invalid Credentials');
+            res.json({status:401});
           }
     }catch(e){
-        next(e)
+        res.json({message:e.message})
     }
-}
-)
+})
 
 module.exports = giverRouter

@@ -38,15 +38,20 @@ export const seekerLogin = (loginData) => {
       .then(resp => resp.json())
   }
 
-  export const giverLogin = (loginData) => {
+  export const giverLogin = async (loginData) => {
     const opts = {
       method: 'POST',
       body: JSON.stringify(loginData),
       headers: {
         'Content-Type': 'application/json'
       }
-    };
-  
-    return fetch(`${url}/giver/signin`, opts)
-      .then(resp => resp.json())
+    }
+    const fetchData = await fetch(`${url}/giver/signin`, opts)
+      .then(resp => {
+        return resp;
+      })
+      .catch(e=>{
+        return ''
+      })
+    return fetchData;
   }
