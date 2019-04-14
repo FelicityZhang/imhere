@@ -306,22 +306,13 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      state:'',
-      currentUser: null,
-      authFormData: {
-        email: "",
-        password: ""
-      }
+      currentUser: '',
     }
-
-    this.handleSeekerLoginButton = this.handleSeekerLoginButton.bind( this )
-    this.handleGiverLoginButton = this.handleGiverLoginButton.bind( this )
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
     this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
     this.authHandleChange = this.authHandleChange.bind( this )
-
   }
   postGiver(data){
     console.log("posting giver")
@@ -335,41 +326,43 @@ class App extends Component {
     return true;
   }
 
-  handleSeekerLoginButton() {
-    this.props.history.push( "/seeker" )
-  }
+  // handleSeekerLoginButton() {
+  //   this.props.history.push( "/seeker" )
+  // }
 
-  handleGiverLoginButton() {
-    this.props.history.push( "/giver" )
-  }
+  // handleGiverLoginButton() {
+  //   this.props.history.push( "/giver" )
+  // }
 
 
-  async handleSeekerLogin() {
-    const userData = await seekerLogin(this.state.authFormData);
+  async handleSeekerLogin(data) {
+    const userData = await seekerLogin(data);
     this.setState({
       currentUser: decode(userData.token)
     })
     localStorage.setItem("jwt", userData.token)
   }
 
-  async handleGiverLogin() {
-    const userData = await giverLogin(this.state.authFormData);
+  async handleGiverLogin(data) {
+    const userData = await giverLogin(data);
+    console.log(userData)
+    // if(userData.status==401){
+    //   return false;
+    // }
     this.setState({
       currentUser: decode(userData.token)
     })
     localStorage.setItem("jwt", userData.token)
   }
 
-  async handleSeekerRegister( e ) {
-    e.preventDefault();
-    await seekerRegister( this.state.authFormData );
-    this.handleSeekerLogin();
+  async handleSeekerRegister(data) {
+    await seekerRegister( data );
+    this.handleSeekerLogin( data );
   }
 
-  async handleGiverRegister( e ) {
-    e.preventDefault();
-    await giverRegister( this.state.authFormData );
-    this.handleGiverLogin();
+  async handleGiverRegister(data) {
+    await giverRegister( data );
+    this.handleGiverLogin(data);
   }
 
   authHandleChange( e ) {
@@ -434,9 +427,8 @@ class App extends Component {
             render={ ( props ) => <GiverLogin {...props} /> } />
           <Route path='/giver/registration'render={ ( props ) => (
               <GiverReg 
-              { ...props } 
-              postGiver={this.postGiver}
-              handleReg={ this.handleGiverRegisters}
+              { ...props }
+              handleReg={ this.handleGiverRegister}
               handleChange={ this.authHandleChange }
               formData={ this.state.authFormData } />)} />
           <Route
@@ -463,4 +455,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App

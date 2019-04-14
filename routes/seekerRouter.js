@@ -43,7 +43,7 @@ seekerRouter.post('/seeker/signin', async(req, res, next)=>{
             res.status(401).send('Invalid Credentials');
           }
     }catch(e){
-        next(e)
+        res.json({message:e.message})
     }
 }
 )

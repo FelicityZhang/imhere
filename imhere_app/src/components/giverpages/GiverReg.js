@@ -32,7 +32,7 @@ class GiverReg extends Component {
     const {first, last, password, picture, description, email, gender, rate} = this.state;
     const name = first.concat(" ",last);
     const data = { name, password, picture, description, email, gender, rate };
-    const success = this.props.postGiver(data);
+    const success = this.props.handleReg(data);
     this.setState({
       first:'',
       last:'',
