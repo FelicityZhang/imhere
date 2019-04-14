@@ -35,7 +35,7 @@ try{
     name: 'Wendy Applebottom',
     password_digest: 234,
     picture_url: 'https://randomuser.me/api/portraits/women/1.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Furniture assembly',
     email: 'wendya@gmail.com'
   });
 
@@ -43,7 +43,7 @@ try{
     name: 'Ellen Benice',
     password_digest: 345,
     picture_url: 'https://randomuser.me/api/portraits/women/2.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Deep clean',
     email: 'ellenb@gmail.com'
   });
 
@@ -51,7 +51,7 @@ try{
     name: 'Ken Quarters',
     password_digest: 456,
     picture_url: 'https://randomuser.me/api/portraits/men/2.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Home repaires',
     email: 'kenq@gmail.com'
   });
 
@@ -59,7 +59,7 @@ try{
     name: 'Allen Windell',
     password_digest: 567,
     picture_url: 'https://randomuser.me/api/portraits/men/3.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Yark work',
     email: 'allenw@gmail.com'
   });
 
@@ -67,7 +67,7 @@ try{
     name: 'Randy Earnst',
     password_digest: 678,
     picture_url: 'https://randomuser.me/api/portraits/men/4.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Packing & Unpacking',
     email: 'randye@gmail.com'
   });
 
@@ -75,7 +75,7 @@ try{
     name: 'Steven Rodgers',
     password_digest: 789,
     picture_url: 'https://randomuser.me/api/portraits/men/5.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Painting',
     email: 'stevenr@gmail.com'
   });
 
@@ -84,7 +84,7 @@ try{
     name: 'Maggie Simpson',
     password_digest: 987,
     picture_url: 'https://randomuser.me/api/portraits/women/3.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Plumbing',
     email: 'maggieq@gmail.com'
   });
 
@@ -93,7 +93,7 @@ try{
     name: 'Karen Tonelle',
     password_digest: 876,
     picture_url: 'https://randomuser.me/api/portraits/women/4.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Electrical',
     email: 'karent@gmail.com'
   });
 
@@ -101,7 +101,7 @@ try{
     name: 'Frances Yancy',
     password_digest: 765,
     picture_url: 'https://randomuser.me/api/portraits/women/5.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
+    description: 'Needs someone who is skilled for Carpentry',
     email: 'francesy@gmail.com'
   });
 
@@ -111,8 +111,8 @@ try{
 
   const giver1 = await Giver.create({
     name: 'Peter Williamson',
+    age: 25,
     gender: 'Male',
-    skill: 'Mounting',
     rates: 200,
     password_digest: 654,
     picture_url: 'https://randomuser.me/api/portraits/men/6.jpg',
@@ -122,8 +122,8 @@ try{
 
   const giver2 = await Giver.create({
     name: 'Tommy Tales',
+    age: 39,
     gender: 'Male',
-    skill: 'Moving',
     rates: 100,
     password_digest: 543,
     picture_url: 'https://randomuser.me/api/portraits/men/7.jpg',
@@ -133,8 +133,8 @@ try{
 
   const giver3 = await Giver.create({
     name: 'Chris Mumford',
+    age: 26,
     gender: 'Male',
-    skill: 'Furniture assembly',
     rates: 50,
     password_digest: 432,
     picture_url: 'https://randomuser.me/api/portraits/men/8.jpg',
@@ -144,8 +144,8 @@ try{
 
   const giver4 = await Giver.create({
     name: 'Amin Allah',
+    age: 29,
     gender: 'Male',
-    skill: 'Home repaires',
     rates: 100,
     password_digest: 321,
     picture_url: 'https://randomuser.me/api/portraits/men/9.jpg',
@@ -155,8 +155,8 @@ try{
 
   const giver5 = await Giver.create({
     name: 'Andrew Borchinski',
+    age: 42,
     gender: 'Male',
-    skill: 'Cleaning',
     rates: 50,
     password_digest: 210,
     picture_url: 'https://randomuser.me/api/portraits/men/10.jpg',
@@ -166,8 +166,8 @@ try{
 
   const giver6 = await Giver.create({
     name: 'John Ngyun',
+    age: 38,
     gender: 'Male',
-    skill: 'Heavy lifting',
     rates: 150,
     password_digest: 112,
     picture_url: 'https://randomuser.me/api/portraits/men/11.jpg',
@@ -177,8 +177,8 @@ try{
 
   const giver7 = await Giver.create({
     name: 'Ivan Sanderhoff',
+    age: 34,
     gender: 'Male',
-    skill: 'Delivery',
     rates: 90,
     password_digest: 113,
     picture_url: 'https://randomuser.me/api/portraits/men/12.jpg',
@@ -188,8 +188,8 @@ try{
 
   const giver8 = await Giver.create({
     name: 'Anthony Ferdinand',
+    age: 35,
     gender: 'Male',
-    skill: 'Yark work',
     rates: 80,
     password_digest: 114,
     picture_url: 'https://randomuser.me/api/portraits/men/13.jpg',
@@ -199,8 +199,8 @@ try{
 
   const giver9 = await Giver.create({
     name: 'Medhi Fidelah',
+    age: 47,
     gender: 'Male',
-    skill: 'Personal assistant',
     rates: 70,
     password_digest: 115,
     picture_url: 'https://randomuser.me/api/portraits/men/14.jpg',
@@ -210,8 +210,8 @@ try{
 
   const giver10 = await Giver.create({
     name: 'Eddie Scores',
+    age: 32,
     gender: 'Male',
-    skill: 'Packing & Unpacking',
     rates: 100,
     password_digest: 116,
     picture_url: 'https://randomuser.me/api/portraits/men/15.jpg',
@@ -221,8 +221,8 @@ try{
 
   const giver11 = await Giver.create({
     name: 'Amanda Diamond',
+    age: 42,
     gender: 'Female',
-    skill: 'Painting',
     rates: 50,
     password_digest: 117,
     picture_url: 'https://randomuser.me/api/portraits/women/6.jpg',
@@ -232,8 +232,8 @@ try{
 
   const giver12 = await Giver.create({
     name: 'Helen Jacobs',
+    age: 38,
     gender: 'Female',
-    skill: 'Plumbing',
     rates: 60,
     password_digest: 118,
     picture_url: 'https://randomuser.me/api/portraits/women/7.jpg',
@@ -243,9 +243,9 @@ try{
 
   const giver13 = await Giver.create({
     name: 'Jennifer Lopeza',
+    age: 28,
     gender: 'Female',
-    skill: 'Electrical',
-    rates: 50,
+    rates: 60,
     password_digest: 119,
     picture_url: 'https://randomuser.me/api/portraits/women/8.jpg',
     description: 'Specializing in replacement/removal of light fitures and fuse replacements.',
@@ -254,8 +254,8 @@ try{
 
   const giver14 = await Giver.create({
     name: 'Lucy Lineal',
+    age: 47,
     gender: 'Female',
-    skill: 'Deep clean',
     rates: 80,
     password_digest: 120,
     picture_url: 'https://randomuser.me/api/portraits/women/9.jpg',
@@ -265,8 +265,8 @@ try{
 
   const giver15 = await Giver.create({
     name: 'Juniper Evers',
+    age: 40,
     gender: 'Female',
-    skill: 'Organization',
     rates: 90,
     password_digest: 121,
     picture_url: 'https://randomuser.me/api/portraits/women/10.jpg',
@@ -276,8 +276,8 @@ try{
 
   const giver16 = await Giver.create({
     name: 'Indie Cortez',
+    age: 36,
     gender: 'Female',
-    skill: 'Event staffing',
     rates: 100,
     password_digest: 122,
     picture_url: 'https://randomuser.me/api/portraits/women/11.jpg',
@@ -287,8 +287,8 @@ try{
 
   const giver17 = await Giver.create({
     name: 'Eliz Inez',
+    age: 27,
     gender: 'Female',
-    skill: 'Run errands',
     rates: 100,
     password_digest: 211,
     picture_url: 'https://randomuser.me/api/portraits/women/12.jpg',
@@ -298,8 +298,8 @@ try{
 
   const giver18 = await Giver.create({
     name: 'Teigan Wonderful',
+    age: 30,
     gender: 'Female',
-    skill: 'Wait in line',
     rates: 80,
     password_digest: 222,
     picture_url: 'https://randomuser.me/api/portraits/women/13.jpg',
@@ -309,8 +309,8 @@ try{
 
   const giver19 = await Giver.create({
     name: 'Maddy Kilawatz',
+    age: 28,
     gender: 'Female',
-    skill: 'Carpentry',
     rates: 90,
     password_digest: 223,
     picture_url: 'https://randomuser.me/api/portraits/women/14.jpg',
@@ -320,8 +320,8 @@ try{
 
   const giver20 = await Giver.create({
     name: 'Nancy Grabowski',
+    age: 35,
     gender: 'Female',
-    skill: 'Plumbing',
     rates: 100,
     password_digest: 225,
     picture_url: 'https://randomuser.me/api/portraits/women/15.jpg',
@@ -340,9 +340,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Mounting needed',
-    start_time: '2004-10-19 10:23:54', 
-    end_time: 0,
-    description: 'I need someone to mount my TV.'
+    start_time: '2019-04-18 15:23:54', 
+    end_time: 2019,
+    description: 'I need someone to mount my TV.',
+    complete: 1
   });
   
 
@@ -351,9 +352,10 @@ try{
     // seeker_id: 2,
     approval: 0,
     title: 'Painting needed',
-    start_time: '2004-10-19 10:23:54',
-    end_time: 100,
-    description: 'I need someone to paint my apartment.'
+    start_time: '2019-04-18 14:23:54',
+    end_time: 1100,
+    description: 'I need someone to paint my apartment.',
+    complete: 1
   });
 
   const request3 = await Request.create({
@@ -361,9 +363,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Moving needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 12:23:54',
     end_time: 1100,
-    description: 'I need someone to assist me to move.'
+    description: 'I need someone to assist me to move.',
+    complete: 0
   });
 
   const request4 = await Request.create({
@@ -371,9 +374,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 13:23:54',
     end_time: 1100,
-    description: 'I need someone to clean my bathroom.'
+    description: 'I need someone to clean my bathroom.',
+    complete: 1
   });
 
   const request5 = await Request.create({
@@ -383,7 +387,8 @@ try{
     title: 'Plumbing needed',
     start_time: '2004-10-19 10:23:54',
     end_time: 1100,
-    description: 'I need a plumber asap.'
+    description: 'I need a plumber asap.',
+    complete: 0
   });
 
   const request6 = await Request.create({
@@ -391,9 +396,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Electrical needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 12:23:54',
     end_time: 1100,
-    description: 'I need a electrical technicial.'
+    description: 'I need a electrical technicial.',
+    complete: 1
   });
 
   const request7 = await Request.create({
@@ -401,9 +407,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Packing & unpacking needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 13:23:54',
     end_time: 1100,
-    description: 'I need someone to pack my clothings.'
+    description: 'I need someone to pack my clothings.',
+    complete: 0
   });
 
   const request8 = await Request.create({
@@ -411,9 +418,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Organization needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 14:23:54',
     end_time: 1100,
-    description: 'I need someone to organize my stuff.'
+    description: 'I need someone to organize my stuff.',
+    complete: 1
   });
 
   const request9 = await Request.create({
@@ -421,9 +429,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 18:23:54',
     end_time: 1100,
-    description: 'I need a plumber asap.'
+    description: 'I need a plumber asap.',
+    complete: 0
   });
 
   const request10 = await Request.create({
@@ -431,9 +440,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: '2004-10-19 10:23:54',
+    start_time: '2019-04-18 12:23:54',
     end_time: 1100,
-    description: 'I need someone to clean up my bedroom.'
+    description: 'I need someone to clean up my bedroom.',
+    complete: 1
   });
 
 
@@ -543,135 +553,137 @@ try{
   const skill11 = await Skill.create({
     description: 'Light fixtures'
   });
-const skill12= await Skill.create({
-    description: 'Air Conditioner repair'
-  });
-const skill13 = await Skill.create({
-    description: 'House sitting'
-  });
-const skill14 = await Skill.create({
-    description: 'Dog Walking'
-  });
-const skill15 = await Skill.create({
-    description: 'Child care (0 months to 2 years)'
-  });
-const skill16 = await Skill.create({
-    description: 'Child care (2 years and older)'
-  });
-const skill17 = await Skill.create({
-    description: 'Elder care'
-  });
-const skill18 = await Skill.create({
-    description: 'Furniture restoration'
-  });
-const skill19 = await Skill.create({
-    description: 'Grocery shopping'
-  });
-const skill20 = await Skill.create({
-    description: 'Afterschool pickup'
-  });
-const skill21 = await Skill.create({
-    description: 'Life coach'
-  });
-const skill22 = await Skill.create({
-    description: 'Makeup design'
-  });
-const skill23 = await Skill.create({
-    description: 'Hair stylist'
-  });
-const skill24 = await Skill.create({
-    description: 'Nail stylist'
-  });
-const skill25 = await Skill.create({
-    description: 'Weight loss specialist'
-  });
-const skill26 = await Skill.create({
-    description: 'Wardrobe consultant'
-  });
-const skill27 = await Skill.create({
-    description: 'Wardrobe stylist'
-  });
-const skill28 = await Skill.create({
-    description: 'General car maintanance'
-  });
-const skill29 = await Skill.create({
-    description: 'Seamstress'
-  });
-const skill30= await Skill.create({
-    description: 'Closet organization'
-  });
-const skill31 = await Skill.create({
-    description: 'Personal trainer'
-  });
-const skill32 = await Skill.create({
-    description: 'Wait in line'
-  });
-const skill33 = await Skill.create({
-    description: 'Photography'
-  });
-const skill34 = await Skill.create({
-    description: 'Accounting'
-  });
-const skill35 = await Skill.create({
-    description: 'Office Organization'
-  });
-const skill36 = await Skill.create({
-    description: 'Graphic Design'
-  });
-const skill37 = await Skill.create({
-    description: 'Carpentry'
-  });
-const skill38 = await Skill.create({
-    description: 'Cooking'
-  });
-const skill39 = await Skill.create({
-    description: 'Baking'
-  });
-const skill40 = await Skill.create({
-    description: 'Party Planning'
-  });
-const skill41 = await Skill.create({
-    description: 'Interior design'
-  });
-const skill42 = await Skill.create({
-    description: 'Art deco'
-  });
-const skill43 = await Skill.create({
-    description: 'Bicycle repair/assistance'
-  });
-const skill44 = await Skill.create({
-    description: 'Packing & Unpacking'
-  });
-const skill45 = await Skill.create({
-    description: 'Social media enhancer'
-  });
-const skill46 = await Skill.create({
-    description: 'Party promotion'
-  });
-const skill47 = await Skill.create({
-    description: 'Singer'
-  });
-const skill48 = await Skill.create({
-    description: 'Pet trainer'
-  });
-const skill49 = await Skill.create({
-    description: 'Business advisor'
-  });
-const skill50 = await Skill.create({
-    description: 'Pianist'
-  });
-const skill51 = await Skill.create({
-    description: 'Drummer'
-  });
-const skill52 = await Skill.create({
-    description: 'Street Artist'
-  });
-const skill53 = await Skill.create({
-    description: 'Dancer'
-  });
-const skill54 = await Skill.create({
-    description: 'Guitarist'
-  });
+  
+  const skill12= await Skill.create({
+      description: 'Air Conditioner repair'
+    });
+  const skill13 = await Skill.create({
+      description: 'House sitting'
+    });
+  const skill14 = await Skill.create({
+      description: 'Dog Walking'
+    });
+  const skill15 = await Skill.create({
+      description: 'Child care (0 months to 2 years)'
+    });
+  const skill16 = await Skill.create({
+      description: 'Child care (2 years and older)'
+    });
+  const skill17 = await Skill.create({
+      description: 'Elder care'
+    });
+  const skill18 = await Skill.create({
+      description: 'Furniture restoration'
+    });
+  const skill19 = await Skill.create({
+      description: 'Grocery shopping'
+    });
+  const skill20 = await Skill.create({
+      description: 'Afterschool pickup'
+    });
+  const skill21 = await Skill.create({
+      description: 'Life coach'
+    });
+  const skill22 = await Skill.create({
+      description: 'Makeup design'
+    });
+  const skill23 = await Skill.create({
+      description: 'Hair stylist'
+    });
+  const skill24 = await Skill.create({
+      description: 'Nail stylist'
+    });
+  const skill25 = await Skill.create({
+      description: 'Weight loss specialist'
+    });
+  const skill26 = await Skill.create({
+      description: 'Wardrobe consultant'
+    });
+  const skill27 = await Skill.create({
+      description: 'Wardrobe stylist'
+    });
+  const skill28 = await Skill.create({
+      description: 'General car maintanance'
+    });
+  const skill29 = await Skill.create({
+      description: 'Seamstress'
+    });
+  const skill30= await Skill.create({
+      description: 'Closet organization'
+    });
+  const skill31 = await Skill.create({
+      description: 'Personal trainer'
+    });
+  const skill32 = await Skill.create({
+      description: 'Wait in line'
+    });
+  const skill33 = await Skill.create({
+      description: 'Photography'
+    });
+  const skill34 = await Skill.create({
+      description: 'Accounting'
+    });
+  const skill35 = await Skill.create({
+      description: 'Office Organization'
+    });
+  const skill36 = await Skill.create({
+      description: 'Graphic Design'
+    });
+  const skill37 = await Skill.create({
+      description: 'Carpentry'
+    });
+  const skill38 = await Skill.create({
+      description: 'Cooking'
+    });
+  const skill39 = await Skill.create({
+      description: 'Baking'
+    });
+  const skill40 = await Skill.create({
+      description: 'Party Planning'
+    });
+  const skill41 = await Skill.create({
+      description: 'Interior design'
+    });
+  const skill42 = await Skill.create({
+      description: 'Art deco'
+    });
+  const skill43 = await Skill.create({
+      description: 'Bicycle repair/assistance'
+    });
+  const skill44 = await Skill.create({
+      description: 'Packing & Unpacking'
+    });
+  const skill45 = await Skill.create({
+      description: 'Social media enhancer'
+    });
+  const skill46 = await Skill.create({
+      description: 'Party promotion'
+    });
+  const skill47 = await Skill.create({
+      description: 'Singer'
+    });
+  const skill48 = await Skill.create({
+      description: 'Pet trainer'
+    });
+  const skill49 = await Skill.create({
+      description: 'Business advisor'
+    });
+  const skill50 = await Skill.create({
+      description: 'Pianist'
+    });
+  const skill51 = await Skill.create({
+      description: 'Drummer'
+    });
+  const skill52 = await Skill.create({
+      description: 'Street Artist'
+    });
+  const skill53 = await Skill.create({
+      description: 'Dancer'
+    });
+  const skill54 = await Skill.create({
+      description: 'Guitarist'
+    });
+
 
 
 
@@ -731,3 +743,111 @@ const skill54 = await Skill.create({
   await skill52.setSkill(giver12);
   await skill53.setSkill(giver13);
   await skill54.setSkill(giver14);
+
+
+
+  await seeker1.setSeeker(request1);
+  await seeker1.setSeeker(review1);
+
+  
+  await seeker2.setSeeker(request2);
+  await seeker2.setSeeker(review2);
+
+  
+  await seeker3.setSeeker(request3);
+  await seeker3.setSeeker(review3);
+
+  
+  await seeker4.setSeeker(request4);
+  await seeker4.setSeeker(review4);
+
+  
+  await seeker5.setSeeker(request5);
+  await seeker5.setSeeker(review5);
+
+  
+  await seeker6.setSeeker(request6);
+  await seeker6.setSeeker(review6);
+
+  
+  await seeker7.setSeeker(request7);
+  await seeker7.setSeeker(review7);
+
+ 
+  await seeker8.setSeeker(request8);
+  await seeker8.setSeeker(review8);
+
+  
+  await seeker9.setSeeker(request9);
+  await seeker9.setSeeker(review9);
+
+  
+  await seeker10.setSeeker(request10);
+  await seeker10.setSeeker(review10);
+
+  
+
+  await giver1.setGiver(request1);
+  await giver1.setGiver(review1);
+
+  
+  await giver2.setGiver(request2);
+  await giver2.setGiver(review2);
+
+  
+  await giver3.setGiver(request3);
+  await giver3.setGiver(review3);
+
+
+  await giver4.setGiver(request4);
+  await giver4.setGiver(review4);
+
+
+  await giver5.setGiver(request5);
+  await giver5.setGiver(review5);
+
+  
+  await giver6.setGiver(request6);
+  await giver6.setGiver(review6);
+
+
+  await giver7.setGiver(request7);
+  await giver7.setGiver(review7);
+
+ 
+  await giver8.setGiver(request8);
+  await giver8.setGiver(review8);
+
+  
+  await giver9.setGiver(request9);
+  await giver9.setGiver(review9);
+
+ 
+  await giver10.setGiver(request10);
+  await giver10.setGiver(review10);
+
+ 
+  await giver11.setGiver(request10);
+  await giver11.setGiver(review10);
+
+  
+  await giver12.setGiver(request9);
+  await giver12.setGiver(review9);
+
+  
+  await giver13.setGiver(request8);
+  await giver13.setGiver(review8);
+
+
+  
+
+  process.exit()
+}catch (error) {
+  console.log(error)
+}
+}
+
+main();
+
+
+ 

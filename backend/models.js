@@ -37,11 +37,11 @@ age: {
 gender: {
      type:Sequelize.STRING
 },
-skill: {
-    type:Sequelize.TEXT
-},
 rates: {
     type:Sequelize.INTEGER
+},
+email: {
+    type:Sequelize.TEXT
 },
 password_digest: {
     type:Sequelize.STRING
@@ -89,6 +89,9 @@ const Request = sequelize.define('request', {
     },
     description: {
         type: Sequelize.TEXT
+    },
+    complete: {
+        type: Sequelize.INTEGER
     },
     });
 
