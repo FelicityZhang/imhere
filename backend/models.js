@@ -82,10 +82,10 @@ const Request = sequelize.define('request', {
         type: Sequelize.TEXT
     },
     start_time: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
     },
     end_time: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
     },
     description: {
         type: Sequelize.TEXT
@@ -102,30 +102,29 @@ const Review = sequelize.define('review', {
     content: {
         type: Sequelize.TEXT
     },
-    });  
+    }); 
+    
+    const Skill = sequelize.define('skill', {
+        description: {
+            type: Sequelize.TEXT
+        }
+    })
+    
 
     
     Giver.hasMany(Message, { onDelete: 'cascade' })
     Message.belongsTo(Giver);
 
-    Giver.belongsToMany(Request, {through: 'user_style_xref',
-                                foreignKey: 'giverId' })
+    Giver.hasMany(Request, { onDelete: 'cascade' })
     Request.belongsTo(Giver);
 
-    Seeker.belongsToMany(Message, {through: 'user_style_xref',
-                                     onDelete: 'cascade' })
+    Giver.hasMany(Skill)
+
+    Seeker.hasMany(Message)
     Message.belongsTo(Seeker);
 
-    Seeker.belongsToMany(Request, {through: 'user_style_xref',
-                                foreignKey: 'seekerId' })
+    Seeker.hasMany(Request)
     Request.belongsTo(Seeker);
-
-
-    Request.belongsTo(Review, {through: 'users_style_xref',
-                                foreignKey: 'giverId' })
-
-    Review.belongsTo(Request, {through: 'users_style_xref',
-                                foreignKey: 'userId' })
     
 sequelize.sync();
     
@@ -136,5 +135,6 @@ module.exports = {
     Giver,
     Message,
     Request,
-    Review
+    Review,
+    Skill
 }
