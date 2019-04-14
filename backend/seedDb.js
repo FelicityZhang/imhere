@@ -343,7 +343,7 @@ try{
     start_time: '2019-04-18 15:23:54', 
     end_time: 2019,
     description: 'I need someone to mount my TV.',
-    complete: 'Done'
+    complete: 1
   });
   
 
@@ -355,7 +355,7 @@ try{
     start_time: '2019-04-18 14:23:54',
     end_time: 1100,
     description: 'I need someone to paint my apartment.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request3 = await Request.create({
@@ -366,7 +366,7 @@ try{
     start_time: '2019-04-18 12:23:54',
     end_time: 1100,
     description: 'I need someone to assist me to move.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request4 = await Request.create({
@@ -377,7 +377,7 @@ try{
     start_time: '2019-04-18 13:23:54',
     end_time: 1100,
     description: 'I need someone to clean my bathroom.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request5 = await Request.create({
@@ -385,10 +385,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: '2019-04-18 15:23:54',
+    start_time: '2004-10-19 10:23:54',
     end_time: 1100,
     description: 'I need a plumber asap.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request6 = await Request.create({
@@ -399,7 +399,7 @@ try{
     start_time: '2019-04-18 12:23:54',
     end_time: 1100,
     description: 'I need a electrical technicial.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request7 = await Request.create({
@@ -410,7 +410,7 @@ try{
     start_time: '2019-04-18 13:23:54',
     end_time: 1100,
     description: 'I need someone to pack my clothings.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request8 = await Request.create({
@@ -421,7 +421,7 @@ try{
     start_time: '2019-04-18 14:23:54',
     end_time: 1100,
     description: 'I need someone to organize my stuff.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request9 = await Request.create({
@@ -432,7 +432,7 @@ try{
     start_time: '2019-04-18 18:23:54',
     end_time: 1100,
     description: 'I need a plumber asap.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request10 = await Request.create({
@@ -443,7 +443,7 @@ try{
     start_time: '2019-04-18 12:23:54',
     end_time: 1100,
     description: 'I need someone to clean up my bedroom.',
-    complete: 'Done'
+    complete: 1
   });
 
 
@@ -553,135 +553,136 @@ try{
   const skill11 = await Skill.create({
     description: 'Light fixtures'
   });
-const skill12= await Skill.create({
-    description: 'Air Conditioner repair'
-  });
-const skill13 = await Skill.create({
-    description: 'House sitting'
-  });
-const skill14 = await Skill.create({
-    description: 'Dog Walking'
-  });
-const skill15 = await Skill.create({
-    description: 'Child care (0 months to 2 years)'
-  });
-const skill16 = await Skill.create({
-    description: 'Child care (2 years and older)'
-  });
-const skill17 = await Skill.create({
-    description: 'Elder care'
-  });
-const skill18 = await Skill.create({
-    description: 'Furniture restoration'
-  });
-const skill19 = await Skill.create({
-    description: 'Grocery shopping'
-  });
-const skill20 = await Skill.create({
-    description: 'Afterschool pickup'
-  });
-const skill21 = await Skill.create({
-    description: 'Life coach'
-  });
-const skill22 = await Skill.create({
-    description: 'Makeup design'
-  });
-const skill23 = await Skill.create({
-    description: 'Hair stylist'
-  });
-const skill24 = await Skill.create({
-    description: 'Nail stylist'
-  });
-const skill25 = await Skill.create({
-    description: 'Weight loss specialist'
-  });
-const skill26 = await Skill.create({
-    description: 'Wardrobe consultant'
-  });
-const skill27 = await Skill.create({
-    description: 'Wardrobe stylist'
-  });
-const skill28 = await Skill.create({
-    description: 'General car maintanance'
-  });
-const skill29 = await Skill.create({
-    description: 'Seamstress'
-  });
-const skill30= await Skill.create({
-    description: 'Closet organization'
-  });
-const skill31 = await Skill.create({
-    description: 'Personal trainer'
-  });
-const skill32 = await Skill.create({
-    description: 'Wait in line'
-  });
-const skill33 = await Skill.create({
-    description: 'Photography'
-  });
-const skill34 = await Skill.create({
-    description: 'Accounting'
-  });
-const skill35 = await Skill.create({
-    description: 'Office Organization'
-  });
-const skill36 = await Skill.create({
-    description: 'Graphic Design'
-  });
-const skill37 = await Skill.create({
-    description: 'Carpentry'
-  });
-const skill38 = await Skill.create({
-    description: 'Cooking'
-  });
-const skill39 = await Skill.create({
-    description: 'Baking'
-  });
-const skill40 = await Skill.create({
-    description: 'Party Planning'
-  });
-const skill41 = await Skill.create({
-    description: 'Interior design'
-  });
-const skill42 = await Skill.create({
-    description: 'Art deco'
-  });
-const skill43 = await Skill.create({
-    description: 'Bicycle repair/assistance'
-  });
-const skill44 = await Skill.create({
-    description: 'Packing & Unpacking'
-  });
-const skill45 = await Skill.create({
-    description: 'Social media enhancer'
-  });
-const skill46 = await Skill.create({
-    description: 'Party promotion'
-  });
-const skill47 = await Skill.create({
-    description: 'Singer'
-  });
-const skill48 = await Skill.create({
-    description: 'Pet trainer'
-  });
-const skill49 = await Skill.create({
-    description: 'Business advisor'
-  });
-const skill50 = await Skill.create({
-    description: 'Pianist'
-  });
-const skill51 = await Skill.create({
-    description: 'Drummer'
-  });
-const skill52 = await Skill.create({
-    description: 'Street Artist'
-  });
-const skill53 = await Skill.create({
-    description: 'Dancer'
-  });
-const skill54 = await Skill.create({
-    description: 'Guitarist'
-  });
+  
+  const skill12= await Skill.create({
+      description: 'Air Conditioner repair'
+    });
+  const skill13 = await Skill.create({
+      description: 'House sitting'
+    });
+  const skill14 = await Skill.create({
+      description: 'Dog Walking'
+    });
+  const skill15 = await Skill.create({
+      description: 'Child care (0 months to 2 years)'
+    });
+  const skill16 = await Skill.create({
+      description: 'Child care (2 years and older)'
+    });
+  const skill17 = await Skill.create({
+      description: 'Elder care'
+    });
+  const skill18 = await Skill.create({
+      description: 'Furniture restoration'
+    });
+  const skill19 = await Skill.create({
+      description: 'Grocery shopping'
+    });
+  const skill20 = await Skill.create({
+      description: 'Afterschool pickup'
+    });
+  const skill21 = await Skill.create({
+      description: 'Life coach'
+    });
+  const skill22 = await Skill.create({
+      description: 'Makeup design'
+    });
+  const skill23 = await Skill.create({
+      description: 'Hair stylist'
+    });
+  const skill24 = await Skill.create({
+      description: 'Nail stylist'
+    });
+  const skill25 = await Skill.create({
+      description: 'Weight loss specialist'
+    });
+  const skill26 = await Skill.create({
+      description: 'Wardrobe consultant'
+    });
+  const skill27 = await Skill.create({
+      description: 'Wardrobe stylist'
+    });
+  const skill28 = await Skill.create({
+      description: 'General car maintanance'
+    });
+  const skill29 = await Skill.create({
+      description: 'Seamstress'
+    });
+  const skill30= await Skill.create({
+      description: 'Closet organization'
+    });
+  const skill31 = await Skill.create({
+      description: 'Personal trainer'
+    });
+  const skill32 = await Skill.create({
+      description: 'Wait in line'
+    });
+  const skill33 = await Skill.create({
+      description: 'Photography'
+    });
+  const skill34 = await Skill.create({
+      description: 'Accounting'
+    });
+  const skill35 = await Skill.create({
+      description: 'Office Organization'
+    });
+  const skill36 = await Skill.create({
+      description: 'Graphic Design'
+    });
+  const skill37 = await Skill.create({
+      description: 'Carpentry'
+    });
+  const skill38 = await Skill.create({
+      description: 'Cooking'
+    });
+  const skill39 = await Skill.create({
+      description: 'Baking'
+    });
+  const skill40 = await Skill.create({
+      description: 'Party Planning'
+    });
+  const skill41 = await Skill.create({
+      description: 'Interior design'
+    });
+  const skill42 = await Skill.create({
+      description: 'Art deco'
+    });
+  const skill43 = await Skill.create({
+      description: 'Bicycle repair/assistance'
+    });
+  const skill44 = await Skill.create({
+      description: 'Packing & Unpacking'
+    });
+  const skill45 = await Skill.create({
+      description: 'Social media enhancer'
+    });
+  const skill46 = await Skill.create({
+      description: 'Party promotion'
+    });
+  const skill47 = await Skill.create({
+      description: 'Singer'
+    });
+  const skill48 = await Skill.create({
+      description: 'Pet trainer'
+    });
+  const skill49 = await Skill.create({
+      description: 'Business advisor'
+    });
+  const skill50 = await Skill.create({
+      description: 'Pianist'
+    });
+  const skill51 = await Skill.create({
+      description: 'Drummer'
+    });
+  const skill52 = await Skill.create({
+      description: 'Street Artist'
+    });
+  const skill53 = await Skill.create({
+      description: 'Dancer'
+    });
+  const skill54 = await Skill.create({
+      description: 'Guitarist'
+    });
 
 
 
@@ -837,35 +838,8 @@ const skill54 = await Skill.create({
   await giver13.setGiver(request8);
   await giver13.setGiver(review8);
 
-  
-  await giver14.setGiver(request7);
-  await giver14.setGiver(review7);
 
   
-  await giver15.setGiver(request6);
-  await giver15.setGiver(review6);
-
-  
-  await giver16.setGiver(request5);
-  await giver16.setGiver(review5);
-
-  
-  await giver17.setGiver(request4);
-  await giver17.setGiver(review4);
-
-
-  await giver18.setGiver(request3);
-  await giver18.setGiver(review3);
-
- 
-  await giver19.setGiver(request2);
-  await giver19.setGiver(review2);
-
- 
-  await giver20.setGiver(request1);
-  await giver20.setGiver(review1);
-
-
 
   process.exit()
 }catch (error) {
@@ -875,3 +849,5 @@ const skill54 = await Skill.create({
 
 main();
 
+
+ 
