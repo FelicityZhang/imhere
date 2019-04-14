@@ -63,7 +63,8 @@ const users = [
 const requests =[{
     giver_id: 1,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete:1,
     title: 'Mounting needed',
     start_time: "0900",
     end_time: "1100",
@@ -72,7 +73,8 @@ const requests =[{
   {
     giver_id: 2,
     seeker_id: 2,
-    approval: 0,
+    approval: 1,
+    complete:1,
     title: 'Painting needed',
     start_time: "0900",
     end_time: "1100",
@@ -82,6 +84,7 @@ const requests =[{
     giver_id: 3,
     seeker_id: 1,
     approval: 0,
+    complete:0,
     title: 'Moving needed',
     start_time: "0900",
     end_time: "1100",
@@ -90,7 +93,8 @@ const requests =[{
   {
     giver_id: 4,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete:0,
     title: 'Deep clean needed',
     start_time: "0900",
     end_time: "1100",
@@ -99,7 +103,8 @@ const requests =[{
   {
     giver_id: 4,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete:0,
     title: 'Plumbing needed',
     start_time: "0900",
     end_time: "1100",
@@ -108,7 +113,8 @@ const requests =[{
   {
     giver_id: 6,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete:0,
     title: 'Electrical needed',
     start_time: "0900",
     end_time: "1100",
@@ -117,7 +123,8 @@ const requests =[{
   {
     giver_id: 4,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete: 1,
     title: 'Packing & unpacking needed',
     start_time: "0900",
     end_time: "1100",
@@ -126,7 +133,8 @@ const requests =[{
   {
     giver_id: 4,
     seeker_id: 1,
-    approval: 0,
+    approval: 1,
+    complete: 1,
     title: 'Organization needed',
     start_time: "0900",
     end_time: "1100",
@@ -136,6 +144,7 @@ const requests =[{
     giver_id: 4,
     seeker_id: 1,
     approval: 0,
+    complete:0,
     title: 'Plumbing needed',
     start_time: "0900",
     end_time: "1100",
@@ -145,6 +154,147 @@ const requests =[{
     giver_id: 4,
     seeker_id: 1,
     approval: 0,
+    complete:0,
+    title: 'Deep clean needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to clean up my bedroom.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Deep clean needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to clean my bathroom.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Plumbing needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 6,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Electrical needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a electrical technicial.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete: 1,
+    title: 'Packing & unpacking needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to pack my clothings.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete: 1,
+    title: 'Organization needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to organize my stuff.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    complete:0,
+    title: 'Plumbing needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    complete:0,
+    title: 'Deep clean needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to clean up my bedroom.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Deep happy needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to clean my bathroom.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Plumbing needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 6,
+    seeker_id: 1,
+    approval: 1,
+    complete:0,
+    title: 'Electrical needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a electrical technicial.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete: 1,
+    title: 'Packing & unpacking needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to pack my clothings.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
+    complete: 1,
+    title: 'Organization needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need someone to organize my stuff.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    complete:0,
+    title: 'Plumbing needed',
+    start_time: "0900",
+    end_time: "1100",
+    description: 'I need a plumber asap.'
+  },
+  {
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 0,
+    complete:0,
     title: 'Deep clean needed',
     start_time: "0900",
     end_time: "1100",
@@ -302,6 +452,11 @@ class App extends Component {
           <Route
             path='/giver/status'
             render={ ( props ) => <GiverStatus { ...props} requests={requests} /> } />
+
+          {/*LiveChat*/}
+          <Route
+            path='/live'
+            render={ ( props ) => <Live { ...props } /> } />
         </Switch>
       </div>
     );
