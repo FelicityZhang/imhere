@@ -25,18 +25,18 @@ app.use((e, req, res, next) => {
 
 
 
-app.get( '/seeker/browse', async ( req, res ) => {
-    try {
-        const givers = await Giver.findAll( { raw: true } )
-        res.json( {
-            givers
-        } )
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
+// app.get( '/seeker/browse', async ( req, res ) => {
+//     try {
+//         const givers = await Giver.findAll( { raw: true } )
+//         res.json( {
+//             givers
+//         } )
+//     } catch ( e ) {
+//         res.status( 500 ).json( {
+//             message: e.message
+//         } )
+//     }
+// } )
 
 
 
@@ -54,84 +54,53 @@ app.get( '/seeker/browse', async ( req, res ) => {
 // } )
 
 
-app.get( '/seeker/:giverid/request', async ( req, res ) => {
-    try {
-        const requests = await Request.findAll( {
-            where: {
-                seeker_id: req.params.seekerid,
-                giver_id: req.params.giverid
-            }
-        } )
-        res.json( {
-            requests
-        } )
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
+// app.get( '/seeker/:giverid/request', async ( req, res ) => {
+//     try {
+//         const requests = await Request.findAll( {
+//             where: {
+//                 seeker_id: req.params.seekerid,
+//                 giver_id: req.params.giverid
+//             }
+//         } )
+//         res.json( {
+//             requests
+//         } )
+//     } catch ( e ) {
+//         res.status( 500 ).json( {
+//             message: e.message
+//         } )
+//     }
+// } )
 
-app.get( '/seeker/status', async ( req, res ) => {
-    try {
-        const requests = await Request.findAll( {
-            where: {
-                seeker_id: req.params.seekerid
-            }
-        } )
-        res.json( {
-            requests
-        } )
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
+// app.get( '/seeker/status', async ( req, res ) => {
+//     try {
+//         const requests = await Request.findAll( {
+//             where: {
+//                 seeker_id: req.params.seekerid
+//             }
+//         } )
+//         res.json( {
+//             requests
+//         } )
+//     } catch ( e ) {
+//         res.status( 500 ).json( {
+//             message: e.message
+//         } )
+//     }
+// } )
 
-
-app.post( '/giver', async ( req, res ) => {
-    try {
-        const giver = await Giver.findOne( {
-            where: {
-                email: req.body.email
-            }
-        } )
-        res.json(giver)
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
-
-app.get( '/giver/status', async ( req, res ) => {
-    try {
-        const requests = await Request.findAll( {
-            where: {
-                giver_id: req.params.id
-            }
-        } )
-        res.json(requests)
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
-
-app.get( '/seeker/:seekerid/search', async ( req, res ) => {
-    try {
-        const id = req.params.seekerid
-        const seeker = await Seeker.findByPk( id, { raw: true } )
-        if ( !seeker ) throw Error( 'seeker not found' )
-        res.json( seeker )
-    } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
-    }
-} )
+// app.get( '/seeker/:seekerid/search', async ( req, res ) => {
+//     try {
+//         const id = req.params.seekerid
+//         const seeker = await Seeker.findByPk( id, { raw: true } )
+//         if ( !seeker ) throw Error( 'seeker not found' )
+//         res.json( seeker )
+//     } catch ( e ) {
+//         res.status( 500 ).json( {
+//             message: e.message
+//         } )
+//     }
+// } )
 
 
 
@@ -198,18 +167,66 @@ app.get( '/seeker/:seekerid/search', async ( req, res ) => {
 
 
 
-app.post( '/messages', async ( req, res ) => {
-    console.log( req.body )
+// app.post( '/messages', async ( req, res ) => {
+//     console.log( req.body )
+//     try {
+//         const message = await Message.create( req.body )
+//         res.json( message )
+//     } catch ( e ) {
+//         console.log( e )
+//         res.status( 500 ).json( { message: e.message } )
+//     }
+// } )
+
+
+
+app.post( '/giver/status', async ( req, res ) => {
     try {
-        const message = await Message.create( req.body )
-        res.json( message )
+        const requests = await Request.findAll( {
+            where: {
+                giver_id: req.body.id
+            }
+        } )
+        res.json( {
+            requests
+        } )
     } catch ( e ) {
-        console.log( e )
-        res.status( 500 ).json( { message: e.message } )
+        res.status( 500 ).json( {
+            message: e.message
+        } )
     }
 } )
 
 
+app.post( '/giver', async ( req, res ) => {
+    try {
+        const giver = await Giver.findOne( {
+            where: {
+                email: req.body.email
+            }
+        } )
+        res.json(giver)
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
+// app.post( '/giver/status', async ( req, res ) => {
+//     try {
+//         const requests = await Request.findAll( {
+//             where: {
+//                 giver_id: req.body.id
+//             }
+//         } )
+//         res.json(requests)
+//     } catch ( e ) {
+//         res.status( 500 ).json( {
+//             message: e.message
+//         } )
+//     }
+// } )
 
 
 // data seeker just typed in
