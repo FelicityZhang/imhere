@@ -28,19 +28,27 @@ import{
   seekerLogin,
   giverLogin
 } from './services/api-helper'
-
 import './App.css';
+
+const url = 'http://localhost:1234'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       currentUser: '',
+      user:{}
     }
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
     this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
+    this.getGiver = this.getGiver.bind( this )
+    this.getGiverStatus = this.getGiverStatus.bind( this )
+  }
+
+  async getGiverInfo(email){
+
   }
 
   async handleSeekerLogin(data) {
@@ -52,22 +60,75 @@ class App extends Component {
   }
 
   async handleGiverLogin(data) {
-    console.log(data)
-    const userData = await giverLogin(data);
-    console.log(userData)
-    if(userData.status==401){
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/signin`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    if(fetchData.status==401||fetchData.status==233){
       return false;
     }else{
+      this.getGiver(data)
       this.setState({
-        currentUser: decode(userData.jwt, { header: true })
+        currentUser: decode(fetchData.jwt, { header: true })
       })
-      localStorage.setItem("jwt", userData.token)
+      localStorage.setItem("jwt", fetchData.jwt)
       return true;
     }
+  }
+  async getGiver(data){
+    console.log(data)
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      // console.log(fetchData.getRequests())
+    this.setState({
+      user:fetchData
+    })
+      
+  }
+
+  async getGiverStatus(data) {
+    const opts = {
+      method: 'GET',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/status`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      console.log("Requests"+fetchData);
   }
 
   async handleSeekerRegister(data) {
     const userData = await seekerRegister( data );
+    console.log(userData)
     this.setState({
       currentUser: decode(userData.jwt, { header: true })
     })
