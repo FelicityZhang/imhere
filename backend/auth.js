@@ -5,6 +5,14 @@ const jwt = require('jsonwebtoken');
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = 'bananasplit';
 
+async function hashPassword (password){
+  const hashedPassword = await new Promise((resolve, reject) => {
+bcrypt.hash(password, SALT_ROUNDS, function(err, hash){
+
+})
+  
+})
+
 const hashPassword = async (password) => {
     const digest = await bcrypt.hash(password, SALT_ROUNDS);
     return digest;
