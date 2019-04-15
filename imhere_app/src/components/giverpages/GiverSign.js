@@ -27,7 +27,7 @@ class GiverSign extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     const data = { email, password }
-    // this.props.giverSign( data )
+    this.props.handleLogin( data )
     this.setState( {
       email: '',
       password: ''
@@ -37,7 +37,7 @@ class GiverSign extends Component {
         clicked:true
       })
       setTimeout(()=>{
-        this.props.history.push('/giver/status')
+        // this.props.history.push('/giver/status')
       },1200)
     }
   }
