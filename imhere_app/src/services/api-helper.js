@@ -48,10 +48,11 @@ export const seekerLogin = (loginData) => {
     }
     const fetchData = await fetch(`${url}/giver/signin`, opts)
       .then(resp => {
-        return resp;
+        console.log(resp)
+        return resp.json();
       })
       .catch(e=>{
-        return ''
+        return e.json()
       })
     return fetchData;
   }

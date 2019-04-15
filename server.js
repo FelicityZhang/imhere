@@ -159,27 +159,27 @@ app.get( '/seeker/:seekerid/search', async ( req, res ) => {
 //     }
 // } )
 
-app.post( 'seeker/registration', async ( req, res ) => {
-    console.log( req.body )
-    try {
-        const seeker = await Seeker.create( req.body )
-        res.json( seeker )
-    } catch ( e ) {
-        console.log( e )
-        res.status( 500 ).json( { message: e.message } )
-    }
-} )
+// app.post( 'seeker/registration', async ( req, res ) => {
+//     console.log( req.body )
+//     try {
+//         const seeker = await Seeker.create( req.body )
+//         res.json( seeker )
+//     } catch ( e ) {
+//         console.log( e )
+//         res.status( 500 ).json( { message: e.message } )
+//     }
+// } )
 
-app.post( '/giver/registration', async ( req, res ) => {
-    console.log( req.body )
-    try {
-        const giver = await Giver.create( req.body )
-        res.json( giver )
-    } catch ( e ) {
-        console.log( e )
-        res.status( 500 ).json( { message: e.message } )
-    }
-} )
+// app.post( '/giver/registration', async ( req, res ) => {
+//     console.log( req.body )
+//     try {
+//         const giver = await Giver.create( req.body )
+//         res.json( giver )
+//     } catch ( e ) {
+//         console.log( e )
+//         res.status( 500 ).json( { message: e.message } )
+//     }
+// } )
 
 
 
@@ -214,9 +214,22 @@ app.post('/giver/registration', async(req, res, next)=>{
             email: req.body.email,
             password_digest
           })
-        res.json(giver)
-        //   const respData = buildAuthResponse(giver);
-        //   res.json(respData);
+          const respData = buildAuthResponse(giver);
+          res.json(respData);
+    }catch(e){
+        res.json({message:e.message})
+    }
+})
+
+app.post('/seeker/registration', async(req, res, next)=>{
+    try{
+        const password_digest = await hashPassword(req.body.password)
+        const seeker = await Seeker.create({
+            email: req.body.email,
+            password_digest
+          })
+          const respData = buildAuthResponse(seeker);
+          res.json(respData);
     }catch(e){
         res.json({message:e.message})
     }
@@ -235,7 +248,7 @@ app.post('/giver/signin', async(req, res, next)=>{
             res.json({ ...respData })
         }else {
             res.json({status:401});
-          }
+        }
     }catch(e){
         res.json({message:e.message})
     }
