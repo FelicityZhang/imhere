@@ -37,7 +37,7 @@ age: {
 gender: {
      type:Sequelize.STRING
 },
-rates: {
+rate: {
     type:Sequelize.INTEGER
 },
 email: {
