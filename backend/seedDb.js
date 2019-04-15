@@ -24,11 +24,11 @@ try{
   // Add seed data here -- seeker
 
   const seeker1 = await Seeker.create({
-    name: 'Brandon Pabon',
+    name: 'Maddy Rombes',
     password_digest: 123,
     picture_url: 'https://randomuser.me/api/portraits/men/1.jpg',
     description: 'Needs someone who is skilled for mounting TV',
-    email: 'brandonp@gmail.com'
+    email: 'maddyr@gmail.com'
   });
 
   const seeker2 = await Seeker.create({
@@ -110,65 +110,65 @@ try{
   // giver
 
   const giver1 = await Giver.create({
-    name: 'Peter Williamson',
+    name: 'Juniper Alcorn',
     age: 25,
     gender: 'Male',
-    rates: 200,
+    rate: 200,
     password_digest: 654,
     picture_url: 'https://randomuser.me/api/portraits/men/6.jpg',
     description: 'Very skilled, I’ve mounted my own tv, shelving, and wall mounted desk. I have a drill with bits, and various required anchors. Years of experience painting as well.',
-    email: 'peterw@gmail.com'
+    email: 'junipera@gmail.com'
   });
 
   const giver2 = await Giver.create({
-    name: 'Tommy Tales',
+    name: 'Imani Paul',
     age: 39,
     gender: 'Male',
-    rates: 100,
+    rate: 100,
     password_digest: 543,
     picture_url: 'https://randomuser.me/api/portraits/men/7.jpg',
     description: 'Experienced moving, large & small jobs, local & cross-country. I will load your truck or use my car for small moves. I am well reviewed and eager to please. $10 surcharge hourly for walk-ups above 3rd floor. 2 hour minimum for moves out of state.',
-    email: 'tommyt@gmail.com'
+    email: 'imanip@gmail.com'
   });
 
   const giver3 = await Giver.create({
-    name: 'Chris Mumford',
+    name: 'Elizabeth Moy',
     age: 26,
     gender: 'Male',
-    rates: 50,
+    rate: 50,
     password_digest: 432,
     picture_url: 'https://randomuser.me/api/portraits/men/8.jpg',
     description: 'Professional Handyman with over 10 years experience in assembling and/or installing all manner of ready-to-assemble home and office furniture from Ikea, Wayfair, target or any other brand.Fully equipped with tools and hardware necessary to get the job done.',
-    email: 'chrism@gmail.com'
+    email: 'elizabethm@gmail.com'
   });
 
   const giver4 = await Giver.create({
-    name: 'Amin Allah',
+    name: 'Teigan Hockman',
     age: 29,
     gender: 'Male',
-    rates: 100,
+    rate: 100,
     password_digest: 321,
     picture_url: 'https://randomuser.me/api/portraits/men/9.jpg',
     description: 'I have replaced door knobs, bathroom cabinets, door locks, and light bulbs so I believe I am fit to complete any minor home repairs.',
-    email: 'amina@gmail.com'
+    email: 'teiganh@gmail.com'
   });
 
   const giver5 = await Giver.create({
-    name: 'Andrew Borchinski',
+    name: 'Tara Fenton',
     age: 42,
     gender: 'Male',
-    rates: 50,
+    rate: 50,
     password_digest: 210,
     picture_url: 'https://randomuser.me/api/portraits/men/10.jpg',
     description: 'I am a very clean person! I have cleaned my whole life wether it be at home or for most of the jobs I have had so it is second nature when I do it for someone else.',
-    email: 'andrewt@gmail.com'
+    email: 'taraf@gmail.com'
   });
 
   const giver6 = await Giver.create({
     name: 'John Ngyun',
     age: 38,
     gender: 'Male',
-    rates: 150,
+    rate: 150,
     password_digest: 112,
     picture_url: 'https://randomuser.me/api/portraits/men/11.jpg',
     description: 'I lift weights and have moving experience working for staffing agencies moving furniture in hotels.',
@@ -179,7 +179,7 @@ try{
     name: 'Ivan Sanderhoff',
     age: 34,
     gender: 'Male',
-    rates: 90,
+    rate: 90,
     password_digest: 113,
     picture_url: 'https://randomuser.me/api/portraits/men/12.jpg',
     description: 'If your looking for someone to do deliveries I am the right guy for the job. expenses in nyc. I do not have a vehicle. Nothing over 15 pounds also no flower deliveries.',
@@ -190,7 +190,7 @@ try{
     name: 'Anthony Ferdinand',
     age: 35,
     gender: 'Male',
-    rates: 80,
+    rate: 80,
     password_digest: 114,
     picture_url: 'https://randomuser.me/api/portraits/men/13.jpg',
     description: 'I have worked in landscaping for a golf course before, de potting plants, raking leaves, shoving snow, etc. and am in very good shape endurance wise.',
@@ -201,7 +201,7 @@ try{
     name: 'Medhi Fidelah',
     age: 47,
     gender: 'Male',
-    rates: 70,
+    rate: 70,
     password_digest: 115,
     picture_url: 'https://randomuser.me/api/portraits/men/14.jpg',
     description: 'I previously worked as a receptionist at a law firm for 2 years. I currently work as an administrative assistant at property management office. I have years of experience being an assistant. My memory and multi-tasking skills are phenomenal.',
@@ -212,7 +212,7 @@ try{
     name: 'Eddie Scores',
     age: 32,
     gender: 'Male',
-    rates: 100,
+    rate: 100,
     password_digest: 116,
     picture_url: 'https://randomuser.me/api/portraits/men/15.jpg',
     description: 'I like to treat others the way I would LOVE to be treated. My conscious will not let me sleep unless I give everything at hand 110%. You will not regret me, I guarantee it.',
@@ -220,109 +220,109 @@ try{
   });
 
   const giver11 = await Giver.create({
-    name: 'Amanda Diamond',
+    name: 'Sean Mercer',
     age: 42,
     gender: 'Female',
-    rates: 50,
+    rate: 50,
     password_digest: 117,
     picture_url: 'https://randomuser.me/api/portraits/women/6.jpg',
     description: 'I do Affordable + Professional paint /plaster repair! I also do fantastic wallpaper work too! Smooth no bubbles and razor sharp corners and crisp straight edges My fee is calculated hourly or part of an hour over 15 min. rounding up to next hour.',
-    email: 'amanda@gmail.com'
+    email: 'seanm@gmail.com'
   });
 
   const giver12 = await Giver.create({
-    name: 'Helen Jacobs',
+    name: 'Bruno Galvao',
     age: 38,
     gender: 'Female',
-    rates: 60,
+    rate: 60,
     password_digest: 118,
     picture_url: 'https://randomuser.me/api/portraits/women/7.jpg',
     description: 'I have Plenty of experience installing and repairing faucets sinks bath and shower. Plz DONT hire me to unclog anything.',
-    email: 'helenj@gmail.com'
+    email: 'brunog@gmail.com'
   });
 
   const giver13 = await Giver.create({
-    name: 'Jennifer Lopeza',
+    name: 'Leo Rodriguez',
     age: 28,
     gender: 'Female',
-    rates: 60,
+    rate: 60,
     password_digest: 119,
     picture_url: 'https://randomuser.me/api/portraits/women/8.jpg',
     description: 'Specializing in replacement/removal of light fitures and fuse replacements.',
-    email: 'jenniferu@gmail.com'
+    email: 'leor@gmail.com'
   });
 
   const giver14 = await Giver.create({
-    name: 'Lucy Lineal',
+    name: 'David Whitlatch',
     age: 47,
     gender: 'Female',
-    rates: 80,
+    rate: 80,
     password_digest: 120,
     picture_url: 'https://randomuser.me/api/portraits/women/9.jpg',
     description: 'Detail Oriented Make Sure Get Every Nick Nack Grease And Grime is Gone',
-    email: 'lillianj@gmail.com'
+    email: 'davidw@gmail.com'
   });
 
   const giver15 = await Giver.create({
-    name: 'Juniper Evers',
+    name: 'Galbert ONeil',
     age: 40,
     gender: 'Female',
-    rates: 90,
+    rate: 90,
     password_digest: 121,
     picture_url: 'https://randomuser.me/api/portraits/women/10.jpg',
     description: 'From a young age, I always took pride in my organizational skills. Whether it’s simply sorting and organizing, cleaning or just making a space more efficient, I always exceed expectations and guarantee satisfaction.',
-    email: 'junipere@gmail.com'
+    email: 'galberto@gmail.com'
   });
 
   const giver16 = await Giver.create({
-    name: 'Indie Cortez',
+    name: 'Alane Ndong',
     age: 36,
     gender: 'Female',
-    rates: 100,
+    rate: 100,
     password_digest: 122,
     picture_url: 'https://randomuser.me/api/portraits/women/11.jpg',
     description: 'I used to work as a party host at Bolwmor Lanes for two years. Hosting events of all sizes from kid parties to large corporate events.',
-    email: 'imanic@gmail.com'
+    email: 'alanen@gmail.com'
   });
 
   const giver17 = await Giver.create({
-    name: 'Eliz Inez',
+    name: 'Ed Roesch',
     age: 27,
     gender: 'Female',
-    rates: 100,
+    rate: 100,
     password_digest: 211,
     picture_url: 'https://randomuser.me/api/portraits/women/12.jpg',
     description: 'If you need me to ship packages or go to the post office or anything else then I am the right guy for the task. i do not have a vehicle. Nothing over 15lbs. Also no flower deliveries.',
-    email: 'elizi@gmail.com'
+    email: 'edr@gmail.com'
   });
 
   const giver18 = await Giver.create({
-    name: 'Teigan Wonderful',
+    name: 'Solito Reyes',
     age: 30,
     gender: 'Female',
-    rates: 80,
+    rate: 80,
     password_digest: 222,
     picture_url: 'https://randomuser.me/api/portraits/women/13.jpg',
     description: 'I am reliable, friendly, hard working & willing to help. Thanks for considering me.as a person who’s done his fair share of waiting in long lines, such as comic con, I have patience and endurance for this task.',
-    email: 'teiganw@gmail.com'
+    email: 'solitor@gmail.com'
   });
 
   const giver19 = await Giver.create({
-    name: 'Maddy Kilawatz',
+    name: 'Jeremy Zimmerman',
     age: 28,
     gender: 'Female',
-    rates: 90,
+    rate: 90,
     password_digest: 223,
     picture_url: 'https://randomuser.me/api/portraits/women/14.jpg',
     description: 'Have worked as a professional carpenter for 4 years with in NYC. I have extensive knowledge of fabrication techniques and furniture-building.',
-    email: 'maddyk@gmail.com'
+    email: 'jeremyz@gmail.com'
   });
 
   const giver20 = await Giver.create({
-    name: 'Nancy Grabowski',
+    name: 'Soren Soroush',
     age: 35,
     gender: 'Female',
-    rates: 100,
+    rate: 100,
     password_digest: 225,
     picture_url: 'https://randomuser.me/api/portraits/women/15.jpg',
     description: 'Very proficient and enjoy plumbing installation the most. 10 years experience. Two hours minimum per appointment.',
@@ -340,10 +340,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Mounting needed',
-    start_time: '2019-04-18 15:23:54', 
-    end_time: 2019,
+    start_time: '2019-04-18 15:00:00', 
+    end_time: '2019-04-18 17:00:00',
     description: 'I need someone to mount my TV.',
-    complete: 'Done'
+    complete: 1
   });
   
 
@@ -352,10 +352,10 @@ try{
     // seeker_id: 2,
     approval: 0,
     title: 'Painting needed',
-    start_time: '2019-04-18 14:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 17:00:00',
     description: 'I need someone to paint my apartment.',
-    complete: 'Done'
+    complete: 0
   });
 
   const request3 = await Request.create({
@@ -363,10 +363,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Moving needed',
-    start_time: '2019-04-18 12:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 18:00:00',
     description: 'I need someone to assist me to move.',
-    complete: 'Not yet'
+    complete: 1
   });
 
   const request4 = await Request.create({
@@ -374,10 +374,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: '2019-04-18 13:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 17:00:00',
     description: 'I need someone to clean my bathroom.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request5 = await Request.create({
@@ -385,10 +385,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: '2019-04-18 15:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 11:00:00',
     description: 'I need a plumber asap.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request6 = await Request.create({
@@ -396,10 +396,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Electrical needed',
-    start_time: '2019-04-18 12:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 17:00:00',
+    end_time: '2019-04-18 19:00:00',
     description: 'I need a electrical technicial.',
-    complete: 'Done'
+    complete: 0
   });
 
   const request7 = await Request.create({
@@ -407,10 +407,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Packing & unpacking needed',
-    start_time: '2019-04-18 13:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 10:00:00',
+    end_time: '2019-04-18 19:00:00',
     description: 'I need someone to pack my clothings.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request8 = await Request.create({
@@ -418,10 +418,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Organization needed',
-    start_time: '2019-04-18 14:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 17:00:00',
     description: 'I need someone to organize my stuff.',
-    complete: 'Done'
+    complete: 1
   });
 
   const request9 = await Request.create({
@@ -429,10 +429,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
-    start_time: '2019-04-18 18:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 17:00:00',
+    end_time: '2019-04-18 19:00:00',
     description: 'I need a plumber asap.',
-    complete: 'Not yet'
+    complete: 0
   });
 
   const request10 = await Request.create({
@@ -440,10 +440,10 @@ try{
     // seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
-    start_time: '2019-04-18 12:23:54',
-    end_time: 1100,
+    start_time: '2019-04-18 09:00:00',
+    end_time: '2019-04-18 18:00:00',
     description: 'I need someone to clean up my bedroom.',
-    complete: 'Done'
+    complete: 0
   });
 
 
