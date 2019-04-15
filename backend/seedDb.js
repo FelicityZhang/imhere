@@ -336,9 +336,9 @@ try{
   // request
 
   const request1 = await Request.create({
-    // giver_id: 1,
-    // seeker_id: 1,
-    approval: 0,
+    giver_id: 1,
+    seeker_id: 1,
+    approval: 1,
     title: 'Mounting needed',
     start_time: '2019-04-18 15:00:00', 
     end_time: '2019-04-18 17:00:00',
@@ -348,8 +348,8 @@ try{
   
 
   const request2 = await Request.create({
-    // giver_id: 2,
-    // seeker_id: 2,
+    giver_id: 2,
+    seeker_id: 2,
     approval: 0,
     title: 'Painting needed',
     start_time: '2019-04-18 09:00:00',
@@ -359,9 +359,9 @@ try{
   });
 
   const request3 = await Request.create({
-    // giver_id: 3,
-    // seeker_id: 1,
-    approval: 0,
+    giver_id: 3,
+    seeker_id: 1,
+    approval: 1,
     title: 'Moving needed',
     start_time: '2019-04-18 09:00:00',
     end_time: '2019-04-18 18:00:00',
@@ -370,9 +370,9 @@ try{
   });
 
   const request4 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
-    approval: 0,
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
     title: 'Deep clean needed',
     start_time: '2019-04-18 09:00:00',
     end_time: '2019-04-18 17:00:00',
@@ -381,8 +381,8 @@ try{
   });
 
   const request5 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
+    giver_id: 4,
+    seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
     start_time: '2019-04-18 09:00:00',
@@ -392,8 +392,8 @@ try{
   });
 
   const request6 = await Request.create({
-    // giver_id: 6,
-    // seeker_id: 1,
+    giver_id: 6,
+    seeker_id: 1,
     approval: 0,
     title: 'Electrical needed',
     start_time: '2019-04-18 17:00:00',
@@ -403,8 +403,8 @@ try{
   });
 
   const request7 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
+    giver_id: 4,
+    seeker_id: 1,
     approval: 0,
     title: 'Packing & unpacking needed',
     start_time: '2019-04-18 10:00:00',
@@ -414,9 +414,9 @@ try{
   });
 
   const request8 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
-    approval: 0,
+    giver_id: 4,
+    seeker_id: 1,
+    approval: 1,
     title: 'Organization needed',
     start_time: '2019-04-18 09:00:00',
     end_time: '2019-04-18 17:00:00',
@@ -425,8 +425,8 @@ try{
   });
 
   const request9 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
+    giver_id: 4,
+    seeker_id: 1,
     approval: 0,
     title: 'Plumbing needed',
     start_time: '2019-04-18 17:00:00',
@@ -436,8 +436,8 @@ try{
   });
 
   const request10 = await Request.create({
-    // giver_id: 4,
-    // seeker_id: 1,
+    giver_id: 4,
+    seeker_id: 1,
     approval: 0,
     title: 'Deep clean needed',
     start_time: '2019-04-18 09:00:00',
@@ -447,244 +447,297 @@ try{
 
   });
 
-
+ 
 
   // review
 
   const review1 = await Review.create({
-    // request_id: 1,
+    request_id: 1,
     rating: 7,
     content: 'He was fantastic! He arrived on time and completed the task quickly and efficiently. He even offered to clean up afterwards. Would definitely hire him again! '
   });
  
   const review2 = await Review.create({
-    // request_id: 2,
+    request_id: 2,
     rating: 8,
     content: 'He was amazing. Stayed much longer than anticipated and helped with multiple jobs. Could not have been more professional. Highly recommend!'
   });
 
   const review3 = await Review.create({
-    // request_id: 3,
+    request_id: 3,
     rating: 6,
     content: 'On time, friendly, efficient, and competent. I would definitely recommend him. He did a great job.'
   });
 
   const review4 = await Review.create({
-    // request_id: 4,
+    request_id: 4,
     rating: 8,
     content: 'Fantastic! Hung my coat rack on a plaster and lathe wall in no time. She was very knowledgable about the building materials. '
   });
 
   const review5 = await Review.create({
-    // request_id: 5,
+    request_id: 5,
     rating: 9,
     content: 'Super quick, timely, and even had day-of avails. Would absolutely recommend to anyone looking to mount their tv!'
   });
 
   const review6 = await Review.create({
-    // request_id: 6,
+    request_id: 6,
     rating: 8,
     content: 'He consulted me before making any major decisions that would increase the cost of my task. He answered all of my questions and was very helpful. Would recommend!'
   });
 
   const review7 = await Review.create({
-    // request_id: 7,
+    request_id: 7,
     rating: 6,
     content: 'Amazing perfessional job!  I would have him come again!'
   });
 
   const review8 = await Review.create({
-    // request_id: 8,
+    request_id: 8,
     rating: 8,
     content: 'He’s super quick and professional. I hired him to remove a tv mounted on a brick wall. He then helped me disassemble my bed frame and even asked if there was anything else I needed to get the most out of my time frame.'
   });
 
   const review9 = await Review.create({
-    // request_id: 9,
+    request_id: 9,
     rating: 7,
     content: 'Amazing! Cannot wait to hire him again. '
   });
 
   const review10 = await Review.create({
-    // request_id: 10,
+    request_id: 10,
     rating: 9,
     content: 'Mounted a large picture and a mirror. Came well equipped and completed both successfully. Very friendly and nice person, would highly recommend.'
   });
 
   const skill1 = await Skill.create({
+    giver_id: 5,
     description: 'Mounting'
   });
 
   const skill2 = await Skill.create({
+    giver_id: 6,
     description: 'Moving'
   });
 
   const skill3 = await Skill.create({
+    giver_id: 7,
     description: 'Furniture assembly'
   });
 
   const skill4 = await Skill.create({
+    giver_id: 3,
     description: 'Home repaires'
   });
 
   const skill5 = await Skill.create({
+    giver_id: 3,
     description: 'Cleaning'
   });
 
   const skill6 = await Skill.create({
+    giver_id: 4,
     description: 'Heavy lifting'
   });
 
   const skill7 = await Skill.create({
+    giver_id: 6,
     description: 'Delivery'
   });
 
   const skill8 = await Skill.create({
+    giver_id: 2,
     description: 'Yark work'
   });
 
   const skill9 = await Skill.create({
+    giver_id: 5,
     description: 'Personal assistant'
   });
 
   const skill10 = await Skill.create({
+    giver_id: 9,
     description: 'Packing & Unpacking'
   });
 
   const skill11 = await Skill.create({
+    giver_id: 9,
     description: 'Light fixtures'
   });
   
   const skill12= await Skill.create({
+    giver_id: 8,
       description: 'Air Conditioner repair'
     });
   const skill13 = await Skill.create({
+    giver_id: 7,
       description: 'House sitting'
     });
   const skill14 = await Skill.create({
+    giver_id: 2,
       description: 'Dog Walking'
     });
   const skill15 = await Skill.create({
+    giver_id: 7,
       description: 'Child care (0 months to 2 years)'
     });
   const skill16 = await Skill.create({
+    giver_id: 6,
       description: 'Child care (2 years and older)'
     });
   const skill17 = await Skill.create({
+    giver_id: 6,
       description: 'Elder care'
     });
   const skill18 = await Skill.create({
+    giver_id: 9,
       description: 'Furniture restoration'
     });
   const skill19 = await Skill.create({
+    giver_id: 8,
       description: 'Grocery shopping'
     });
   const skill20 = await Skill.create({
+    giver_id: 7,
       description: 'Afterschool pickup'
     });
   const skill21 = await Skill.create({
+    giver_id: 2,
       description: 'Life coach'
     });
   const skill22 = await Skill.create({
+    giver_id: 1,
       description: 'Makeup design'
     });
   const skill23 = await Skill.create({
+    giver_id: 2,
       description: 'Hair stylist'
     });
   const skill24 = await Skill.create({
+    giver_id: 3,
       description: 'Nail stylist'
     });
   const skill25 = await Skill.create({
+    giver_id: 4,
       description: 'Weight loss specialist'
     });
   const skill26 = await Skill.create({
+    giver_id: 2,
       description: 'Wardrobe consultant'
     });
   const skill27 = await Skill.create({
+    giver_id: 5,
       description: 'Wardrobe stylist'
     });
   const skill28 = await Skill.create({
+    giver_id: 6,
       description: 'General car maintanance'
     });
   const skill29 = await Skill.create({
+    giver_id: 6,
       description: 'Seamstress'
     });
   const skill30= await Skill.create({
+    giver_id: 8,
       description: 'Closet organization'
     });
   const skill31 = await Skill.create({
+    giver_id: 7,
       description: 'Personal trainer'
     });
   const skill32 = await Skill.create({
+    giver_id: 9,
       description: 'Wait in line'
     });
   const skill33 = await Skill.create({
+    giver_id: 7,
       description: 'Photography'
     });
   const skill34 = await Skill.create({
+    giver_id: 8,
       description: 'Accounting'
     });
   const skill35 = await Skill.create({
+    giver_id: 7,
       description: 'Office Organization'
     });
   const skill36 = await Skill.create({
+    giver_id: 2,
       description: 'Graphic Design'
     });
   const skill37 = await Skill.create({
+    giver_id: 4,
       description: 'Carpentry'
     });
   const skill38 = await Skill.create({
+    giver_id: 2,
       description: 'Cooking'
     });
   const skill39 = await Skill.create({
+    giver_id: 3,
       description: 'Baking'
     });
   const skill40 = await Skill.create({
+    giver_id: 7,
       description: 'Party Planning'
     });
   const skill41 = await Skill.create({
+    giver_id: 6,
       description: 'Interior design'
     });
   const skill42 = await Skill.create({
+    giver_id: 6,
       description: 'Art deco'
     });
   const skill43 = await Skill.create({
+    giver_id: 5,
       description: 'Bicycle repair/assistance'
     });
   const skill44 = await Skill.create({
+    giver_id: 4,
       description: 'Packing & Unpacking'
     });
   const skill45 = await Skill.create({
+    giver_id: 9,
       description: 'Social media enhancer'
     });
   const skill46 = await Skill.create({
+    giver_id: 2,
       description: 'Party promotion'
     });
   const skill47 = await Skill.create({
+    giver_id: 8,
       description: 'Singer'
     });
   const skill48 = await Skill.create({
+    giver_id: 7,
       description: 'Pet trainer'
     });
   const skill49 = await Skill.create({
+    giver_id: 1,
       description: 'Business advisor'
     });
   const skill50 = await Skill.create({
+    giver_id: 2,
       description: 'Pianist'
     });
   const skill51 = await Skill.create({
+      giver_id: 3,
       description: 'Drummer'
     });
   const skill52 = await Skill.create({
+    giver_id: 4,
       description: 'Street Artist'
     });
   const skill53 = await Skill.create({
+    giver_id: 6,
       description: 'Dancer'
     });
   const skill54 = await Skill.create({
+    giver_id: 5,
       description: 'Guitarist'
     });
-
 
 
 
@@ -844,7 +897,6 @@ try{
 
   process.exit()
 }catch (error) {
-  console.log(error)
 }
 }
 
