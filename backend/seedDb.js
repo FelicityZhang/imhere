@@ -447,8 +447,65 @@ try{
 
   });
 
- 
+  const request11 = await Request.create({
+    giver_id: 1,
+    seeker_id: 1,
+    approval: 1,
+    title: 'Plese do my nails',
+    start_time: '2019-04-18 12:00:00',
+    end_time: '2019-04-18 18:00:00',
+    description: 'I have a party to go to.',
+    complete: 0
 
+  });
+ 
+  const request12 = await Request.create({
+    giver_id: 1,
+    seeker_id: 1,
+    approval: 1,
+    title: 'Wardrobe Design',
+    start_time: '2019-04-18 10:00:00',
+    end_time: '2019-04-18 16:00:00',
+    description: 'My husband and I will be heading out to dinner and a show for our anniversary. It is a very special evening and I want to be dressed perfectly and would like some professional assistance.',
+    complete: 0
+
+  });
+
+    const request13 = await Request.create({
+      giver_id: 1,
+      seeker_id: 1,
+      approval: 1,
+      title: 'Shopping',
+      start_time: '2019-04-18 15:00:00',
+      end_time: '2019-04-18 17:00:00',
+      description: 'Next week I will be too busy to get my groceries from the farmers market.',
+      complete: 0
+
+    });
+
+    const request14 = await Request.create({
+      giver_id: 1,
+      seeker_id: 1,
+      approval: 1,
+      title: 'Arts and Crafts',
+      start_time: '2019-04-18 08:30:00',
+      end_time: '2019-04-18 10:00:00',
+      description: 'I would like to keep my 2 kids busy on Sunday mornings and could use a hand. Please help teach them how to paint and be creative.',
+      complete: 0
+
+    }); 
+
+    const request15 = await Request.create({
+      giver_id: 1,
+      seeker_id: 1,
+      approval: 1,
+      title: 'Singer',
+      start_time: '2019-04-18 18:00:00',
+      end_time: '2019-04-18 20:00:00',
+      description: 'My girlfriend is coming over and I will be cooking her dinner. Trying to get the mood right and if you could stop by and serenade us while we eat that would be awesome!',
+      complete: 0
+
+    }); 
   // review
 
   const review1 = await Review.create({
