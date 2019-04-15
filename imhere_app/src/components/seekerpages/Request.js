@@ -37,9 +37,11 @@ handleRequestSubtmit = async event =>{
       title: this.state.title,
       start_time: this.state.start_time,
       end_time: this.state.end_time,
-      descriptions: this.state.description
+      descriptions: this.state.description,
+      seeker_id: this.props.seeker_id,
+      giver_id: this.props.match.params.giverid
     }
- await fetch(`${url}/seeker/1/request`,{
+ await fetch(`${url}/seeker/${this.props.match.params.giverid}/request`,{
     method:'POST',
     body:JSON.stringify(data),
     headers:{
@@ -55,8 +57,6 @@ handleRequestSubtmit = async event =>{
     end_time: '',
     descriptions: ''
   })
-
-  
 }
 
   render() {
