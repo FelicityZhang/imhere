@@ -9,12 +9,11 @@ class GiverSign extends Component {
     this.state = {
       email: '',
       password: '',
-      vpassword:'',
+      errorMessage: '',
       clicked:false
     }
     this.handleGiverSignInfo = this.handleGiverSignInfo.bind( this );
     this.handleGiverSignSubmit = this.handleGiverSignSubmit.bind( this );
-
   }
 
   handleGiverSignInfo( event ) {
@@ -23,22 +22,26 @@ class GiverSign extends Component {
     } )
   }
 
-  handleGiverSignSubmit( event ) {
+  async handleGiverSignSubmit( event ) {
     event.preventDefault();
     const { email, password } = this.state;
     const data = { email, password }
-    this.props.handleLogin( data )
+    const result = await this.props.handleLogin( data )
     this.setState( {
       email: '',
       password: ''
     } )
-    if(true){
+    if(result){
       this.setState({
         clicked:true
       })
       setTimeout(()=>{
-        // this.props.history.push('/giver/status')
+        this.props.history.push('/giver/status')
       },1200)
+    }else{
+      this.setState(
+        {errorMessage:"Wrong Credentials"}
+        )
     }
   }
   render() {
@@ -98,13 +101,6 @@ class GiverSign extends Component {
             value={ this.state.password }
             onChange={ this.handleGiverSignInfo }
           />
-          <input
-            name='vpassword'
-            placeholder='Retype Password'
-            type="password"
-            value={ this.state.vpassword }
-            onChange={ this.handleGiverSignInfo }
-          />
           <br />
           <button
             id="giverSignSubmit"
@@ -112,6 +108,19 @@ class GiverSign extends Component {
             Enter
           </button>
         </form>
+        <div
+          id="errorMessage"
+          style={
+            this.state.clicked?(
+              {
+                left:"-20%",
+                opacity:"0"
+              }
+            ):(
+              {left:"30%"}
+            )
+          }
+        >{this.state.errorMessage}</div>
       </div>
     )
   }
