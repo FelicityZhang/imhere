@@ -88,16 +88,30 @@ app.get( '/seeker/status', async ( req, res ) => {
     }
 } )
 
+
+app.post( '/giver', async ( req, res ) => {
+    try {
+        const giver = await Giver.findOne( {
+            where: {
+                email: req.body.email
+            }
+        } )
+        res.json(giver)
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
 app.get( '/giver/status', async ( req, res ) => {
     try {
         const requests = await Request.findAll( {
             where: {
-                giver_id: req.params.giverid
+                giver_id: req.params.id
             }
         } )
-        res.json( {
-            requests
-        } )
+        res.json(requests)
     } catch ( e ) {
         res.status( 500 ).json( {
             message: e.message
@@ -159,27 +173,27 @@ app.get( '/seeker/:seekerid/search', async ( req, res ) => {
 //     }
 // } )
 
-app.post( 'seeker/registration', async ( req, res ) => {
-    console.log( req.body )
-    try {
-        const seeker = await Seeker.create( req.body )
-        res.json( seeker )
-    } catch ( e ) {
-        console.log( e )
-        res.status( 500 ).json( { message: e.message } )
-    }
-} )
+// app.post( 'seeker/registration', async ( req, res ) => {
+//     console.log( req.body )
+//     try {
+//         const seeker = await Seeker.create( req.body )
+//         res.json( seeker )
+//     } catch ( e ) {
+//         console.log( e )
+//         res.status( 500 ).json( { message: e.message } )
+//     }
+// } )
 
-app.post( '/giver/registration', async ( req, res ) => {
-    console.log( req.body )
-    try {
-        const giver = await Giver.create( req.body )
-        res.json( giver )
-    } catch ( e ) {
-        console.log( e )
-        res.status( 500 ).json( { message: e.message } )
-    }
-} )
+// app.post( '/giver/registration', async ( req, res ) => {
+//     console.log( req.body )
+//     try {
+//         const giver = await Giver.create( req.body )
+//         res.json( giver )
+//     } catch ( e ) {
+//         console.log( e )
+//         res.status( 500 ).json( { message: e.message } )
+//     }
+// } )
 
 
 
@@ -210,13 +224,13 @@ const buildAuthResponse = giver => {
 app.post('/giver/registration', async(req, res, next)=>{
     try{
         const password_digest = await hashPassword(req.body.password)
+        console.log({email:req.body.email,password_digest});
         const giver = await Giver.create({
             email: req.body.email,
             password_digest
           })
-        res.json(giver)
-        //   const respData = buildAuthResponse(giver);
-        //   res.json(respData);
+          const respData = buildAuthResponse(giver);
+          res.json(respData);
     }catch(e){
         res.json({message:e.message})
     }
@@ -232,15 +246,31 @@ app.post('/giver/signin', async(req, res, next)=>{
         })
         if(await checkPassword(req.body.password, giver.password_digest) ){
             const respData = buildAuthResponse(giver);
-            res.json({ ...respData })
-        }else {
+            console.log(respData)
+            res.json({ ...respData, status:888 })
+        }else{
             res.json({status:401});
-          }
+        }
+    }catch(e){
+        res.json({message:e.message,status:233})
+    }
+})
+
+app.post('/seeker/registration', async(req, res, next)=>{
+    try{
+        const password_digest = await hashPassword(req.body.password)
+        const seeker = await Seeker.create({
+            email: req.body.email,
+            password_digest
+          })
+          const respData = buildAuthResponse(seeker);
+          res.json(respData);
     }catch(e){
         res.json({message:e.message})
     }
-}
-)
+})
+
+
 
 app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);

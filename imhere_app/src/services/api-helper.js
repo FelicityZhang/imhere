@@ -48,7 +48,7 @@ export const seekerLogin = (loginData) => {
     }
     const fetchData = await fetch(`${url}/giver/signin`, opts)
       .then(resp => {
-        return resp;
+        return resp.json();
       })
       .catch(e=>{
         return ''

@@ -12,8 +12,8 @@ export const LoignSeeker = (seekerLoginData) => {
         .then(resp => resp.json())
 }
 
-export const LoignGiver = (giverLoginData) => {
-    const opt ={
+export const giverLogin = (giverLoginData) => {
+    const opts ={
         method: 'POST',
         body: JSON.stringify(giverLoginData),
         headers:{
