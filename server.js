@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 1234
 
 const cors = require( 'cors' )
 app.use( cors() )
+app.use(logger('dev'));
+
 
 
 app.use( "/", express.static( "./build/" ) );
