@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = 'bananasplit';
 
+
 async function hashPassword (password) {
 
   const hashedPassword = await new Promise((resolve, reject) => {
@@ -19,6 +20,7 @@ async function hashPassword (password) {
 }
 
 hashPassword('123');
+
 
   const genToken = (seekerData) => {
     const token = jwt.sign(seekerData, TOKEN_KEY);
