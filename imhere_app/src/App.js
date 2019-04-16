@@ -62,6 +62,43 @@ class App extends Component {
     this.getGiver = this.getGiver.bind( this )
     this.getGiverInfo = this.getGiverInfo.bind(this);
   }
+
+  async giverUpdateProfile(data){
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    await fetch(`${url}/giver/update/${this.state.user.id}`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    this.getGiver();
+  }
+
+  async seekerUpdateProfile(data){
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    await fetch(`${url}/seeker/update/${this.state.user.id}`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    this.getSeeker();
+  }
+
   async searchGiverBySkill(data){
     const query = data.split(' ').join('#')
     console.log("query"+query)
@@ -278,6 +315,8 @@ class App extends Component {
             render={ ( props ) => <EditProfile 
               { ...props }
               user={this.state.user}
+              seekerUpdateProfile={this.seekerUpdateProfile}
+              giverUpdateProfile={this.giverUpdateProfile}
             /> } />
 
           {/*Seekers*/ }

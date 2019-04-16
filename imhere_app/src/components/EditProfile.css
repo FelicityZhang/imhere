@@ -14,3 +14,42 @@
     color:white;
     text-transform: capitalize;
 }
+#editProfileProfile{
+    width: 80%;
+    left: 10%;
+    position: relative;
+    height: 60%;
+    top:20%;
+    display:flex;
+}
+#renderProfilePicture{
+    width: 400px;
+    height: 400px;
+    padding: 50px;
+    position: relative;
+    border-radius: 50%;
+    left:0;
+    object-fit:contain;
+}
+.renderGiverWords{
+    position:relative;
+    margin:140px auto;
+}
+.renderGiverWords>*{
+    margin: 10px;
+}
+.renderGiverWords>input{
+    background: rgba(255,255,255,0.8);
+    border:none;
+}
+.renderGiverWords>button{
+    width: 150px;
+    margin: 15px auto;
+    background: #9b726e;
+    border:none;
+    color:white;
+}
+#editProfileTitle{
+    font-size: 35px;
+    margin-top: -50px;
+}
