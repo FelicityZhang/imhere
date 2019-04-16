@@ -1,7 +1,7 @@
 const express = require( 'express' )
-const { Router } = require('express');
+const { Router } = require( 'express' );
 const bodyParser = require( 'body-parser' )
-const { hashPassword, genToken, checkPassword } = require('./backend/auth');
+const { hashPassword, genToken, checkPassword } = require( './backend/auth' );
 const giverRouter = Router();
 const app = express()
 
@@ -16,12 +16,12 @@ app.use( cors() )
 
 app.use( "/", express.static( "./build/" ) );
 app.use( bodyParser.json() )
-app.use((e, req, res, next) => {
-    if (e) {
-      console.log(e);
-      res.status(500).send(e.message)
+app.use( ( e, req, res, next ) => {
+    if ( e ) {
+        console.log( e );
+        res.status( 500 ).send( e.message )
     }
-  })
+} )
 
 
 
@@ -54,40 +54,75 @@ app.use((e, req, res, next) => {
 // } )
 
 
-// app.get( '/seeker/:giverid/request', async ( req, res ) => {
-//     try {
-//         const requests = await Request.findAll( {
-//             where: {
-//                 seeker_id: req.params.seekerid,
-//                 giver_id: req.params.giverid
-//             }
-//         } )
-//         res.json( {
-//             requests
-//         } )
-//     } catch ( e ) {
-//         res.status( 500 ).json( {
-//             message: e.message
-//         } )
-//     }
-// } )
 
-// app.get( '/seeker/status', async ( req, res ) => {
-//     try {
-//         const requests = await Request.findAll( {
-//             where: {
-//                 seeker_id: req.params.seekerid
-//             }
-//         } )
-//         res.json( {
-//             requests
-//         } )
-//     } catch ( e ) {
-//         res.status( 500 ).json( {
-//             message: e.message
-//         } )
-//     }
-// } )
+
+app.get( '/seeker/:giverid/request', async ( req, res ) => {
+    try {
+        const requests = await Request.findAll( {
+            where: {
+                seeker_id: req.params.seekerid,
+                giver_id: req.params.giverid
+            }
+        } )
+        res.json( {
+            requests
+        } )
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
+app.get( '/seeker/status', async ( req, res ) => {
+    try {
+        const requests = await Request.findAll( {
+            where: {
+                seeker_id: req.params.seekerid
+            }
+        } )
+        res.json( {
+            requests
+        } )
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
+
+app.post( '/giver', async ( req, res ) => {
+    try {
+        const giver = await Giver.findOne( {
+            where: {
+                email: req.body.email
+            }
+        } )
+        res.json( giver )
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
+app.get( '/giver/status', async ( req, res ) => {
+    try {
+        const requests = await Request.findAll( {
+            where: {
+                giver_id: req.params.id
+            }
+        } )
+        res.json( requests )
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
+
+
 
 // app.get( '/seeker/:seekerid/search', async ( req, res ) => {
 //     try {
@@ -101,6 +136,7 @@ app.use((e, req, res, next) => {
 //         } )
 //     }
 // } )
+
 
 
 
@@ -263,10 +299,10 @@ app.post( '/giver', async ( req, res ) => {
 const buildAuthResponse = giver => {
     const token_data = {
         id: giver.id,
-        email:giver.email
+        email: giver.email
     }
-    const jwt = genToken(token_data)
-    return {jwt}
+    const jwt = genToken( token_data )
+    return { jwt }
 }
 
 app.post('/giver/registration', async(req, res, next)=>{
@@ -275,11 +311,11 @@ app.post('/giver/registration', async(req, res, next)=>{
         const giver = await Giver.create({
             email: req.body.email,
             password_digest
-          })
-          const respData = buildAuthResponse(giver);
-          res.json(respData);
-    }catch(e){
-        res.json({message:e.message})
+        } )
+        const respData = buildAuthResponse( giver );
+        res.json( respData );
+    } catch ( e ) {
+        res.json( { message: e.message } )
     }
 })
 
@@ -314,25 +350,33 @@ app.post('/seeker/signin', async(req, res, next)=>{
         }else{
             res.json({status:401});
         }
-    }catch(e){
-        res.json({message:e.message,status:233})
+    } catch ( e ) {
+        res.json( { message: e.message, status: 233 } )
     }
-})
+} )
 
-app.post('/seeker/registration', async(req, res, next)=>{
-    try{
-        const password_digest = await hashPassword(req.body.password)
-        const seeker = await Seeker.create({
+app.post( '/seeker/registration', async ( req, res, next ) => {
+    try {
+        const password_digest = await hashPassword( req.body.password )
+        const seeker = await Seeker.create( {
             email: req.body.email,
             password_digest
-          })
-          const respData = buildAuthResponse(seeker);
-          res.json(respData);
-    }catch(e){
-        res.json({message:e.message})
+        } )
+        const respData = buildAuthResponse( seeker );
+        res.json( respData );
+    } catch ( e ) {
+        res.json( { message: e.message } )
     }
-})
+} )
 
+<<<<<<< HEAD
 app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
   })
+=======
+
+
+app.listen( PORT, () => {
+    console.log( `Server up and listening on port ${ PORT }, in ${ app.get( 'env' ) } mode.` );
+} )
+>>>>>>> ae368836d3583b613661fb110893e17186bfae91
