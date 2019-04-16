@@ -36,6 +36,8 @@ const logo = require('./images/logo.gif');
 
 const url = 'http://localhost:1234'
 
+// const url = 'https://imhereapp.herokuapp.coms'
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -61,7 +63,23 @@ class App extends Component {
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
     this.getGiver = this.getGiver.bind( this )
     this.getGiverInfo = this.getGiverInfo.bind(this);
+
+    this.handleRequestDelete = this.handleRequestDelete.bind(this);
+
   }
+
+ 
+
+  async handleRequestDelete(event) {
+   event.preventDefault();
+   await fetch(`${url}/request/delete/:${event.target.user}`, {
+     method: 'DELETE'
+   }).then(response => {
+     this.getGiverInfo(this.state.user.id)
+     return response.json();
+   })
+  }
+
   async searchGiverBySkill(data){
     const query = data.split(' ').join('#')
     console.log("query"+query)
@@ -359,6 +377,7 @@ class App extends Component {
             render={ ( props ) =>
               <GiverStatus { ...props}
                 requests={requests} 
+                handleDelete = {this.handleRequestDelete}
               /> }
           />
 

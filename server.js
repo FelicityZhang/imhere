@@ -83,6 +83,22 @@ app.get('/seeker/all', async(req,res)=>{
 })
 
 
+
+app.delete('/request/delete/:id', async(req,res)=>{
+    try{
+        await Request.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.json({message:"Success"})
+    }catch(e){
+        res.json( { message: e.message } )
+    }
+})
+
+
+
 app.post( '/seeker/request', async ( req, res ) => {        
     try{
         const request = await Request.create( {

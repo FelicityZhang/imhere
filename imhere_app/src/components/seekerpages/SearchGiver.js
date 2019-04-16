@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 import './SearchGiver.css'
 
-class SearchGiver extends Component {
+const url = 'http://localhost:1234'
+// const url ='https://imhereapp.herokuapp.com'
+
+export default class SearchGiver extends Component {
   constructor ( props ) {
     super( props )
     this.state = {

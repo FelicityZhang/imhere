@@ -329,7 +329,117 @@ try{
     email: 'nancyg@gmail.com'
   });
 
+  const giver21 = await Giver.create({
+    name: 'Michelle Redd',
+    age: 29,
+    gender: 'Female',
+    rate: 65,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/16.jpg',
+    description: 'I am an artist who loves to teach children.',
+    email: 'micheller@gmail.com'
+  });
 
+  const giver22 = await Giver.create({
+    name: 'Sandy McDougal',
+    age: 22,
+    gender: 'Female',
+    rate: 95,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/17.jpg',
+    description: 'Singing is me favorite thing to do. Hire me for your next event of any size.',
+    email: 'sandym@gmail.com'
+  });
+
+  const giver23 = await Giver.create({
+    name: 'Rachelle Smith',
+    age: 43,
+    gender: 'Female',
+    rate: 55,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/18.jpg',
+    description: 'I have 15 years of experience in the cleaning business.',
+    email: 'rachelle@gmail.com'
+  });
+
+  const giver24 = await Giver.create({
+    name: 'Toni Marrow',
+    age: 26,
+    gender: 'Female',
+    rate: 270,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/19.jpg',
+    description: 'I am an established hair dresser. My passion in life is making women even more beautiful!',
+    email: 'tonimarrow@gmail.com'
+  });
+
+  const giver25 = await Giver.create({
+    name: 'Nicole Rodriguez',
+    age: 33,
+    gender: 'Female',
+    rate: 150,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/20.jpg',
+    description: 'Certified CPA, as well as MBA. If you need any help with your taxes, please let me know.',
+    email: 'nicolerodriguez@gmail.com'
+  });
+
+
+  const giver26 = await Giver.create({
+    name: 'Inara Pinchenzo',
+    age: 19,
+    gender: 'Female',
+    rate: 175,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/21.jpg',
+    description: 'I am in dance school and looking to get out and perform, at the appropriate venue. Serious inquiries only please.',
+    email: 'inarap@gmail.com'
+  });
+
+  const giver27 = await Giver.create({
+    name: 'Rhoda Kingston',
+    age: 49,
+    gender: 'Female',
+    rate: 175,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/22.jpg',
+    description: 'Professional organizational expert for hire.',
+    email: 'rhodak@gmail.com'
+  });
+
+  const giver28 = await Giver.create({
+    name: 'Shondelle Watkins',
+    age: 34,
+    gender: 'Female',
+    rate: 25,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/23.jpg',
+    description: 'Childcare services provided for kids over 2 years old.',
+    email: 'shondelle@gmail.com'
+  });
+
+  const giver29 = await Giver.create({
+    name: 'Samantha Kristos',
+    age: 24,
+    gender: 'Female',
+    rate: 150,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/24.jpg',
+    description: 'Painter who loves to teach, kids or adults',
+    email: 'shondelle@gmail.com'
+  });
+
+  const giver30 = await Giver.create({
+    name: 'Lilah Weiss',
+    age: 40,
+    gender: 'Female',
+    rate: 85,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/25.jpg',
+    description: 'I am a teacher (reading specialist) who can help tutor your child.',
+    email: 'lilah@gmail.com'
+  });
+  
   // message
 
 
@@ -755,60 +865,60 @@ try{
     
 
   // associations
-  await skill1.setGivers([giver1, giver2, giver3])
-  await skill2.setGivers([giver6, giver5, giver7])
-  await skill3.setGivers([giver7, giver3, giver2])
-  await skill4.setGivers([giver8, giver5, giver9])
-  await skill5.setGivers([giver4, giver2, giver1])
-  await skill6.setGivers([giver6, giver3, giver8])
-  await skill7.setGivers([giver7, giver2, giver3])
-  await skill8.setGivers([giver1, giver2, giver6])
-  await skill9.setGivers([giver1, giver7, giver3])
-  await skill10.setGivers([giver4, giver2, giver3])
-  await skill11.setGivers([giver1, giver2, giver6])
-  await skill12.setGivers([giver6, giver2, giver8])
-  await skill13.setGivers([giver3, giver2, giver3])
-  await skill14.setGivers([giver1, giver2, giver3])
-  await skill15.setGivers([giver1, giver2, giver3])
-  await skill16.setGivers([giver1, giver2, giver3])
-  await skill17.setGivers([giver15, giver8, giver3])
-  await skill18.setGivers([giver1, giver2, giver3])
-  await skill19.setGivers([giver5, giver2, giver3])
-  await skill20.setGivers([giver1, giver7, giver3])
-  await skill21.setGivers([giver1, giver2, giver9])
-  await skill22.setGivers([giver1, giver2, giver3])
-  await skill23.setGivers([giver3, giver6, giver3])
-  await skill24.setGivers([giver1, giver7, giver3])
-  await skill25.setGivers([giver4, giver2, giver3])
-  await skill26.setGivers([giver1, giver2, giver8])
-  await skill27.setGivers([giver7, giver2, giver3])
-  await skill28.setGivers([giver1, giver2, giver9])
-  await skill29.setGivers([giver1, giver2, giver3])
-  await skill30.setGivers([giver6, giver2, giver5])
-  await skill31.setGivers([giver1, giver2, giver3])
-  await skill32.setGivers([giver1, giver2, giver3])
-  await skill33.setGivers([giver5, giver2, giver3])
-  await skill34.setGivers([giver1, giver7, giver3])
-  await skill35.setGivers([giver1, giver2, giver8])
-  await skill36.setGivers([giver4, giver2, giver3])
-  await skill37.setGivers([giver1, giver2, giver3])
-  await skill38.setGivers([giver6, giver2, giver3])
-  await skill39.setGivers([giver1, giver2, giver8])
-  await skill40.setGivers([giver7, giver2, giver3])
-  await skill41.setGivers([giver1, giver7, giver3])
-  await skill42.setGivers([giver4, giver2, giver3])
-  await skill43.setGivers([giver1, giver2, giver3])
-  await skill44.setGivers([giver1, giver7, giver3])
-  await skill45.setGivers([giver5, giver2, giver3])
-  await skill46.setGivers([giver1, giver2, giver3])
-  await skill47.setGivers([giver1, giver2, giver8])
-  await skill48.setGivers([giver7, giver2, giver3])
-  await skill49.setGivers([giver1, giver2, giver7])
-  await skill50.setGivers([giver18, giver2, giver3])
-  await skill51.setGivers([giver1, giver2, giver3])
-  await skill52.setGivers([giver9, giver2, giver3])
-  await skill53.setGivers([giver1, giver2, giver8])
-  await skill54.setGivers([giver1, giver2, giver3])
+  await skill1.setGivers([giver1, giver2, giver3, giver11, giver15, giver20, giver21, giver22, giver8, giver9])
+  await skill2.setGivers([giver6, giver5, giver7, giver2, giver11, giver16, giver19, giver20, giver18, giver15])
+  await skill3.setGivers([giver7, giver3, giver2, giver8, giver13, giver14, giver15, giver16, giver17, giver18])
+  await skill4.setGivers([giver8, giver5, giver9, giver21, giver22, giver23, giver24, giver25, giver26, giver27])
+  await skill5.setGivers([giver4, giver2, giver1, giver5, giver7, giver8, giver10, giver11, giver12, giver15])
+  await skill6.setGivers([giver6, giver3, giver8, giver2, giver5, giver9, giver11, giver21, giver22, giver23])
+  await skill7.setGivers([giver7, giver2, giver3, giver8, giver4, giver11, giver16, giver17, giver18, giver19])
+  await skill8.setGivers([giver1, giver2, giver6, giver3, giver5, giver8, giver16, giver17, giver18, giver21])
+  await skill9.setGivers([giver1, giver7, giver3, giver8, giver10, giver15, giver23, giver25, giver26, giver27])
+  await skill10.setGivers([giver4, giver2, giver3, giver6, giver11, giver10, giver21, giver22, giver25, giver26])
+  await skill11.setGivers([giver1, giver2, giver6, giver12, giver15, giver16, giver18, giver25, giver21, giver22])
+  await skill12.setGivers([giver6, giver2, giver8, giver1, giver22, giver24, giver18, giver19, giver21, giver29])
+  await skill13.setGivers([giver3, giver2, giver6, giver5, giver11, giver13, giver16, giver25, giver22, giver26])
+  await skill14.setGivers([giver1, giver2, giver3, giver6, giver11, giver15, giver16, giver17, giver18, giver20])
+  await skill15.setGivers([giver1, giver2, giver3, giver11, giver8, giver9, giver21, giver25, giver27, giver28])
+  await skill16.setGivers([giver1, giver2, giver3, giver5, giver7, giver17, giver18, giver11, giver23, giver25])
+  await skill17.setGivers([giver15, giver8, giver3, giver2, giver7, giver19, giver16, giver15, giver21, giver23])
+  await skill18.setGivers([giver1, giver2, giver3, giver7, giver9, giver11, giver13, giver12, giver19, giver21])
+  await skill19.setGivers([giver5, giver2, giver3, giver5, giver9, giver14, giver17, giver19, giver26, giver27])
+  await skill20.setGivers([giver1, giver7, giver3, giver8, giver19, giver20, giver25, giver23, giver26, giver28])
+  await skill21.setGivers([giver1, giver2, giver9, giver6, giver12, giver13, giver14, giver15, giver16, giver17])
+  await skill22.setGivers([giver1, giver2, giver3, giver6, giver7, giver11, giver12, giver13, giver14, giver21])
+  await skill23.setGivers([giver3, giver6, giver7, giver5, giver11, giver12, giver13, giver15, giver16, giver21])
+  await skill24.setGivers([giver1, giver7, giver3, giver8, giver9, giver13, giver15, giver16, giver17, giver27])
+  await skill25.setGivers([giver4, giver2, giver3, giver16, giver17, giver21, giver22, giver23, giver25, giver27])
+  await skill26.setGivers([giver1, giver2, giver8, giver12, giver15, giver17, giver18, giver19, giver23, giver25])
+  await skill27.setGivers([giver7, giver2, giver3, giver13, giver14, giver15, giver21, giver22, giver23, giver24])
+  await skill28.setGivers([giver1, giver2, giver9, giver8, giver11, giver16, giver17, giver18, giver21, giver26])
+  await skill29.setGivers([giver1, giver2, giver3, giver7, giver5, giver12, giver14, giver16, giver17, giver18])
+  await skill30.setGivers([giver6, giver2, giver5, giver8, giver11, giver12, giver15, giver24, giver25, giver26])
+  await skill31.setGivers([giver1, giver2, giver3, giver8, giver9, giver15, giver17, giver18, giver21, giver26])
+  await skill32.setGivers([giver1, giver2, giver3, giver15, giver16, giver17, giver21, giver22, giver26, giver8])
+  await skill33.setGivers([giver5, giver2, giver3, giver6, giver8, giver11, giver12, giver16, giver21, giver22])
+  await skill34.setGivers([giver1, giver7, giver3, giver17, giver18, giver25, giver26, giver27, giver8, giver9])
+  await skill35.setGivers([giver1, giver2, giver8, giver9, giver11, giver12, giver13, giver14, giver15, giver16])
+  await skill36.setGivers([giver4, giver2, giver3, giver8, giver11, giver10, giver24, giver25, giver27, giver15])
+  await skill37.setGivers([giver1, giver2, giver3, giver6, giver8, giver11, giver12, giver16, giver17, giver21])
+  await skill38.setGivers([giver6, giver2, giver3, giver7, giver8, giver13, giver14, giver15, giver16, giver20])
+  await skill39.setGivers([giver1, giver2, giver8, giver11, giver17, giver18, giver19, giver21, giver22, giver23])
+  await skill40.setGivers([giver7, giver2, giver3, giver8, giver7, giver10, giver18, giver19, giver22, giver25])
+  await skill41.setGivers([giver1, giver7, giver3, giver5, giver18, giver16, giver15, giver13, giver26, giver27])
+  await skill42.setGivers([giver4, giver2, giver3, giver8, giver11, giver21, giver25, giver26, giver17, giver18])
+  await skill43.setGivers([giver1, giver2, giver3, giver7, giver9, giver11, giver16, giver17, giver18, giver19])
+  await skill44.setGivers([giver1, giver7, giver3, giver8, giver11, giver19, giver20, giver28, giver29, giver22])
+  await skill45.setGivers([giver5, giver2, giver3, giver5, giver7, giver11, giver13, giver15, giver16, giver20])
+  await skill46.setGivers([giver1, giver2, giver3, giver7, giver8, giver12, giver14, giver16, giver17, giver21])
+  await skill47.setGivers([giver1, giver2, giver8, giver9, giver11, giver10, giver15, giver24, giver25, giver27])
+  await skill48.setGivers([giver7, giver2, giver3, giver7, giver9, giver17, giver18, giver19, giver21, giver24])
+  await skill49.setGivers([giver1, giver2, giver7, giver5, giver11, giver12, giver13, giver14, giver22, giver23])
+  await skill50.setGivers([giver18, giver2, giver3, giver4, giver7, giver11, giver15, giver22, giver25, giver27])
+  await skill51.setGivers([giver1, giver2, giver3, giver6, giver8, giver11, giver16, giver17, giver18, giver22])
+  await skill52.setGivers([giver9, giver2, giver3, giver5, giver11, giver12, giver16, giver17, giver18, giver28])
+  await skill53.setGivers([giver1, giver2, giver8, giver6, giver12, giver15, giver16, giver18, giver26, giver25])
+  await skill54.setGivers([giver1, giver2, giver30, giver8, giver16, giver17, giver18, giver23, giver25, giver27])
 
 
 
