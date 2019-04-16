@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './GiverStatus.css'
+import '../Status.css'
 
 export default class GiverStatus extends Component {
     constructor(props){

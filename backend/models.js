@@ -10,9 +10,6 @@ const sequelize = new Sequelize( {
 } );
 
 const Seeker = sequelize.define('seeker', {
-    seeker_id: {
-        type:Sequelize.INTEGER
-    },
     name: {
         type:Sequelize.STRING
     },
@@ -111,9 +108,6 @@ const Review = sequelize.define('review', {
     }); 
     
     const Skill = sequelize.define('skill', {
-        giver_id: {
-            type: Sequelize.INTEGER
-        },
         description: {
             type: Sequelize.TEXT
         }
@@ -121,19 +115,21 @@ const Review = sequelize.define('review', {
     
 
     
-    Giver.hasMany(Message, { onDelete: 'cascade' })
+    Giver.hasMany(Message)
     Message.belongsTo(Giver);
 
-    Giver.hasMany(Request, { onDelete: 'cascade' })
+    Giver.hasMany(Request)
     Request.belongsTo(Giver);
-
-    Giver.hasMany(Skill)
 
     Seeker.hasMany(Message)
     Message.belongsTo(Seeker);
 
     Seeker.hasMany(Request)
     Request.belongsTo(Seeker);
+
+
+    Giver.belongsToMany(Skill, { through: 'giver_skills'})
+    Skill.belongsToMany(Giver, { through: 'giver_skills'})
 
     
 sequelize.sync();
