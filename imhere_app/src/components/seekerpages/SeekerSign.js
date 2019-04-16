@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
 import './SeekerSign.css';
+const seeker = require('../../images/seeker.png')
 
-const seekerid= 1;
+
+
 class SeekerSign extends Component {
   constructor ( props ) {
     super( props )
     this.state = {
       email: '',
       password: '',
-      vpassword: ''
     }
     this.handleSeekerSignInfo = this.handleSeekerSignInfo.bind( this );
     this.handleSeekerSignSubmit = this.handleSeekerSignSubmit.bind( this );
@@ -23,22 +24,26 @@ class SeekerSign extends Component {
     } )
   }
 
-  handleSeekerSignSubmit( event ) {
+  async handleSeekerSignSubmit( event ) {
     event.preventDefault();
     const { email, password } = this.state;
     const data = { email, password }
-    // this.props.seekerSign( data )
+    const result = await this.props.handleLogin( data )
     this.setState( {
       email: '',
       password: ''
     } )
-    if(true){
+    if(result){
       this.setState({
         clicked:true
       })
       setTimeout(()=>{
         this.props.history.push('/seeker/browse')
       },1200)
+    }else{
+      this.setState(
+        {errorMessage:"Wrong Credentials"}
+        )
     }
   }
 
@@ -59,6 +64,20 @@ class SeekerSign extends Component {
             }
           >Seeker
         </div>
+        <img
+            id="genSeekerImage"
+            src={seeker}
+            style={
+              this.state.clicked?(
+                {
+                  left:"-37%",
+                  opacity:"0"
+                }
+              ):(
+                {left:"13%"}
+              )
+            }
+          />
         <div
             id="seekerSignSign"
             style={
@@ -97,14 +116,6 @@ class SeekerSign extends Component {
             placeholder='Password'
             type="password"
             value={ this.state.password }
-            onChange={ this.handleSeekerSignInfo }
-          />
-          <br />
-          <input
-            name='vpassword'
-            placeholder='Retype Password'
-            type="password"
-            value={ this.state.vpassword }
             onChange={ this.handleSeekerSignInfo }
           />
           <br />

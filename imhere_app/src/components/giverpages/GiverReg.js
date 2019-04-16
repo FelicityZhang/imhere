@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 
 import './GiverReg.css'
+const giver = require('../../images/giver.png')
 
 class GiverReg extends Component {
   constructor(props) {
@@ -56,6 +57,20 @@ class GiverReg extends Component {
   render(){
     return (
       <div id="giverReg">
+        <img
+            id="genGiverImage"
+            src={giver}
+            style={
+              this.state.clicked?(
+                {
+                  right:"-36%",
+                  opacity:"0"
+                }
+              ):(
+                {right:"14%"}
+              )
+            }
+          />
         <div
             id="giverRegGiverWord"
             style={

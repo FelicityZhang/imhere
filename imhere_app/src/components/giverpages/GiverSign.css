@@ -57,3 +57,10 @@
     width: 200px;
     background:#7cb2d1;
 }
+#errorMessage{
+    position: fixed;
+    top: 52%;
+    margin-left:75px;
+    opacity:1;
+    transition: left 1.5s ease-in, opacity 1s ease-in;
+}

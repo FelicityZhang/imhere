@@ -5,18 +5,37 @@ const jwt = require('jsonwebtoken');
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = 'bananasplit';
 
-  const hashPassword = async (password) => {
-    const digest = await bcrypt.hash(password, SALT_ROUNDS);
-    return digest;
-  }
+
+async function hashPassword (password) {
+
+  const hashedPassword = await new Promise((resolve, reject) => {
+    bcrypt.hash(password, SALT_ROUNDS, function(err, hash) {
+      if (err) reject(err)
+      console.log(hash)
+      resolve(hash)
+    });
+  })
+
+  return hashedPassword
+}
+
+hashPassword('123');
+
 
   const genToken = (seekerData) => {
     const token = jwt.sign(seekerData, TOKEN_KEY);
     return token;
   }
 
-  const checkPassword = async (password, password_digest) => {
-    return await bcrypt.compare(password, password_digest);
+  async function checkPassword (password, password_digest) {
+
+    const checkedPassword = await new Promise((resolve, reject) => {
+        bcrypt.compare(password, password_digest)
+          .then(function(res) {
+            resolve(res)
+          })
+    })
+    return checkedPassword
   }
 
   const restrict = (req, res, next) => {

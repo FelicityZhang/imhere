@@ -15,19 +15,19 @@ const buildAuthResponse = giver => {
     return {jwt}
 }
 
-giverRouter.post('/giver/resgistration', async(req, res, next)=>{
-    try{
-        const password_digest = await hashPassword(req.body.password)
-        const giver = await Giver.create({
-            email: req.body.email,
-            password_digest
-          })
-          const respData = buildAuthResponse(giver);
-          res.json(respData);
-    }catch(e){
-        res.json({message:e.message})
-    }
-})
+// giverRouter.post('/giver/resgistration', async(req, res, next)=>{
+//     try{
+//         const password_digest = await hashPassword(req.body.password)
+//         const giver = await Giver.create({
+//             email: req.body.email,
+//             password_digest
+//           })
+//           const respData = buildAuthResponse(giver);
+//           res.json(respData);
+//     }catch(e){
+//         res.json({message:e.message})
+//     }
+// })
 
 giverRouter.post('/giver/signin', async(req, res, next)=>{
     console.log(req)

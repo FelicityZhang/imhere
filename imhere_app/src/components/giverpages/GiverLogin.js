@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import './GiverLogin.css';
+const giver = require('../../images/giver.png')
 
 const clickedStyle = {
   top: "25%"
@@ -23,6 +24,10 @@ class GiverLogin extends Component {
             id="giverLoginGiverWord"
           >Giver
         </div>
+        <img
+            id="genGiverImage"
+            src={giver}
+          />
         <div
           id="giverLoginReg"
           onClick={e=>{

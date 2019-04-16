@@ -19,365 +19,251 @@ import Request from './components/seekerpages/Request';
 import SeekerStatus from './components/seekerpages/SeekerStatus';
 import SeekerThank from './components/seekerpages/SeekerThank';
 import{
+  users
+} from './Data';
+import{
   seekerRegister,
   giverRegister,
   seekerLogin,
   giverLogin
 } from './services/api-helper'
-
 import './App.css';
-const users = [
-  {
-    id: 1,
-    name: 'Brandon P',
-    password_digest: 123,
-    picture_url: 'https://randomuser.me/api/portraits/men/1.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
-    email: 'brandonp@gmail.com'
-  },
-  {
-    id: 2,
-    name: 'Wendy A',
-    password_digest: 234,
-    picture_url: 'https://randomuser.me/api/portraits/women/1.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
-    email: 'wendya@gmail.com'
-  },
-  {
-    id: 3,
-    name: 'Ellen B',
-    password_digest: 345,
-    picture_url: 'https://randomuser.me/api/portraits/women/2.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
-    email: 'ellenb@gmail.com'
-  },
-  {
-    id: 4,
-    name: 'Ken Q',
-    password_digest: 456,
-    picture_url: 'https://randomuser.me/api/portraits/men/2.jpg',
-    description: 'Needs someone who is skilled for mounting TV',
-    email: 'kenq@gmail.com'
-  }
-]
-const requests =[{
-    giver_id: 1,
-    seeker_id: 1,
-    approval: 1,
-    complete:1,
-    title: 'Mounting needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to mount my TV.'
-  },
-  {
-    giver_id: 2,
-    seeker_id: 2,
-    approval: 1,
-    complete:1,
-    title: 'Painting needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to paint my apartment.'
-  },
-  {
-    giver_id: 3,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Moving needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to assist me to move.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Deep clean needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean my bathroom.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 6,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Electrical needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a electrical technicial.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Packing & unpacking needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to pack my clothings.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Organization needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to organize my stuff.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Deep clean needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean up my bedroom.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Deep clean needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean my bathroom.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 6,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Electrical needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a electrical technicial.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Packing & unpacking needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to pack my clothings.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Organization needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to organize my stuff.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Deep clean needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean up my bedroom.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Deep happy needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean my bathroom.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 6,
-    seeker_id: 1,
-    approval: 1,
-    complete:0,
-    title: 'Electrical needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a electrical technicial.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Packing & unpacking needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to pack my clothings.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 1,
-    complete: 1,
-    title: 'Organization needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to organize my stuff.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Plumbing needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need a plumber asap.'
-  },
-  {
-    giver_id: 4,
-    seeker_id: 1,
-    approval: 0,
-    complete:0,
-    title: 'Deep clean needed',
-    start_time: "0900",
-    end_time: "1100",
-    description: 'I need someone to clean up my bedroom.'
-  }
-];
+const logo = require('./images/logo.gif');
+
+
+const url = 'http://localhost:1234'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       currentUser: '',
+      user:{},
+      requests:[],
+      allGivers:[]
     }
+    this.getAllGivers = this.getAllGivers.bind( this )
+
+
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
-    this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
+    this.getSeeker = this.getSeeker.bind( this )
+    this.getSeekerInfo = this.getSeekerInfo.bind(this);
+
+
+    this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
-    this.authHandleChange = this.authHandleChange.bind( this )
+    this.getGiver = this.getGiver.bind( this )
+    this.getGiverInfo = this.getGiverInfo.bind(this);
   }
-  postGiver(data){
-    console.log("posting giver")
-    console.log(data)
-    return true;
-  }
-
-  postSeeker(data){
-    console.log("posting seeker")
-    console.log(data)
-    return true;
-  }
-
-  // handleSeekerLoginButton() {
-  //   this.props.history.push( "/seeker" )
-  // }
-
-  // handleGiverLoginButton() {
-  //   this.props.history.push( "/giver" )
-  // }
-
 
   async handleSeekerLogin(data) {
-    const userData = await seekerLogin(data);
-    this.setState({
-      currentUser: decode(userData.token)
-    })
-    localStorage.setItem("jwt", userData.token)
-  }
-
-  async handleGiverLogin(data) {
-    const userData = await giverLogin(data);
-    console.log(userData)
-    // if(userData.status==401){
-    //   return false;
-    // }
-    this.setState({
-      currentUser: decode(userData.token)
-    })
-    localStorage.setItem("jwt", userData.token)
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker/signin`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    if(fetchData.status==401||fetchData.status==233){
+      return false;
+    }else{
+      this.getSeeker(data)
+      this.setState({
+        currentUser: decode(fetchData.jwt, { header: true })
+      })
+      localStorage.setItem("jwt", fetchData.jwt)
+      return true;
+    }
   }
 
   async handleSeekerRegister(data) {
-    await seekerRegister( data );
-    this.handleSeekerLogin( data );
+    const userData = await seekerRegister( data );
+    console.log(userData)
+    this.setState({
+      currentUser: decode(userData.jwt, { header: true })
+    })
+  }
+
+  async getSeeker(data){
+    console.log(data)
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    this.setState({
+      user:fetchData
+    })
+    this.getSeekerInfo();
+  }
+
+  async getSeekerInfo(){
+    const {id} = this.state.user;
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify({id}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker/status`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      console.log(fetchData);
+      if(fetchData.requests){
+        this.setState({requests:fetchData.requests});
+      }
+  }
+
+  async handleGiverLogin(data) {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/signin`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    if(fetchData.status==401||fetchData.status==233){
+      return false;
+    }else{
+      this.getGiver(data)
+      this.setState({
+        currentUser: decode(fetchData.jwt, { header: true })
+      })
+      localStorage.setItem("jwt", fetchData.jwt)
+      return true;
+    }
   }
 
   async handleGiverRegister(data) {
-    await giverRegister( data );
-    this.handleGiverLogin(data);
+    const userData = await giverRegister( data );
+    this.setState({
+      currentUser: decode(userData.jwt, { header: true })
+    })
   }
 
-  authHandleChange( e ) {
-    const { email, value } = e.target;
-    this.setState( prevState => ( {
-      authFormData: {
-        ...prevState.authFormData,
-        [ email ]: value
+  async getGiver(data){
+    console.log(data)
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
       }
-    } ) );
+    }
+    const fetchData = await fetch(`${url}/giver`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    this.setState({
+      user:fetchData
+    })
+    this.getGiverInfo();
+  }
+
+  async getGiverInfo(){
+    const {id} = this.state.user;
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify({id}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/status`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      console.log(fetchData);
+      if(fetchData.requests){
+        this.setState({requests:fetchData.requests});
+      }
+  }
+  getAllGivers(){
+    // const opts = {
+    //   method: 'POST',
+    //   body: JSON.stringify({id}),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // }
+    // const fetchData = await fetch(`${url}/giver/status`, opts)
+    //   .then(resp => {
+    //     return resp.json();
+    //   })
+    //   .catch(e=>{
+    //     return {error:e.message}
+    //   })
+    //   console.log(fetchData);
+    //   if(fetchData.requests){
+    //     this.setState({requests:fetchData.requests});
+    //   }
+  }
+
+  componentDidMount(){
+    this.getAllGivers();
   }
 
   render() {
     return (
       <div className="App">
+        <img
+          className={this.props.history.location.pathname==='/'?"noDisplayLogo":"displayLogo"}
+          id="nonMainlogo"
+          src={logo}
+          onClick={()=>{
+            this.props.history.push('/')
+          }}
+        />
+        <header
+          className={this.props.history.location.pathname==='/'?"noDisplayHeader":"displayHeader"}
+          id="generalHeader">
+        </header>
+
+        <footer
+          className={this.props.history.location.pathname==='/'?"noDisplayFooter":"displayFooter"}
+          id="generalFooter">
+          <a 
+            id="aboutUs"
+            className={this.props.history.location.pathname==='/'?"noDisplayAbout":"displayAbout"}
+            href="https://github.com/FelicityZhang/imhere"
+          >About us</a>
+        </footer>
+
         <Switch>
           <Route
             exact path='/'
@@ -385,23 +271,24 @@ class App extends Component {
 
           {/*Seekers*/ }
           <Route 
-          exact path='/seeker' 
-          render={ ( props ) => < SeekerLogin {...props}/>}/>
-          <Route path='/seeker/registration'render={ ( props ) => (
-            <SeekerReg 
-             { ...props } 
-             postSeeker={this.postSeeker}
-             handleReg={ this.handleSeekerRegisters}
-             handleChange={ this.authHandleChange }
-             formData={ this.state.authFormData } />)} />
+            exact path='/seeker' 
+            render={ ( props ) => < SeekerLogin {...props}/>}/>
+          <Route 
+            path='/seeker/registration'
+            render={ ( props ) => (
+              <SeekerReg 
+                { ...props } 
+                handleReg={ this.handleSeekerRegister}
+              />)}
+          />
           <Route
             path='/seeker/signin'
             render={ ( props ) => (
               <SeekerSign 
-              { ...props }
-              handleLogin={ this.handleSeekerLogin }
-              handleChange={ this.authHandleChange }
-              formData={ this.state.authFormData } />)} />
+                { ...props }
+                handleLogin={ this.handleSeekerLogin }
+              />)}
+          />
           <Route
             path='/seeker/browse'
             render={ ( props ) => <ListGiver { ...props } givers={users}/> } />
@@ -413,7 +300,7 @@ class App extends Component {
             render={ ( props ) => <RenderGiver { ...props } givers={users}/> } />
           <Route
             path='/seeker/:giverid/request'
-            render={ ( props ) => <Request { ...props } /> } />
+            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={users}/> } />
           <Route
             path='/seeker/status'
             render={ ( props ) => <SeekerStatus { ...props } /> } />
@@ -424,35 +311,51 @@ class App extends Component {
           {/*Giver*/ }
           <Route 
             exact path='/giver'
-            render={ ( props ) => <GiverLogin {...props} /> } />
-          <Route path='/giver/registration'render={ ( props ) => (
+            render={ ( props ) => <GiverLogin {...props} /> }  
+          />
+          <Route
+            path='/giver/registration'
+            render={ ( props ) => (
               <GiverReg 
-              { ...props }
-              handleReg={ this.handleGiverRegister}
-              handleChange={ this.authHandleChange }
-              formData={ this.state.authFormData } />)} />
+                { ...props }
+                handleReg={ this.handleGiverRegister}
+              />)}
+          />
           <Route
             path='/giver/signin'
             render={ ( props ) => (
              <GiverSign
               { ...props }
               handleLogin={ this.handleGiverLogin }
-              handleChange={ this.authHandleChange }
-              formData={ this.state.authFormData } />)} />             <Route
+            />)}
+          />
+          <Route
             path='/giver/complete'
-            render={ ( props ) => <GiverThank { ...props } /> } />
+            render={ ( props ) =>
+              <GiverThank
+                { ...props } 
+              /> }
+          />
           <Route
             path='/giver/status'
-            render={ ( props ) => <GiverStatus { ...props} requests={requests} /> } />
+            render={ ( props ) =>
+              <GiverStatus { ...props}
+                requests={this.state.requests} 
+              /> }
+          />
 
           {/*LiveChat*/}
           <Route
             path='/live'
-            render={ ( props ) => <Live { ...props } /> } />
+            render={ ( props ) =>
+            <Live 
+              { ...props } 
+              /> } 
+          />
         </Switch>
       </div>
     );
   }
 }
 
-export default App
+export default withRouter(App);
