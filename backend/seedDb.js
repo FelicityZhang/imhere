@@ -329,7 +329,117 @@ try{
     email: 'nancyg@gmail.com'
   });
 
+  const giver21 = await Giver.create({
+    name: 'Michelle Redd',
+    age: 29,
+    gender: 'Female',
+    rate: 65,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/16.jpg',
+    description: 'I am an artist who loves to teach children.',
+    email: 'micheller@gmail.com'
+  });
 
+  const giver22 = await Giver.create({
+    name: 'Sandy McDougal',
+    age: 22,
+    gender: 'Female',
+    rate: 95,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/17.jpg',
+    description: 'Singing is me favorite thing to do. Hire me for your next event of any size.',
+    email: 'sandym@gmail.com'
+  });
+
+  const giver23 = await Giver.create({
+    name: 'Rachelle Smith',
+    age: 43,
+    gender: 'Female',
+    rate: 55,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/18.jpg',
+    description: 'I have 15 years of experience in the cleaning business.',
+    email: 'rachelle@gmail.com'
+  });
+
+  const giver24 = await Giver.create({
+    name: 'Toni Marrow',
+    age: 26,
+    gender: 'Female',
+    rate: 270,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/19.jpg',
+    description: 'I am an established hair dresser. My passion in life is making women even more beautiful!',
+    email: 'tonimarrow@gmail.com'
+  });
+
+  const giver25 = await Giver.create({
+    name: 'Nicole Rodriguez',
+    age: 33,
+    gender: 'Female',
+    rate: 150,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/20.jpg',
+    description: 'Certified CPA, as well as MBA. If you need any help with your taxes, please let me know.',
+    email: 'nicolerodriguez@gmail.com'
+  });
+
+
+  const giver26 = await Giver.create({
+    name: 'Inara Pinchenzo',
+    age: 19,
+    gender: 'Female',
+    rate: 175,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/21.jpg',
+    description: 'I am in dance school and looking to get out and perform, at the appropriate venue. Serious inquiries only please.',
+    email: 'inarap@gmail.com'
+  });
+
+  const giver27 = await Giver.create({
+    name: 'Rhoda Kingston',
+    age: 49,
+    gender: 'Female',
+    rate: 175,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/22.jpg',
+    description: 'Professional organizational expert for hire.',
+    email: 'rhodak@gmail.com'
+  });
+
+  const giver28 = await Giver.create({
+    name: 'Shondelle Watkins',
+    age: 34,
+    gender: 'Female',
+    rate: 25,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/23.jpg',
+    description: 'Childcare services provided for kids over 2 years old.',
+    email: 'shondelle@gmail.com'
+  });
+
+  const giver29 = await Giver.create({
+    name: 'Samantha Kristos',
+    age: 24,
+    gender: 'Female',
+    rate: 150,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/24.jpg',
+    description: 'Painter who loves to teach, kids or adults',
+    email: 'shondelle@gmail.com'
+  });
+
+  const giver30 = await Giver.create({
+    name: 'Lilah Weiss',
+    age: 40,
+    gender: 'Female',
+    rate: 85,
+    password_digest: 225,
+    picture_url: 'https://randomuser.me/api/portraits/women/25.jpg',
+    description: 'I am a teacher (reading specialist) who can help tutor your child.',
+    email: 'lilah@gmail.com'
+  });
+  
   // message
 
 
