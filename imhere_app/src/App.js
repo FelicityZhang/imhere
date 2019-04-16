@@ -72,7 +72,8 @@ class App extends Component {
 
   async handleRequestDelete(event) {
    event.preventDefault();
-   await fetch(`${url}/request/delete/:${event.target.user}`, {
+   console.log(event);
+   await fetch(`${url}/request/delete/:${event.target.key}`, {
      method: 'DELETE'
    }).then(response => {
      this.getGiverInfo(this.state.user.id)
