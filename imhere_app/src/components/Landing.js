@@ -44,7 +44,6 @@ class Landing extends Component {
     }
     return (
       <div>
-        <div id="landingTitle">I'm a...</div>
           <div 
             id="landingSelectSeeker"
             style={this.state.seeker?selectedSeekerStyle:defaultSeekerStyle}
@@ -59,6 +58,9 @@ class Landing extends Component {
             >
           </div>
           <div
+            id="seekerDescription"
+          >Who's here for me?</div>
+          <div
             id="landingSeekerWord"
             style={this.state.seeker?
                     {
@@ -68,6 +70,9 @@ class Landing extends Component {
                       left:"30%"
                     }:defaultSeekerStyle}
           >Seeker</div>
+          <div
+            id="giverDescription"
+          >Who am I here for?</div>
           <div 
             id="landingSelectGiver"
             style={this.state.giver?selectedGiverStyle:defaultGiverStyle}

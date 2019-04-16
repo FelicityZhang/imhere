@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 import './SeekerSign.css';
 
-const seekerid= 1;
+
 class SeekerSign extends Component {
   constructor ( props ) {
     super( props )
@@ -23,22 +23,26 @@ class SeekerSign extends Component {
     } )
   }
 
-  handleSeekerSignSubmit( event ) {
+  async handleGiverSignSubmit( event ) {
     event.preventDefault();
     const { email, password } = this.state;
     const data = { email, password }
-    // this.props.seekerSign( data )
+    const result = await this.props.handleLogin( data )
     this.setState( {
       email: '',
       password: ''
     } )
-    if(true){
+    if(result){
       this.setState({
         clicked:true
       })
       setTimeout(()=>{
         this.props.history.push('/seeker/browse')
       },1200)
+    }else{
+      this.setState(
+        {errorMessage:"Wrong Credentials"}
+        )
     }
   }
 

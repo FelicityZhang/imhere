@@ -19,8 +19,7 @@ import Request from './components/seekerpages/Request';
 import SeekerStatus from './components/seekerpages/SeekerStatus';
 import SeekerThank from './components/seekerpages/SeekerThank';
 import{
-  users,
-  requests
+  users
 } from './Data';
 import{
   seekerRegister,
@@ -29,6 +28,10 @@ import{
   giverLogin
 } from './services/api-helper'
 import './App.css';
+const logo = require('./images/logo.gif');
+const giver = require('./images/giver.png')
+const seeker = require('./images/seeker.png')
+const nyc = require('./images/nyc.png');
 
 const url = 'http://localhost:1234'
 
@@ -41,15 +44,75 @@ class App extends Component {
       requests:[]
     }
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
-    this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
+    this.getSeeker = this.getGiver.bind( this )
+    this.getSeekerInfo = this.getGiverInfo.bind(this);
+
+
+    this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
     this.getGiver = this.getGiver.bind( this )
-    this.getGiverStatus = this.getGiverStatus.bind( this )
     this.getGiverInfo = this.getGiverInfo.bind(this);
   }
 
-  async getGiverInfo(){
+  async handleSeekerLogin(data) {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker/signin`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    if(fetchData.status==401||fetchData.status==233){
+      return false;
+    }else{
+      this.getSeeker(data)
+      this.setState({
+        currentUser: decode(fetchData.jwt, { header: true })
+      })
+      localStorage.setItem("jwt", fetchData.jwt)
+      return true;
+    }
+  }
+
+  async handleSeekerRegister(data) {
+    const userData = await seekerRegister( data );
+    console.log(userData)
+    this.setState({
+      currentUser: decode(userData.jwt, { header: true })
+    })
+  }
+
+  async getSeeker(data){
+    console.log(data)
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+    this.setState({
+      user:fetchData
+    })
+    this.getSeekerInfo();
+  }
+
+  async getSeekerInfo(){
     const {id} = this.state.user;
     const opts = {
       method: 'POST',
@@ -58,7 +121,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     }
-    const fetchData = await fetch(`${url}/giver/status`, opts)
+    const fetchData = await fetch(`${url}/seeker/status`, opts)
       .then(resp => {
         return resp.json();
       })
@@ -69,14 +132,6 @@ class App extends Component {
       if(fetchData.requests){
         this.setState({requests:fetchData.requests});
       }
-  }
-
-  async handleSeekerLogin(data) {
-    const userData = await seekerLogin(data);
-    this.setState({
-      currentUser: decode(userData.token, { header: true })
-    })
-    localStorage.setItem("jwt", userData.token)
   }
 
   async handleGiverLogin(data) {
@@ -105,6 +160,14 @@ class App extends Component {
       return true;
     }
   }
+
+  async handleGiverRegister(data) {
+    const userData = await giverRegister( data );
+    this.setState({
+      currentUser: decode(userData.jwt, { header: true })
+    })
+  }
+
   async getGiver(data){
     console.log(data)
     const opts = {
@@ -127,10 +190,11 @@ class App extends Component {
     this.getGiverInfo();
   }
 
-  async getGiverStatus(data) {
+  async getGiverInfo(){
+    const {id} = this.state.user;
     const opts = {
-      method: 'GET',
-      body: JSON.stringify(data),
+      method: 'POST',
+      body: JSON.stringify({id}),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -142,27 +206,50 @@ class App extends Component {
       .catch(e=>{
         return {error:e.message}
       })
-      console.log("Requests"+fetchData);
+      console.log(fetchData);
+      if(fetchData.requests){
+        this.setState({requests:fetchData.requests});
+      }
   }
 
-  async handleSeekerRegister(data) {
-    const userData = await seekerRegister( data );
-    console.log(userData)
-    this.setState({
-      currentUser: decode(userData.jwt, { header: true })
-    })
-  }
+  componentDidMount(){
 
-  async handleGiverRegister(data) {
-    const userData = await giverRegister( data );
-    this.setState({
-      currentUser: decode(userData.jwt, { header: true })
-    })
   }
 
   render() {
     return (
       <div className="App">
+        <img
+          className={this.props.history.location.pathname==='/'?"noDisplayLogo":"displayLogo"}
+          id="nonMainlogo"
+          src={logo}
+        />
+        <header
+          className={this.props.history.location.pathname==='/'?"noDisplayHeader":"displayHeader"}
+          id="generalHeader">
+        </header>
+
+        <img
+          id="mainlogo"
+          style={this.props.history.location.pathname==='/'?null:{display:"none"}}
+          src={logo}
+        />
+
+        <img
+          id="giverImage"
+          src={giver}
+        />
+
+        <img
+          id="seekerImage"
+          src={seeker}
+        />
+
+        <img
+          id="backgroundNyc"
+          src={nyc}
+        />
+
         <Switch>
           <Route
             exact path='/'
@@ -177,7 +264,7 @@ class App extends Component {
             render={ ( props ) => (
               <SeekerReg 
                 { ...props } 
-                handleReg={ this.handleSeekerRegisters}
+                handleReg={ this.handleSeekerRegister}
               />)}
           />
           <Route
@@ -257,4 +344,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App);

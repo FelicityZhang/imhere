@@ -178,6 +178,22 @@ app.use((e, req, res, next) => {
 //     }
 // } )
 
+app.post( '/seeker/status', async ( req, res ) => {
+    try {
+        const requests = await Request.findAll( {
+            where: {
+                seeker_id: req.body.id
+            }
+        } )
+        res.json( {
+            requests
+        } )
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
 
 
 app.post( '/giver/status', async ( req, res ) => {
@@ -197,6 +213,20 @@ app.post( '/giver/status', async ( req, res ) => {
     }
 } )
 
+app.post( '/seeker', async ( req, res ) => {
+    try {
+        const seeker = await Seeker.findOne( {
+            where: {
+                email: req.body.email
+            }
+        } )
+        res.json(seeker)
+    } catch ( e ) {
+        res.status( 500 ).json( {
+            message: e.message
+        } )
+    }
+} )
 
 app.post( '/giver', async ( req, res ) => {
     try {
@@ -242,7 +272,6 @@ const buildAuthResponse = giver => {
 app.post('/giver/registration', async(req, res, next)=>{
     try{
         const password_digest = await hashPassword(req.body.password)
-        console.log({email:req.body.email,password_digest});
         const giver = await Giver.create({
             email: req.body.email,
             password_digest
@@ -255,7 +284,6 @@ app.post('/giver/registration', async(req, res, next)=>{
 })
 
 app.post('/giver/signin', async(req, res, next)=>{
-    console.log(req)
     try{
         const giver = await Giver.findOne({
             where:{
@@ -264,7 +292,24 @@ app.post('/giver/signin', async(req, res, next)=>{
         })
         if(await checkPassword(req.body.password, giver.password_digest) ){
             const respData = buildAuthResponse(giver);
-            console.log(respData)
+            res.json({ ...respData, status:888 })
+        }else{
+            res.json({status:401});
+        }
+    }catch(e){
+        res.json({message:e.message,status:233})
+    }
+})
+
+app.post('/seeker/signin', async(req, res, next)=>{
+    try{
+        const seeker = await Seeker.findOne({
+            where:{
+                email:req.body.email
+            }
+        })
+        if(await checkPassword(req.body.password, seeker.password_digest) ){
+            const respData = buildAuthResponse(seeker);
             res.json({ ...respData, status:888 })
         }else{
             res.json({status:401});
@@ -287,8 +332,6 @@ app.post('/seeker/registration', async(req, res, next)=>{
         res.json({message:e.message})
     }
 })
-
-
 
 app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
