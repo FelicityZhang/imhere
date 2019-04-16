@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../Status.css'
 
+const url = 'http://localhost:1234'
+// const url = 'https://imhereapp.herokuapp.coms'
+
 export default class GiverStatus extends Component {
     constructor(props){
       super(props)
@@ -10,6 +13,8 @@ export default class GiverStatus extends Component {
         completePage:0
       }
     }
+
+
     render() {
       const notApproved = this.props.requests.filter((request) => !request.approval)
       const approvedNotComplete = this.props.requests.filter(request => request.approval && !request.complete)
@@ -18,22 +23,29 @@ export default class GiverStatus extends Component {
       const approvedNotCompleteMax = Math.ceil(approvedNotComplete.length/3);
       const completeMax = Math.ceil(complete.length/3)
       console.log(notApprovedMax+" "+approvedNotCompleteMax+" "+completeMax);
-      const displayRequests = (requests,page) => {
+      const displayRequests = (requests,page, bool) => {
         return requests.map((request,ind) => {
           if(ind<(page*3+3)&&ind>=page*3){
             return(
-              <div id="request">
+              <div 
+                id="request">
                   <h2>{request.title}</h2>
                   <p>{request.start_time} to {request.end_time}</p>
                   <h3>{request.description}</h3>
+              {bool?<button
+              className = "deleteButton"
+              key={request.id}
+              onClick = {event =>this.props.handleDelete(event)}
+              >Delete</button>
+              :null}
               </div>
             )
           }
         })
       }
-      const displayNotApproved = displayRequests(notApproved,this.state.notApprovedPage);
-      const displayApprovedNotComplete = displayRequests(approvedNotComplete, this.state.approvedNotCompletePage);
-      const displayComplete = displayRequests(complete, this.state.completePage)
+      const displayNotApproved = displayRequests(notApproved,this.state.notApprovedPage,true);
+      const displayApprovedNotComplete = displayRequests(approvedNotComplete, this.state.approvedNotCompletePage,false);
+      const displayComplete = displayRequests(complete, this.state.completePage,false)
       return(
         <div id="giverStatus">
           {displayNotApproved.length?(
