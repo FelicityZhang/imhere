@@ -303,7 +303,12 @@ class App extends Component {
             render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={users}/> } />
           <Route
             path='/seeker/status'
-            render={ ( props ) => <SeekerStatus { ...props } /> } />
+            render={ ( props ) =>
+              <SeekerStatus { ...props}
+                requests={this.state.requests} 
+              /> }
+          />
+
           <Route
             path='/seeker/complete'
             render={ ( props ) => <SeekerThank { ...props } /> } />

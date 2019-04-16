@@ -55,6 +55,16 @@ app.use( ( e, req, res, next ) => {
 
 
 
+app.get('/seeker/search/:description', async(req,res)=>{
+    try{
+        const skill = await skill.findByPk(req.params.description)
+        const givers = await skill.getGivers()
+        res.json({...skill.get(),givers})
+    }catch(e){
+        res.json( { message: e.message } )
+    }
+})
+
 
 app.post( '/seeker/request', async ( req, res ) => {        
     try{
