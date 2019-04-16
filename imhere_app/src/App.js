@@ -36,7 +36,7 @@ const logo = require('./images/logo.gif');
 
 const url = 'http://localhost:1234'
 
-// const url = 'https://imhereapp.herokuapp.coms'
+// const url = 'https://imhereapp.herokuapp.com'
 
 class App extends Component {
   constructor(props){
