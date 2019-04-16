@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 
 import './SeekerReg.css'
+const seeker = require('../../images/seeker.png')
+
 
 class SeekerReg extends Component {
   constructor(props) {
@@ -68,6 +70,20 @@ class SeekerReg extends Component {
             }
           >Seeker
         </div>
+        <img
+            id="genSeekerImage"
+            src={seeker}
+            style={
+              this.state.clicked?(
+                {
+                  left:"-37%",
+                  opacity:"0"
+                }
+              ):(
+                {left:"13%"}
+              )
+            }
+          />
           <div
             id="seekerRegReg"
             style={

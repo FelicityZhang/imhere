@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import './SeekerLogin.css';
+const seeker = require('../../images/seeker.png')
+
 
 const clickedStyle = {
   top: "25%"
@@ -24,6 +26,10 @@ class SeekerLogin extends Component {
             id="seekerLoginSeekerWord"
           >Seeker
         </div>
+        <img
+            id="genSeekerImage"
+            src={seeker}
+          />
         <div
           id="seekerLoginReg"
           onClick={e=>{

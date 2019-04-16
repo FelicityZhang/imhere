@@ -29,9 +29,7 @@ import{
 } from './services/api-helper'
 import './App.css';
 const logo = require('./images/logo.gif');
-const giver = require('./images/giver.png')
-const seeker = require('./images/seeker.png')
-const nyc = require('./images/nyc.png');
+
 
 const url = 'http://localhost:1234'
 
@@ -41,12 +39,16 @@ class App extends Component {
     this.state = {
       currentUser: '',
       user:{},
-      requests:[]
+      requests:[],
+      allGivers:[]
     }
+    this.getAllGivers = this.getAllGivers.bind( this )
+
+
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
-    this.getSeeker = this.getGiver.bind( this )
-    this.getSeekerInfo = this.getGiverInfo.bind(this);
+    this.getSeeker = this.getSeeker.bind( this )
+    this.getSeekerInfo = this.getSeekerInfo.bind(this);
 
 
     this.handleGiverLogin = this.handleGiverLogin.bind( this )
@@ -211,9 +213,29 @@ class App extends Component {
         this.setState({requests:fetchData.requests});
       }
   }
+  getAllGivers(){
+    // const opts = {
+    //   method: 'POST',
+    //   body: JSON.stringify({id}),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // }
+    // const fetchData = await fetch(`${url}/giver/status`, opts)
+    //   .then(resp => {
+    //     return resp.json();
+    //   })
+    //   .catch(e=>{
+    //     return {error:e.message}
+    //   })
+    //   console.log(fetchData);
+    //   if(fetchData.requests){
+    //     this.setState({requests:fetchData.requests});
+    //   }
+  }
 
   componentDidMount(){
-
+    this.getAllGivers();
   }
 
   render() {
@@ -223,32 +245,24 @@ class App extends Component {
           className={this.props.history.location.pathname==='/'?"noDisplayLogo":"displayLogo"}
           id="nonMainlogo"
           src={logo}
+          onClick={()=>{
+            this.props.history.push('/')
+          }}
         />
         <header
           className={this.props.history.location.pathname==='/'?"noDisplayHeader":"displayHeader"}
           id="generalHeader">
         </header>
 
-        <img
-          id="mainlogo"
-          style={this.props.history.location.pathname==='/'?null:{display:"none"}}
-          src={logo}
-        />
-
-        <img
-          id="giverImage"
-          src={giver}
-        />
-
-        <img
-          id="seekerImage"
-          src={seeker}
-        />
-
-        <img
-          id="backgroundNyc"
-          src={nyc}
-        />
+        <footer
+          className={this.props.history.location.pathname==='/'?"noDisplayFooter":"displayFooter"}
+          id="generalFooter">
+          <a 
+            id="aboutUs"
+            className={this.props.history.location.pathname==='/'?"noDisplayAbout":"displayAbout"}
+            href="https://github.com/FelicityZhang/imhere"
+          >About us</a>
+        </footer>
 
         <Switch>
           <Route
@@ -286,7 +300,7 @@ class App extends Component {
             render={ ( props ) => <RenderGiver { ...props } givers={users}/> } />
           <Route
             path='/seeker/:giverid/request'
-            render={ ( props ) => <Request { ...props } /> } />
+            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={users}/> } />
           <Route
             path='/seeker/status'
             render={ ( props ) => <SeekerStatus { ...props } /> } />

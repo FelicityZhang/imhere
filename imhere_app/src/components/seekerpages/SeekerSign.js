@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
 import './SeekerSign.css';
+const seeker = require('../../images/seeker.png')
+
 
 
 class SeekerSign extends Component {
@@ -10,7 +12,6 @@ class SeekerSign extends Component {
     this.state = {
       email: '',
       password: '',
-      vpassword: ''
     }
     this.handleSeekerSignInfo = this.handleSeekerSignInfo.bind( this );
     this.handleSeekerSignSubmit = this.handleSeekerSignSubmit.bind( this );
@@ -23,7 +24,7 @@ class SeekerSign extends Component {
     } )
   }
 
-  async handleGiverSignSubmit( event ) {
+  async handleSeekerSignSubmit( event ) {
     event.preventDefault();
     const { email, password } = this.state;
     const data = { email, password }
@@ -63,6 +64,20 @@ class SeekerSign extends Component {
             }
           >Seeker
         </div>
+        <img
+            id="genSeekerImage"
+            src={seeker}
+            style={
+              this.state.clicked?(
+                {
+                  left:"-37%",
+                  opacity:"0"
+                }
+              ):(
+                {left:"13%"}
+              )
+            }
+          />
         <div
             id="seekerSignSign"
             style={
@@ -101,14 +116,6 @@ class SeekerSign extends Component {
             placeholder='Password'
             type="password"
             value={ this.state.password }
-            onChange={ this.handleSeekerSignInfo }
-          />
-          <br />
-          <input
-            name='vpassword'
-            placeholder='Retype Password'
-            type="password"
-            value={ this.state.vpassword }
             onChange={ this.handleSeekerSignInfo }
           />
           <br />

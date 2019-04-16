@@ -33,7 +33,7 @@
 #seekerDescription{
     position:fixed;
     pointer-events: none;
-    color: black;
+    color: white;
     margin-bottom: -100px;
     margin-left: 105px;
     bottom: 45%;
@@ -44,11 +44,72 @@
 #giverDescription{
     position:fixed;
     pointer-events: none;
-    color: black;
+    color: white;
     margin-bottom: -100px;
     margin-right: 105px;
     bottom: 45%;
     right: 30%;
     font-size: 27px;
     opacity: 0.8;
+}
+#mainlogo{
+    position: fixed;
+    margin: 15px 30px;
+    opacity:1;
+    filter: invert(100%);
+    width: 310px;
+    margin-left: -150px;
+    top:14%;
+    left:50%;
+    z-index:1;
+    transition: top 0.8s ease-out;
+}
+#giverImage{
+    position:fixed;
+    right: 14%;
+    top: 18%;
+    width:300px;
+    animation:giverEnter 2.2s ease-in-out;
+}
+@keyframes giverEnter{
+    0%{
+        right:-25%;
+        top:10%;
+    }
+    50%{
+        right:-25%;
+        top:10%;
+    }
+    75%{
+        top:20%;
+    }
+}
+#seekerImage{
+    position:fixed;
+    left: 13%;
+    top: 36%;
+    transform: rotateY(180deg);
+    width:320px;
+    animation:seekerEnter 2s ease-in-out;
+}
+@keyframes seekerEnter{
+    0%{
+        left:-25%;
+        top:28%;
+    }
+    50%{
+        left:-25%;
+        top:28%;
+    }
+    75%{
+        top:38%;
+    }
+}
+#backgroundNyc{
+    position:fixed;
+    left: -0.5%;
+    bottom: 12%;
+    width:101%;
+    opacity:0.2;
+    z-index:-1;
 }

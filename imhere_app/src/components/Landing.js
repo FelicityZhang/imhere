@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
-
 import './Landing.css';
+
+const logo = require('../images/logo.gif');
+const giver = require('../images/giver.png')
+const seeker = require('../images/seeker.png')
+const nyc = require('../images/nyc.png');
 
 class Landing extends Component {
   constructor(props){
@@ -44,6 +48,37 @@ class Landing extends Component {
     }
     return (
       <div>
+          <img
+            id="mainlogo"
+            src={logo}
+          />
+
+          <img
+            id="giverImage"
+            style={this.state.giver?
+              {
+                zIndex:"3"
+              }
+              :
+              null}
+            src={giver}
+          />
+
+          <img
+            id="seekerImage"
+            style={this.state.seeker?
+              {
+                zIndex:"3"
+              }
+              :
+              null}
+            src={seeker}
+          />
+
+          <img
+            id="backgroundNyc"
+            src={nyc}
+          />
           <div 
             id="landingSelectSeeker"
             style={this.state.seeker?selectedSeekerStyle:defaultSeekerStyle}

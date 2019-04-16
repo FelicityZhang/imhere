@@ -56,23 +56,21 @@ app.use( ( e, req, res, next ) => {
 
 
 
-app.get( '/seeker/:giverid/request', async ( req, res ) => {
-    try {
-        const requests = await Request.findAll( {
-            where: {
-                seeker_id: req.params.seekerid,
-                giver_id: req.params.giverid
-            }
-        } )
-        res.json( {
-            requests
-        } )
+app.post( '/seeker/request', async ( req, res ) => {        
+    try{
+        const request = await Request.create( {
+            title: req.body.title,
+            start_time: req.body.start_time,
+            end_time: req.body.end_time,
+            description: req.body.description,
+            seeker_id: req.body.seeker_id,
+            giver_id: req.body.giver_id
+          })
+        res.json( request );
     } catch ( e ) {
-        res.status( 500 ).json( {
-            message: e.message
-        } )
+        res.json( { message: e.message } )
     }
-} )
+})
 
 app.get( '/seeker/status', async ( req, res ) => {
     try {
@@ -369,14 +367,6 @@ app.post( '/seeker/registration', async ( req, res, next ) => {
     }
 } )
 
-<<<<<<< HEAD
 app.listen(PORT, () => {
     console.log(`Server up and listening on port ${PORT}, in ${app.get('env')} mode.`);
   })
-=======
-
-
-app.listen( PORT, () => {
-    console.log( `Server up and listening on port ${ PORT }, in ${ app.get( 'env' ) } mode.` );
-} )
->>>>>>> ae368836d3583b613661fb110893e17186bfae91
