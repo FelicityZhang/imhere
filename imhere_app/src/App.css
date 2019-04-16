@@ -5,6 +5,89 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
+a{
+  text-decoration: none;
+  color:inherit;
+}
 body{
-  background: #7cb2d1;
+  background: black;
+}
+#nonMainlogo{
+  position: fixed;
+  margin: 15px 30px;
+  opacity:0.8;
+  filter: invert(100%);
+  width: 170px;
+  left:0%;
+  z-index:10;
+  transition: top 0.8s ease-out;
+}
+#generalHeader{
+  position: fixed;
+  z-index:9;
+  top:0;
+  width:100%;
+  height: 9%;
+  transition: left 0.8s ease-in-out;
+  transition-delay: 0.5s;
+  background-image: linear-gradient(to left,rgba(255,255,255,0.0),rgba(255,255,255,0.15), rgba(225,225,255,0.15));
+}
+.noDisplayHeader{
+  left:-100%;
+}
+.displayHeader{
+  left:0%;
+}
+#aboutUs{
+  display:block;
+  position:fixed;
+  transition: right 0.8s ease-in-out;
+  color:rgba(255,255,255,0.8);
+  font-size:30px;
+  padding:20px 40px;
+}
+.noDisplayAbout{
+  right:-10%;
+}
+.displayAbout{
+  right:0%;
+}
+#generalFooter{
+  position: fixed;
+  z-index:9;
+  bottom:0;
+  width:100%;
+  height: 9%;
+  transition: right 0.8s ease-in-out;
+  transition-delay: 0.5s;
+  background-image: linear-gradient(to right,rgba(255,255,255,0.0),rgba(255,255,255,0.15), rgba(225,225,255,0.15));
+}
+.noDisplayFooter{
+  right:-100%;
+}
+.displayFooter{
+  right:0%;
+}
+.noDisplayLogo{
+  top:-10%;
+}
+.displayLogo{ 
+  top:0%;
+}
+#genSeekerImage{
+  position:fixed;
+  left: 13%;
+  top: 36%;
+  transform: rotateY(180deg);
+  width:320px;
+  opacity: 1;
+  transition: left 1.5s ease-in, opacity 1s ease-in;
+}
+#genGiverImage{
+  position:fixed;
+  right: 14%;
+  top: 18%;
+  width:300px;
+  opacity: 1;
+  transition: right 1.5s ease-in, opacity 1s ease-in;
 }

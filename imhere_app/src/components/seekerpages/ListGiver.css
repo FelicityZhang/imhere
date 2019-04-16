@@ -1,0 +1,47 @@
+#listGiver{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background:#e6b7c1;
+    z-index:-1;
+}
+#listGiverTitle{
+    position:relative;
+    top:11%;
+}
+#giverPicture{
+    width:200px;
+    padding:10px;
+}
+#giverContainer{
+    display:flex;
+    flex-flow: row wrap;
+    position:relative;
+    margin: 10px auto;
+    top:10%;
+}
+#giverContainer>*{
+    margin: auto;
+}
+.giverProfile{
+    display: flex;
+    width: 440px;
+    height: 200px;
+    background:#9B726D;
+    color:white;
+    margin: 20px 10px;
+    flex-flow: row nowrap;
+}
+
+.giverWords{
+    margin: auto 0;
+    height: 180px;
+    display:flex;
+    flex-flow: column nowrap;
+}
+.giverWords>*{
+    margin:5px;
+}
+.giverName{
+    margin:20px 0;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
 import './GiverSign.css';
+const giver = require('../../images/giver.png')
 
 class GiverSign extends Component {
   constructor ( props ) {
@@ -61,6 +62,20 @@ class GiverSign extends Component {
             }
           >Giver
         </div>
+        <img
+            id="genGiverImage"
+            src={giver}
+            style={
+              this.state.clicked?(
+                {
+                  right:"-36%",
+                  opacity:"0"
+                }
+              ):(
+                {right:"14%"}
+              )
+            }
+          />
         <div
             id="giverSignSign"
             style={

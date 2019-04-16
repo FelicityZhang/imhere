@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 
 import './SeekerReg.css'
+const seeker = require('../../images/seeker.png')
+
 
 class SeekerReg extends Component {
   constructor(props) {
@@ -32,16 +34,14 @@ class SeekerReg extends Component {
     const {first, last, password, picture, description, email, gender, rate} = this.state;
     const name = first.concat(" ",last);
     const data = { name, password, picture, description, email, gender, rate };
-    const success = this.props.postSeeker(data);
+    const success = this.props.handleReg(data);
     this.setState({
       first:'',
       last:'',
       password:'',
       picture:'',
       description:'',
-      email: '',
-      gender: '',
-      rate: ''
+      email: ''
     })
     if(success){
       this.setState({
@@ -50,8 +50,6 @@ class SeekerReg extends Component {
       setTimeout(()=>{
         this.props.history.push('/seeker/browse')
       },1200);
-    }else{
-      //something
     }
   }
 
@@ -72,6 +70,20 @@ class SeekerReg extends Component {
             }
           >Seeker
         </div>
+        <img
+            id="genSeekerImage"
+            src={seeker}
+            style={
+              this.state.clicked?(
+                {
+                  left:"-37%",
+                  opacity:"0"
+                }
+              ):(
+                {left:"13%"}
+              )
+            }
+          />
           <div
             id="seekerRegReg"
             style={
@@ -138,20 +150,6 @@ class SeekerReg extends Component {
               name='email'
               placeholder='Email'
               value={this.state.email} 
-              onChange={this.handleChangebySetState} 
-            />
-            <br />
-            <input 
-              name='gender'
-              placeholder='Gender'
-              value={this.state.gender} 
-              onChange={this.handleChangebySetState} 
-            />
-            <br />
-            <input 
-              name='rate'
-              placeholder='Rate'
-              value={this.state.rate} 
               onChange={this.handleChangebySetState} 
             />
             <br />

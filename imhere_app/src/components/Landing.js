@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
-
 import './Landing.css';
+
+const logo = require('../images/logo.gif');
+const giver = require('../images/giver.png')
+const seeker = require('../images/seeker.png')
+const nyc = require('../images/nyc.png');
 
 class Landing extends Component {
   constructor(props){
@@ -44,7 +48,37 @@ class Landing extends Component {
     }
     return (
       <div>
-        <div id="landingTitle">I'm a...</div>
+          <img
+            id="mainlogo"
+            src={logo}
+          />
+
+          <img
+            id="giverImage"
+            style={this.state.giver?
+              {
+                zIndex:"3"
+              }
+              :
+              null}
+            src={giver}
+          />
+
+          <img
+            id="seekerImage"
+            style={this.state.seeker?
+              {
+                zIndex:"3"
+              }
+              :
+              null}
+            src={seeker}
+          />
+
+          <img
+            id="backgroundNyc"
+            src={nyc}
+          />
           <div 
             id="landingSelectSeeker"
             style={this.state.seeker?selectedSeekerStyle:defaultSeekerStyle}
@@ -59,6 +93,9 @@ class Landing extends Component {
             >
           </div>
           <div
+            id="seekerDescription"
+          >Who's here for me?</div>
+          <div
             id="landingSeekerWord"
             style={this.state.seeker?
                     {
@@ -68,6 +105,9 @@ class Landing extends Component {
                       left:"30%"
                     }:defaultSeekerStyle}
           >Seeker</div>
+          <div
+            id="giverDescription"
+          >Who am I here for?</div>
           <div 
             id="landingSelectGiver"
             style={this.state.giver?selectedGiverStyle:defaultGiverStyle}

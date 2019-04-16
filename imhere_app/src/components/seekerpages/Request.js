@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
-const url = 'http://localhost/1234'
+const url = 'http://localhost:1234'
 
 // /seeker/:giverid/request
 
@@ -12,7 +12,7 @@ class Request extends Component {
         title: '',
         start_time: '',
         end_time: '',
-        descriptions: ''
+        description: ''
       }
   this.handleChangebySetState=this.handleChangebySetState.bind(this);
   this.handleRequestSubtmit=this.handleRequestSubtmit.bind(this);
@@ -37,19 +37,20 @@ handleRequestSubtmit = async event =>{
       title: this.state.title,
       start_time: this.state.start_time,
       end_time: this.state.end_time,
-      descriptions: this.state.description,
+      description: this.state.description,
       seeker_id: this.props.seeker_id,
-      giver_id: this.props.match.params.giverid
+      giver_id: parseInt(this.props.match.params.giverid)
     }
- await fetch(`${url}/seeker/${this.props.match.params.giverid}/request`,{
-    method:'POST',
-    body:JSON.stringify(data),
-    headers:{
-      'Content-Type' : 'apllication/json'
-    }
-  }).then(response =>{
-    return response.json()
-  })
+    console.log(data);
+  await fetch(`${url}/seeker/request`,{
+      method:'POST',
+      body:JSON.stringify(data),
+      headers:{
+        'Content-Type' : 'application/json'
+      }
+    }).then(response =>{
+      return response.json()
+    })
 
   this.setState({
     title:'',
@@ -60,8 +61,17 @@ handleRequestSubtmit = async event =>{
 }
 
   render() {
+    const {giverid} = this.props.match.params
+    const giver = this.props.givers.find(searchedGiver=>searchedGiver.id==giverid)
     return (
       <div>
+        {/* <div id="renderGiver">
+          <div class="renderGiverProfile">
+            <img 
+              id="renderGiverPicture"
+              alt={`${giver.name}'s Profile`} src={giver.picture_url}/>
+          </div>
+        </div> */}
         <form onSubmit={this.handleRequestSubtmit}>
         <h4>Congratulations, ImHere is here to help you. Please give us a few more details about your project? This is so your Giver can best assist you.
         </h4>
