@@ -37,7 +37,8 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: '',
-      user:{}
+      user:{},
+      requests:[]
     }
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
     this.handleGiverLogin = this.handleGiverLogin.bind( this )
@@ -45,10 +46,29 @@ class App extends Component {
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
     this.getGiver = this.getGiver.bind( this )
     this.getGiverStatus = this.getGiverStatus.bind( this )
+    this.getGiverInfo = this.getGiverInfo.bind(this);
   }
 
-  async getGiverInfo(email){
-
+  async getGiverInfo(){
+    const {id} = this.state.user;
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify({id}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/status`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      console.log(fetchData);
+      if(fetchData.requests){
+        this.setState({requests:fetchData.requests});
+      }
   }
 
   async handleSeekerLogin(data) {
@@ -101,11 +121,10 @@ class App extends Component {
       .catch(e=>{
         return {error:e.message}
       })
-      // console.log(fetchData.getRequests())
     this.setState({
       user:fetchData
     })
-      
+    this.getGiverInfo();
   }
 
   async getGiverStatus(data) {
@@ -220,7 +239,7 @@ class App extends Component {
             path='/giver/status'
             render={ ( props ) =>
               <GiverStatus { ...props}
-                requests={requests} 
+                requests={this.state.requests} 
               /> }
           />
 

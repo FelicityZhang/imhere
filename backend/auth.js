@@ -10,12 +10,15 @@ async function hashPassword (password) {
   const hashedPassword = await new Promise((resolve, reject) => {
     bcrypt.hash(password, SALT_ROUNDS, function(err, hash) {
       if (err) reject(err)
+      console.log(hash)
       resolve(hash)
     });
   })
 
   return hashedPassword
 }
+
+hashPassword('123');
 
   const genToken = (seekerData) => {
     const token = jwt.sign(seekerData, TOKEN_KEY);

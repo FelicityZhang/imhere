@@ -114,7 +114,7 @@ try{
     age: 25,
     gender: 'Male',
     rate: 200,
-    password_digest: 654,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/6.jpg',
     description: 'Very skilled, I’ve mounted my own tv, shelving, and wall mounted desk. I have a drill with bits, and various required anchors. Years of experience painting as well.',
     email: 'junipera@gmail.com'
@@ -125,7 +125,7 @@ try{
     age: 39,
     gender: 'Male',
     rate: 100,
-    password_digest: 543,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/7.jpg',
     description: 'Experienced moving, large & small jobs, local & cross-country. I will load your truck or use my car for small moves. I am well reviewed and eager to please. $10 surcharge hourly for walk-ups above 3rd floor. 2 hour minimum for moves out of state.',
     email: 'imanip@gmail.com'
@@ -136,7 +136,7 @@ try{
     age: 26,
     gender: 'Male',
     rate: 50,
-    password_digest: 432,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/8.jpg',
     description: 'Professional Handyman with over 10 years experience in assembling and/or installing all manner of ready-to-assemble home and office furniture from Ikea, Wayfair, target or any other brand.Fully equipped with tools and hardware necessary to get the job done.',
     email: 'elizabethm@gmail.com'
@@ -147,7 +147,7 @@ try{
     age: 29,
     gender: 'Male',
     rate: 100,
-    password_digest: 321,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/9.jpg',
     description: 'I have replaced door knobs, bathroom cabinets, door locks, and light bulbs so I believe I am fit to complete any minor home repairs.',
     email: 'teiganh@gmail.com'
@@ -158,7 +158,7 @@ try{
     age: 42,
     gender: 'Male',
     rate: 50,
-    password_digest: 210,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/10.jpg',
     description: 'I am a very clean person! I have cleaned my whole life wether it be at home or for most of the jobs I have had so it is second nature when I do it for someone else.',
     email: 'taraf@gmail.com'
@@ -169,7 +169,7 @@ try{
     age: 38,
     gender: 'Male',
     rate: 150,
-    password_digest: 112,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/11.jpg',
     description: 'I lift weights and have moving experience working for staffing agencies moving furniture in hotels.',
     email: 'johnn@gmail.com'
@@ -180,7 +180,7 @@ try{
     age: 34,
     gender: 'Male',
     rate: 90,
-    password_digest: 113,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/12.jpg',
     description: 'If your looking for someone to do deliveries I am the right guy for the job. expenses in nyc. I do not have a vehicle. Nothing over 15 pounds also no flower deliveries.',
     email: 'ivans@gmail.com'
@@ -191,7 +191,7 @@ try{
     age: 35,
     gender: 'Male',
     rate: 80,
-    password_digest: 114,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/13.jpg',
     description: 'I have worked in landscaping for a golf course before, de potting plants, raking leaves, shoving snow, etc. and am in very good shape endurance wise.',
     email: 'anthonyf@gmail.com'
@@ -202,7 +202,7 @@ try{
     age: 47,
     gender: 'Male',
     rate: 70,
-    password_digest: 115,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/14.jpg',
     description: 'I previously worked as a receptionist at a law firm for 2 years. I currently work as an administrative assistant at property management office. I have years of experience being an assistant. My memory and multi-tasking skills are phenomenal.',
     email: 'medhif@gmail.com'
@@ -213,7 +213,7 @@ try{
     age: 32,
     gender: 'Male',
     rate: 100,
-    password_digest: 116,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/men/15.jpg',
     description: 'I like to treat others the way I would LOVE to be treated. My conscious will not let me sleep unless I give everything at hand 110%. You will not regret me, I guarantee it.',
     email: 'eddie@gmail.com'
@@ -224,7 +224,7 @@ try{
     age: 42,
     gender: 'Female',
     rate: 50,
-    password_digest: 117,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/6.jpg',
     description: 'I do Affordable + Professional paint /plaster repair! I also do fantastic wallpaper work too! Smooth no bubbles and razor sharp corners and crisp straight edges My fee is calculated hourly or part of an hour over 15 min. rounding up to next hour.',
     email: 'seanm@gmail.com'
@@ -235,7 +235,7 @@ try{
     age: 38,
     gender: 'Female',
     rate: 60,
-    password_digest: 118,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/7.jpg',
     description: 'I have Plenty of experience installing and repairing faucets sinks bath and shower. Plz DONT hire me to unclog anything.',
     email: 'brunog@gmail.com'
@@ -246,7 +246,7 @@ try{
     age: 28,
     gender: 'Female',
     rate: 60,
-    password_digest: 119,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/8.jpg',
     description: 'Specializing in replacement/removal of light fitures and fuse replacements.',
     email: 'leor@gmail.com'
@@ -257,7 +257,7 @@ try{
     age: 47,
     gender: 'Female',
     rate: 80,
-    password_digest: 120,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/9.jpg',
     description: 'Detail Oriented Make Sure Get Every Nick Nack Grease And Grime is Gone',
     email: 'davidw@gmail.com'
@@ -268,7 +268,7 @@ try{
     age: 40,
     gender: 'Female',
     rate: 90,
-    password_digest: 121,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/10.jpg',
     description: 'From a young age, I always took pride in my organizational skills. Whether it’s simply sorting and organizing, cleaning or just making a space more efficient, I always exceed expectations and guarantee satisfaction.',
     email: 'galberto@gmail.com'
@@ -279,7 +279,7 @@ try{
     age: 36,
     gender: 'Female',
     rate: 100,
-    password_digest: 122,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/11.jpg',
     description: 'I used to work as a party host at Bolwmor Lanes for two years. Hosting events of all sizes from kid parties to large corporate events.',
     email: 'alanen@gmail.com'
@@ -290,7 +290,7 @@ try{
     age: 27,
     gender: 'Female',
     rate: 100,
-    password_digest: 211,
+    password_digest: '$2b$11$z819YhlmM3Z9QE37P7jKpOKetJCBTZfwQR6A55OC9Q95eGcf30cW.',
     picture_url: 'https://randomuser.me/api/portraits/women/12.jpg',
     description: 'If you need me to ship packages or go to the post office or anything else then I am the right guy for the task. i do not have a vehicle. Nothing over 15lbs. Also no flower deliveries.',
     email: 'edr@gmail.com'
