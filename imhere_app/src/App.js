@@ -44,7 +44,8 @@ class App extends Component {
       user:{},
       requests:[],
       allGivers:[],
-      searchedGiver:[]
+      searchedGiver:[],
+      searchKeyword:''
     }
     this.getAllGivers = this.getAllGivers.bind( this )
     this.searchGiverBySkill=this.searchGiverBySkill.bind(this)
@@ -62,12 +63,15 @@ class App extends Component {
     this.getGiverInfo = this.getGiverInfo.bind(this);
   }
   async searchGiverBySkill(data){
-    let endPoint = `${ url }/seeker/search/${data}`
+    const query = data.split(' ').join('#')
+    console.log("query"+query)
+    let endPoint = `${ url }/seeker/search/${query}`
+    console.log("data"+data)
     fetch( endPoint )
       .then( response => response.json() )
-      .then( data => {
-        console.log(data);
-        this.setState({ searchedGiver: data.givers})
+      .then( json => {
+        console.log(json)
+        this.setState({ searchedGiver: json.givers, searchKeyword:json.description})
       } )
   }
   async handleSeekerLogin(data) {
@@ -203,19 +207,11 @@ class App extends Component {
     this.setState({
       user:fetchData
     })
-    this.getGiverInfo();
+    this.getGiverInfo(fetchData.id);
   }
 
-  async getGiverInfo(){
-    const {id} = this.state.user;
-    const opts = {
-      method: 'POST',
-      body: JSON.stringify({id}),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    const fetchData = await fetch(`${url}/giver/status`, opts)
+  async getGiverInfo(id){
+    const fetchData = await fetch(`${url}/giver/status/${id}`)
       .then(resp => {
         return resp.json();
       })
@@ -227,25 +223,15 @@ class App extends Component {
         this.setState({requests:fetchData.requests});
       }
   }
-  getAllGivers(){
-    // const opts = {
-    //   method: 'POST',
-    //   body: JSON.stringify({id}),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // }
-    // const fetchData = await fetch(`${url}/giver/status`, opts)
-    //   .then(resp => {
-    //     return resp.json();
-    //   })
-    //   .catch(e=>{
-    //     return {error:e.message}
-    //   })
-    //   console.log(fetchData);
-    //   if(fetchData.requests){
-    //     this.setState({requests:fetchData.requests});
-    //   }
+  async getAllGivers(){
+    const fetchData = await fetch(`${url}/seeker/all`)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return {error:e.message}
+      })
+      this.setState({allGivers:fetchData});
   }
 
   componentDidMount(){
@@ -258,6 +244,7 @@ class App extends Component {
         <Profile
           user={this.state.user} 
         />
+        <SearchGiver handleSearch={this.searchGiverBySkill}/>
         <img
           className={this.props.history.location.pathname==='/'?"noDisplayLogo":"displayLogo"}
           id="nonMainlogo"
@@ -288,7 +275,10 @@ class App extends Component {
 
           <Route
             path='/:usertype/profile'
-            render={ ( props ) => <EditProfile { ...props } /> } />
+            render={ ( props ) => <EditProfile 
+              { ...props }
+              user={this.state.user}
+            /> } />
 
           {/*Seekers*/ }
           <Route 
@@ -312,16 +302,18 @@ class App extends Component {
           />
           <Route
             path='/seeker/browse'
-            render={ ( props ) => <ListGiver { ...props } givers={users} searched={this.state.searchedGiver}/> } />
-          <Route
-            exact path='/seeker/search'
-            render={ ( props ) => <SearchGiver { ...props } handleSearch={this.searchGiverBySkill}/> } />
+            render={ ( props ) => 
+            <ListGiver { ...props } 
+              givers={this.state.allGivers}
+              searched={this.state.searchedGiver}
+              keyword={this.state.searchKeyword}
+            /> } />
           <Route
             exact path='/seeker/:giverid'
-            render={ ( props ) => <RenderGiver { ...props } givers={users}/> } />
+            render={ ( props ) => <RenderGiver { ...props } givers={this.state.allGivers} /> } />
           <Route
             path='/seeker/:giverid/request'
-            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={users}/> } />
+            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={this.state.allGivers}/> } />
           <Route
             path='/seeker/status'
             render={ ( props ) =>

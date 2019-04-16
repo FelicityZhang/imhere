@@ -8,22 +8,23 @@ export default class RenderGiver extends Component {
     if(giver){
       return (
         <div id="renderGiver">
-          <div class="renderGiverProfile">
+          <div className="renderGiverProfile">
             <img 
               id="renderGiverPicture"
               alt={`${giver.name}'s Profile`} src={giver.picture_url}/>
-            <div class="renderGiverWords">
+            <div className="renderGiverWords">
+            
                 <h2
-                  class="renderGiverName"
+                  className="renderGiverName"
                 >{giver.name}</h2>
-                <h3>{giver.skill || `Ask what he/she/they can do!`}</h3>
-                <p>{giver.description}</p>
                 <Link to={`/seeker/${giverid}/request`}>
                   <button
                     id="requestButton"
                   >Request
                   </button>
                 </Link>
+                <h3>{giver.skill || `Ask what he/she/they can do!`}</h3>
+                <p>{giver.description}</p>
             </div>
           </div>
         </div>

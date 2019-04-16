@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
+import {withRouter} from 'react-router-dom';
 import './SearchGiver.css'
 
-const url = 'http://localhost:1234'
-
-export default class SearchGiver extends Component {
+class SearchGiver extends Component {
   constructor ( props ) {
     super( props )
     this.state = {
@@ -24,15 +23,24 @@ export default class SearchGiver extends Component {
   handleSearchGivers(e) {
     e.preventDefault()
     this.props.handleSearch(this.state.skill_description)
+    this.props.history.push('/seeker/browse');
   }
 
 
   render() {
     return (
-      <div>
-        <div id='searchGiverBar'>
+      <div
+        >
+        <div 
+          className={this.props.history.location.pathname === '/'||
+          this.props.history.location.pathname==='/giver'||
+          this.props.history.location.pathname==='/seeker'||
+          this.props.history.location.pathname.includes("signin")||
+          this.props.history.location.pathname.includes("registration")?"noDisplaySearch":"displaySearch"}
+          id='searchGiverBar'
+        >
           <form onSubmit={ (e) => this.handleSearchGivers(e) }>
-            <input className="input"
+            <input id="searchGiverInput"
               onChange={ event => this.handleChange( event ) }
               placeholder="Search Your Giver by Skill"
               value={ this.state.skill_description }
@@ -40,13 +48,8 @@ export default class SearchGiver extends Component {
             <button id="searchGiverSubmit">Search</button>
           </form>
         </div>
-        <div className="giverContainer">
-          {/* {
-            this.state.data &&  this.handleGivers() 
-          } */}
-        </div>
-
       </div>
     )
   }
 }
+export default withRouter(SearchGiver);
