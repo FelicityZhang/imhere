@@ -333,7 +333,7 @@ try{
   // message
 
 
-  // request
+  // Requests
 
   const request1 = await Request.create({
     giver_id: 1,
@@ -447,9 +447,10 @@ try{
 
   });
 
+  
  
 
-  // review
+  // Reviews
 
   const review1 = await Review.create({
     request_id: 1,
@@ -511,18 +512,17 @@ try{
     content: 'Mounted a large picture and a mirror. Came well equipped and completed both successfully. Very friendly and nice person, would highly recommend.'
   });
 
+  // Skills
+
   const skill1 = await Skill.create({
-    giver_id: 5,
     description: 'Mounting'
   });
 
   const skill2 = await Skill.create({
-    giver_id: 6,
     description: 'Moving'
   });
 
   const skill3 = await Skill.create({
-    giver_id: 7,
     description: 'Furniture assembly'
   });
 
@@ -532,273 +532,227 @@ try{
   });
 
   const skill5 = await Skill.create({
-    giver_id: 3,
     description: 'Cleaning'
   });
 
   const skill6 = await Skill.create({
-    giver_id: 4,
     description: 'Heavy lifting'
   });
 
   const skill7 = await Skill.create({
-    giver_id: 6,
     description: 'Delivery'
   });
 
   const skill8 = await Skill.create({
-    giver_id: 2,
     description: 'Yark work'
   });
 
   const skill9 = await Skill.create({
-    giver_id: 5,
     description: 'Personal assistant'
   });
 
   const skill10 = await Skill.create({
-    giver_id: 9,
     description: 'Packing & Unpacking'
   });
 
   const skill11 = await Skill.create({
-    giver_id: 9,
     description: 'Light fixtures'
   });
   
   const skill12= await Skill.create({
-    giver_id: 8,
       description: 'Air Conditioner repair'
     });
   const skill13 = await Skill.create({
-    giver_id: 7,
       description: 'House sitting'
     });
   const skill14 = await Skill.create({
-    giver_id: 2,
       description: 'Dog Walking'
     });
   const skill15 = await Skill.create({
-    giver_id: 7,
       description: 'Child care (0 months to 2 years)'
     });
   const skill16 = await Skill.create({
-    giver_id: 6,
       description: 'Child care (2 years and older)'
     });
   const skill17 = await Skill.create({
-    giver_id: 6,
       description: 'Elder care'
     });
   const skill18 = await Skill.create({
-    giver_id: 9,
       description: 'Furniture restoration'
     });
   const skill19 = await Skill.create({
-    giver_id: 8,
       description: 'Grocery shopping'
     });
   const skill20 = await Skill.create({
-    giver_id: 7,
       description: 'Afterschool pickup'
     });
   const skill21 = await Skill.create({
-    giver_id: 2,
       description: 'Life coach'
     });
   const skill22 = await Skill.create({
-    giver_id: 1,
       description: 'Makeup design'
     });
   const skill23 = await Skill.create({
-    giver_id: 2,
       description: 'Hair stylist'
     });
   const skill24 = await Skill.create({
-    giver_id: 3,
       description: 'Nail stylist'
     });
   const skill25 = await Skill.create({
-    giver_id: 4,
       description: 'Weight loss specialist'
     });
   const skill26 = await Skill.create({
-    giver_id: 2,
       description: 'Wardrobe consultant'
     });
   const skill27 = await Skill.create({
-    giver_id: 5,
       description: 'Wardrobe stylist'
     });
   const skill28 = await Skill.create({
-    giver_id: 6,
       description: 'General car maintanance'
     });
   const skill29 = await Skill.create({
-    giver_id: 6,
       description: 'Seamstress'
     });
   const skill30= await Skill.create({
-    giver_id: 8,
       description: 'Closet organization'
     });
   const skill31 = await Skill.create({
-    giver_id: 7,
       description: 'Personal trainer'
     });
   const skill32 = await Skill.create({
-    giver_id: 9,
       description: 'Wait in line'
     });
   const skill33 = await Skill.create({
-    giver_id: 7,
       description: 'Photography'
     });
   const skill34 = await Skill.create({
-    giver_id: 8,
       description: 'Accounting'
     });
   const skill35 = await Skill.create({
-    giver_id: 7,
       description: 'Office Organization'
     });
   const skill36 = await Skill.create({
-    giver_id: 2,
       description: 'Graphic Design'
     });
   const skill37 = await Skill.create({
-    giver_id: 4,
       description: 'Carpentry'
     });
   const skill38 = await Skill.create({
-    giver_id: 2,
       description: 'Cooking'
     });
   const skill39 = await Skill.create({
-    giver_id: 3,
       description: 'Baking'
     });
   const skill40 = await Skill.create({
-    giver_id: 7,
       description: 'Party Planning'
     });
   const skill41 = await Skill.create({
-    giver_id: 6,
       description: 'Interior design'
     });
   const skill42 = await Skill.create({
-    giver_id: 6,
       description: 'Art deco'
     });
   const skill43 = await Skill.create({
-    giver_id: 5,
       description: 'Bicycle repair/assistance'
     });
   const skill44 = await Skill.create({
-    giver_id: 4,
       description: 'Packing & Unpacking'
     });
   const skill45 = await Skill.create({
-    giver_id: 9,
       description: 'Social media enhancer'
     });
   const skill46 = await Skill.create({
-    giver_id: 2,
       description: 'Party promotion'
     });
   const skill47 = await Skill.create({
-    giver_id: 8,
       description: 'Singer'
     });
   const skill48 = await Skill.create({
-    giver_id: 7,
       description: 'Pet trainer'
     });
   const skill49 = await Skill.create({
-    giver_id: 1,
       description: 'Business advisor'
     });
   const skill50 = await Skill.create({
-    giver_id: 2,
       description: 'Pianist'
     });
   const skill51 = await Skill.create({
-      giver_id: 3,
       description: 'Drummer'
     });
   const skill52 = await Skill.create({
-    giver_id: 4,
       description: 'Street Artist'
     });
   const skill53 = await Skill.create({
-    giver_id: 6,
       description: 'Dancer'
     });
   const skill54 = await Skill.create({
-    giver_id: 5,
       description: 'Guitarist'
     });
 
 
 
 
+    
+
   // associations
-  await skill1.setSkill(giver1);
-  await skill2.setSkill(giver2);
-  await skill3.setSkill(giver3);
-  await skill4.setSkill(giver4);
-  await skill5.setSkill(giver5);
-  await skill6.setSkill(giver6);
-  await skill7.setSkill(giver7);
-  await skill8.setSkill(giver8);
-  await skill9.setSkill(giver9);
-  await skill10.setSkill(giver10);
-  await skill11.setSkill(giver11);
-  await skill12.setSkill(giver12);
-  await skill13.setSkill(giver13);
-  await skill14.setSkill(giver14);
-  await skill15.setSkill(giver15);
-  await skill16.setSkill(giver16);
-  await skill17.setSkill(giver17);
-  await skill18.setSkill(giver18);
-  await skill19.setSkill(giver19);
-  await skill20.setSkill(giver20);
-  await skill21.setSkill(giver1);
-  await skill22.setSkill(giver2);
-  await skill23.setSkill(giver3);
-  await skill24.setSkill(giver4);
-  await skill25.setSkill(giver5);
-  await skill26.setSkill(giver6);
-  await skill27.setSkill(giver7);
-  await skill28.setSkill(giver8);
-  await skill29.setSkill(giver9);
-  await skill30.setSkill(giver10);
-  await skill31.setSkill(giver11);
-  await skill32.setSkill(giver12);
-  await skill33.setSkill(giver13);
-  await skill34.setSkill(giver14);
-  await skill35.setSkill(giver15);
-  await skill36.setSkill(giver16);
-  await skill37.setSkill(giver17);
-  await skill38.setSkill(giver18);
-  await skill39.setSkill(giver19);
-  await skill40.setSkill(giver20);
-  await skill41.setSkill(giver1);
-  await skill42.setSkill(giver2);
-  await skill43.setSkill(giver3);
-  await skill44.setSkill(giver4);
-  await skill45.setSkill(giver5);
-  await skill46.setSkill(giver6);
-  await skill47.setSkill(giver7);
-  await skill48.setSkill(giver8);
-  await skill49.setSkill(giver9);
-  await skill50.setSkill(giver10);
-  await skill51.setSkill(giver11);
-  await skill52.setSkill(giver12);
-  await skill53.setSkill(giver13);
-  await skill54.setSkill(giver14);
+  await skill1.setGiver([giver1, giver2, giver3])
+  await skill2.setGiver([giver6, giver5, giver7])
+  await skill3.setGiver([giver7, giver3, giver2])
+  await skill4.setGiver([giver8, giver5, giver9])
+  await skill5.setGiver([giver4, giver2, giver1])
+  await skill6.setGiver([giver1, giver3, giver8])
+  await skill7.setGiver([giver1, giver2, giver3])
+  await skill8.setGiver([giver1, giver2, giver3])
+  await skill9.setGiver([giver1, giver2, giver3])
+  await skill10.setGiver([giver1, giver2, giver3])
+  await skill11.setGiver([giver1, giver2, giver3])
+  await skill12.setGiver([giver1, giver2, giver3])
+  await skill13.setGiver([giver1, giver2, giver3])
+  await skill14.setGiver([giver1, giver2, giver3])
+  await skill15.setGiver([giver1, giver2, giver3])
+  await skill16.setGiver([giver1, giver2, giver3])
+  await skill17.setGiver([giver1, giver2, giver3])
+  await skill18.setGiver([giver1, giver2, giver3])
+  await skill19.setGiver([giver1, giver2, giver3])
+  await skill20.setGiver([giver1, giver2, giver3])
+  await skill21.setGiver([giver1, giver2, giver3])
+  await skill22.setGiver([giver1, giver2, giver3])
+  await skill23.setGiver([giver1, giver2, giver3])
+  await skill24.setGiver([giver1, giver2, giver3])
+  await skill25.setGiver([giver1, giver2, giver3])
+  await skill26.setGiver([giver1, giver2, giver3])
+  await skill27.setGiver([giver1, giver2, giver3])
+  await skill28.setGiver([giver1, giver2, giver3])
+  await skill29.setGiver([giver1, giver2, giver3])
+  await skill30.setGiver([giver1, giver2, giver3])
+  await skill31.setGiver([giver1, giver2, giver3])
+  await skill32.setGiver([giver1, giver2, giver3])
+  await skill33.setGiver([giver1, giver2, giver3])
+  await skill34.setGiver([giver1, giver2, giver3])
+  await skill35.setGiver([giver1, giver2, giver3])
+  await skill36.setGiver([giver1, giver2, giver3])
+  await skill37.setGiver([giver1, giver2, giver3])
+  await skill38.setGiver([giver1, giver2, giver3])
+  await skill39.setGiver([giver1, giver2, giver3])
+  await skill40.setGiver([giver1, giver2, giver3])
+  await skill41.setGiver([giver1, giver2, giver3])
+  await skill42.setGiver([giver1, giver2, giver3])
+  await skill43.setGiver([giver1, giver2, giver3])
+  await skill44.setGiver([giver1, giver2, giver3])
+  await skill45.setGiver([giver1, giver2, giver3])
+  await skill46.setGiver([giver1, giver2, giver3])
+  await skill47.setGiver([giver1, giver2, giver3])
+  await skill48.setGiver([giver1, giver2, giver3])
+  await skill49.setGiver([giver1, giver2, giver3])
+  await skill50.setGiver([giver1, giver2, giver3])
+  await skill51.setGiver([giver1, giver2, giver3])
+  await skill52.setGiver([giver1, giver2, giver3])
+  await skill53.setGiver([giver1, giver2, giver3])
+  await skill54.setGiver([giver1, giver2, giver3])
 
 
+
+  
 
   await seeker1.setSeeker(request1);
   await seeker1.setSeeker(review1);
