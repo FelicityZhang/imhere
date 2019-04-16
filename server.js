@@ -148,14 +148,14 @@ app.post( '/giver', async ( req, res ) => {
     }
 } )
 
-app.get( '/giver/status', async ( req, res ) => {
+app.get( '/giver/status/:id', async ( req, res ) => {
     try {
         const requests = await Request.findAll( {
             where: {
                 giver_id: req.params.id
             }
         } )
-        res.json( requests )
+        res.json({requests})
     } catch ( e ) {
         res.status( 500 ).json( {
             message: e.message
@@ -350,11 +350,17 @@ app.post('/giver/registration', async(req, res, next)=>{
     try{
         const password_digest = await hashPassword(req.body.password)
         const giver = await Giver.create({
+            rate: req.body.rate,
+            gender: req.body.gender,
+            age: req.body.age,
+            name: req.body.name,
             email: req.body.email,
+            description: req.body.description,
+            picture_url: req.body.picture_url,
             password_digest
         } )
         const respData = buildAuthResponse( giver );
-        res.json( respData );
+        res.json( respData);
     } catch ( e ) {
         res.json( { message: e.message } )
     }
@@ -400,9 +406,12 @@ app.post( '/seeker/registration', async ( req, res, next ) => {
     try {
         const password_digest = await hashPassword( req.body.password )
         const seeker = await Seeker.create( {
+            name: req.body.name,
             email: req.body.email,
+            description: req.body.description,
+            picture_url: req.body.picture_url,
             password_digest
-        } )
+        })
         const respData = buildAuthResponse( seeker );
         res.json( respData );
     } catch ( e ) {

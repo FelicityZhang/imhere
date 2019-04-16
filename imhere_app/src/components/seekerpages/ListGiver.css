@@ -5,13 +5,17 @@
     background:#e6b7c1;
     z-index:-1;
 }
+#listGiverDescription{
+    font-size:12px;
+}
 #listGiverTitle{
     position:relative;
     top:11%;
 }
 #giverPicture{
     width:200px;
-    padding:10px;
+    padding:20px;
+    object-fit:contain;
 }
 #giverContainer{
     display:flex;
@@ -25,11 +29,11 @@
 }
 .giverProfile{
     display: flex;
-    width: 440px;
+    width: 530px;
     height: 200px;
     background:#9B726D;
     color:white;
-    margin: 20px 10px;
+    margin: 20px 50px;
     flex-flow: row nowrap;
 }
 
@@ -44,4 +48,28 @@
 }
 .giverName{
     margin:20px 0;
+}
+.listGiverPageChangeButton{
+    position: fixed;
+    top: 80%;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    font-size: 22px;
+    padding: 5px;
+    margin:05px;
+}
+#listNextButton{
+    right:50%;
+    margin-right:20px;
+}
+#listPrevButton{
+    right:50%;
+    margin-right:-100px;
+}
+#pageCount{
+    position:fixed;
+    top:75%;
+    right:50%;
+    margin-right:-20px;
 }

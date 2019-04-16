@@ -78,14 +78,14 @@
 }
 .renderGiverWords>*{
     margin:20px;
-    font-size:30px;
+    font-size:26px;
 }
 .renderGiverName{
-    margin:90px auto 20px auto;
-    font-size:70px;
+    margin:40px auto 0px auto;
+    font-size:65px;
 }
 #requestButton{
-    margin-top:15px;
+    margin:5px;
     padding:10px 30px;
     font-size:30px;
     background: rgba(89, 55, 128,0.5);
