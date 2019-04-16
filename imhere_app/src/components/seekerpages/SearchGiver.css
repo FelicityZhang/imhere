@@ -1,0 +1,8 @@
+#searchGiverSubmit{
+    z-index:10;
+
+}
+#searchGiverBar{
+    position:fixed;
+    top:20%;
+}

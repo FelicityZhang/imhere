@@ -18,13 +18,13 @@ export default class ListGiver extends Component {
           key={giver.id}
           to={`/seeker/${giver.id}`}
         >
-          <div class="giverProfile">
+          <div className="giverProfile">
             <img 
               id="giverPicture"
               alt={`${giver.name}'s Profile`} src={giver.picture_url}/>
-              <div class="giverWords">
+              <div className="giverWords">
                 <h2
-                  class="giverName"
+                  className="giverName"
                 >{giver.name}</h2>
                 <h3>{giver.skill || `Ask what he/she/they can do!`}</h3>
                 <p>{giver.description}</p>

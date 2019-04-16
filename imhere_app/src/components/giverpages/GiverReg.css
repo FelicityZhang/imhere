@@ -39,11 +39,6 @@
     transition: left 1.5s ease-in, opacity 1s ease-in;
     animation: fadein 0.5s ease-in;
 }
-@keyframes fadein{
-    0%{
-        opacity: 0;
-    }
-}
 #giverRegForm>*{
     font-size:20px;
     padding: 10px;
@@ -51,6 +46,11 @@
     margin: 5px auto;
     border: none;
     background: rgba(255,255,255,0.9)
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
 }
 #giverRegSubmit{
     margin-top: 20px;

@@ -1,13 +1,15 @@
 const express = require( 'express' )
 const { Router } = require( 'express' );
-const bodyParser = require( 'body-parser' )
+const bodyParser = require( 'body-parser' );
+const Sequelize = require( 'sequelize' );
 const { hashPassword, genToken, checkPassword } = require( './backend/auth' );
 const giverRouter = Router();
 const app = express()
 
-const { Seeker, Giver, Message, Request, Review } = require( './backend/models' );
+const { Seeker, Giver, Message, Request, Review, Skill } = require( './backend/models' );
 const PORT = process.env.PORT || 1234
 
+const Op= Sequelize.Op;
 
 const cors = require( 'cors' )
 app.use( cors() )
@@ -57,9 +59,24 @@ app.use( ( e, req, res, next ) => {
 
 app.get('/seeker/search/:description', async(req,res)=>{
     try{
-        const skill = await skill.findByPk(req.params.description)
+        const skill = await Skill.findOne({
+            where:{
+                description:{
+                    [Op.iLike]: `%${req.params.description}%`
+                }
+            }
+        })
         const givers = await skill.getGivers()
         res.json({...skill.get(),givers})
+    }catch(e){
+        res.json( { message: e.message } )
+    }
+})
+
+app.get('/seeker/all', async(req,res)=>{
+    try{
+        const givers = await Giver.findAll()
+        res.json(givers)
     }catch(e){
         res.json( { message: e.message } )
     }

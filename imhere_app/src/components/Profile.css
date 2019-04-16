@@ -1,0 +1,35 @@
+#profile{
+    z-index: 10;
+    width: 150px;
+    height:80px;
+    position:fixed;
+    right:0;
+}
+#profilePic{
+    position:fixed;
+    pointer-events: none;
+    margin: 10px 20px;
+    width: 65px;
+    height: 65px;
+    top:0;
+    border-radius:50%;
+    object-fit:contain;
+    opacity: 0.8;
+    border:1px solid rgba(255,255,255,0.2);
+    transition: right 0.8s ease-in-out;
+}
+#profileNameDisplay{
+    color:rgba(255,255,255,0.5);
+    position:fixed;
+    margin-right: 98px;
+    top: 24px;
+    z-index:100;
+    font-size:25px;
+    transition: right 0.8s ease-in-out;
+}
+.noDisplayProfile{
+    right:-20%;
+}
+.displayProfile{
+    right:0%;
+}

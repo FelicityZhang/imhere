@@ -65,47 +65,55 @@ handleRequestSubtmit = async event =>{
     const giver = this.props.givers.find(searchedGiver=>searchedGiver.id==giverid)
     return (
       <div>
-        {/* <div id="renderGiver">
+        <div id="renderGiver">
           <div class="renderGiverProfile">
             <img 
               id="renderGiverPicture"
               alt={`${giver.name}'s Profile`} src={giver.picture_url}/>
-          </div>
-        </div> */}
-        <form onSubmit={this.handleRequestSubtmit}>
-        <h4>Congratulations, ImHere is here to help you. Please give us a few more details about your project? This is so your Giver can best assist you.
-        </h4>
-        
-          <input 
-            name='title'
-            placeholder='Describe your task'
-            value={this.state.picture} 
-            onChange={this.handleChangebySetState} 
-          />
-            <br/>
-          <input 
-            name='start_time'
-            placeholder='Preferred Arrival Time'
-            value={this.state.picture} 
-            onChange={this.handleChangebySetState} 
-          />
-            <br/>
-          <input 
-            name='end_time'
-            placeholder='Estimated Departure Time'
-            value={this.state.picture} 
-            onChange={this.handleChangebySetState} 
-          />
-            <br/>
-          <input 
-            name='description'
-            placeholder='Additional Details'
-            value={this.state.picture} 
-            onChange={this.handleChangebySetState} 
-          />
-            <br/>
-            <button type="submit" classname="submitButton">Request</button>
-            </form>
+            <div
+              id="formWords"
+            >
+              <div>{giver.name} is here to help<br/>
+              Please give us a few more details about your project, this is so your Giver can best assist you.</div>
+              <form 
+                id="requestForm"
+                onSubmit={this.handleRequestSubtmit}
+              >
+                  <br/>
+                <input 
+                  name='start_time'
+                  type='datetime-local'
+                  placeholder='Preferred Arrival Time'
+                  value={this.state.picture} 
+                  onChange={this.handleChangebySetState} 
+                />
+                  <br/>
+                <input 
+                  name='end_time'
+                  type='datetime-local'
+                  placeholder='Estimated Departure Time'
+                  value={this.state.picture} 
+                  onChange={this.handleChangebySetState} 
+                />
+                  <br/>
+                <input 
+                  name='title'
+                  placeholder="What's your task?"
+                  value={this.state.picture} 
+                  onChange={this.handleChangebySetState} 
+                />
+                <input 
+                  name='description'
+                  placeholder='Additional Details'
+                  value={this.state.picture} 
+                  onChange={this.handleChangebySetState} 
+                />
+                  <br/>
+                  <button type="submit" id="submitRequest">Submit</button>
+                  </form>
+              </div>  
+            </div>
+        </div>
       </div>
     )
   }
