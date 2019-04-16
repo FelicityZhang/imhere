@@ -43,9 +43,11 @@ class App extends Component {
       currentUser: '',
       user:{},
       requests:[],
-      allGivers:[]
+      allGivers:[],
+      searchedGiver:[]
     }
     this.getAllGivers = this.getAllGivers.bind( this )
+    this.searchGiverBySkill=this.searchGiverBySkill.bind(this)
 
 
     this.handleSeekerLogin = this.handleSeekerLogin.bind( this )
@@ -59,7 +61,15 @@ class App extends Component {
     this.getGiver = this.getGiver.bind( this )
     this.getGiverInfo = this.getGiverInfo.bind(this);
   }
-
+  async searchGiverBySkill(data){
+    let endPoint = `${ url }/seeker/search/${data}`
+    fetch( endPoint )
+      .then( response => response.json() )
+      .then( data => {
+        console.log(data);
+        this.setState({ searchedGiver: data.givers})
+      } )
+  }
   async handleSeekerLogin(data) {
     const opts = {
       method: 'POST',
@@ -302,10 +312,10 @@ class App extends Component {
           />
           <Route
             path='/seeker/browse'
-            render={ ( props ) => <ListGiver { ...props } givers={users}/> } />
+            render={ ( props ) => <ListGiver { ...props } givers={users} searched={this.state.searchedGiver}/> } />
           <Route
             exact path='/seeker/search'
-            render={ ( props ) => <SearchGiver { ...props } /> } />
+            render={ ( props ) => <SearchGiver { ...props } handleSearch={this.searchGiverBySkill}/> } />
           <Route
             exact path='/seeker/:giverid'
             render={ ( props ) => <RenderGiver { ...props } givers={users}/> } />

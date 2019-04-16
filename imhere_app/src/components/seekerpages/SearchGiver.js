@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './SearchGiver.css'
 
 const url = 'http://localhost:1234'
 
@@ -22,25 +23,21 @@ export default class SearchGiver extends Component {
 
   handleSearchGivers(e) {
     e.preventDefault()
-    let endPoint = `${ url }/seeker/search/${this.state.skill_description}`
-    fetch( endPoint )
-      .then( response => response.json() )
-      .then( data => {
-        this.setState( { givers: data} )
-      } )
+    this.props.handleSearch(this.state.skill_description)
   }
 
 
   render() {
     return (
       <div>
-        <div className='searchBar'>
+        <div id='searchGiverBar'>
           <form onSubmit={ (e) => this.handleSearchGivers(e) }>
             <input className="input"
               onChange={ event => this.handleChange( event ) }
+              placeholder="Search Your Giver by Skill"
               value={ this.state.skill_description }
               type="text" />
-            <button className="button">Search</button>
+            <button id="searchGiverSubmit">Search</button>
           </form>
         </div>
         <div className="giverContainer">
