@@ -7,9 +7,9 @@ export default class EditProfile extends Component {
     super(props)
     this.state={
       userType:'',
-      name: "My Name",
-      email: "My Email",
-      description: "My Description"
+      name: '',
+      email: '',
+      description: ''
     }
     this.handleChangebySetState=this.handleChangebySetState.bind(this);
     this.submitChangesByPut=this.submitChangesByPut.bind(this);
@@ -20,15 +20,7 @@ export default class EditProfile extends Component {
     })
   }
 
-  static getDerivedStateFromProps(nextProps,prevState){
-    return{
-      name: nextProps.user.name||"My Name",
-      email: nextProps.user.email||"My Email",
-      description:nextProps.user.description||"My Description"
-    }
-  }
-
-  submitChangesByPut(){
+  async submitChangesByPut(){
     if(this.state.userType==="seeker"){
       this.props.seekerUpdateProfile({
         name:this.state.name,
@@ -46,13 +38,17 @@ export default class EditProfile extends Component {
 
   componentDidMount(){
     this.setState({
-      userType: this.props.match.params.usertype
+      userType: this.props.match.params.usertype,
+      name: this.props.user.name||"My Name",
+      email: this.props.user.email||"My Email",
+      description:this.props.user.description||"My Description"
     })
   }
 
   render() {
     const type = this.props.match.params.usertype
     const user = this.props.user
+    console.log(this.props)
     return (
       <div id={`${type}EditProfile`}>
       

@@ -83,6 +83,56 @@ app.get('/seeker/all', async(req,res)=>{
 })
 
 
+
+app.delete('/request/delete/:id', async(req,res)=>{
+    try{
+        await Request.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.json({message:"Success"})
+    }catch(e){
+        res.json( { message: e.message } )
+    }
+})
+
+
+app.put('/seeker/update/:id', async (req, res) => {
+    try {
+      const id = req.params.id
+      console.log("*****"+id)
+      const updateSeeker = {
+        name: req.body.name,
+        email: req.body.email,
+        description: req.body.description
+      };
+      const seeker = await Seeker.update(updateSeeker, { where: {id: id} })
+      res.json(seeker)
+    } catch(e) {
+      console.error(e)
+      res.status(500).json({message: e.message})
+    }
+  })
+
+
+  app.put('/giver/update/:id', async (req, res) => {
+    try {
+      const id = req.params.id
+      console.log("*****"+id)
+      const updateGiver = {
+        name: req.body.name,
+        email: req.body.email,
+        description: req.body.description
+      };
+      const giver = await Giver.update(updateGiver, { where: {id: id} })
+      res.json(giver)
+    } catch(e) {
+      console.error(e)
+      res.status(500).json({message: e.message})
+    }
+  })
+
 app.post( '/seeker/request', async ( req, res ) => {        
     try{
         const request = await Request.create( {

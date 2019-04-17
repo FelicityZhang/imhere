@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 import './SearchGiver.css'
 
+const url = 'http://localhost:1234'
+// const url ='https://imhereapp.herokuapp.com'
+
 class SearchGiver extends Component {
   constructor ( props ) {
     super( props )
@@ -33,8 +36,8 @@ class SearchGiver extends Component {
         >
         <div 
           className={this.props.history.location.pathname === '/'||
-          this.props.history.location.pathname==='/giver'||
           this.props.history.location.pathname==='/seeker'||
+          this.props.history.location.pathname.includes("giver")||
           this.props.history.location.pathname.includes("signin")||
           this.props.history.location.pathname.includes("registration")?"noDisplaySearch":"displaySearch"}
           id='searchGiverBar'
