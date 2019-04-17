@@ -1,5 +1,13 @@
 # I'm Here
 
+[Felicity Zhang](https://github.com/FelicityZhang): Git Coordinator, Deployment Manager, API Developer
+
+[Sean Haile](https://github.com/seanhailecodes): Quality Assurance Engineer, Product Manager
+
+[Daniel Kuang](https://github.com/danielkuang7): Back End Developer, Database Engineer
+
+[Charles Chen Cui](https://github.com/xarlze): Tech Lead, Front End Developer, CSS Designer
+
 ## Entity Relationship Diagram
 ![ERD](erd.png)
 
