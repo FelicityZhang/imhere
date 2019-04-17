@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-// import './SeekerThank.css'
+import './SeekerThank.css'
 
-export default class SeekerThank extends Component {
+export default class GiverThank extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ export default class SeekerThank extends Component {
         id="seekerThank"
       >
         <h1
-          id="seekerThankMessage"
+          id="giverThankMessage"
           style={
             this.state.clicked?(
               {
@@ -24,9 +24,9 @@ export default class SeekerThank extends Component {
               null
             )
           }
-        >Thank you for registering as a Seeker!</h1>
+        >You have become a Seeker!</h1>
         <div
-          id="thankStatus"
+          id="seekerThankStatus"
           style={
             this.state.clicked?(
               {
@@ -41,7 +41,7 @@ export default class SeekerThank extends Component {
               clicked:true
             })
             setTimeout(()=>{
-              this.props.history.push('/giver/status')
+              this.props.history.push('/seeker/status')
             },1200);
           }}
         >
