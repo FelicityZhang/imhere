@@ -12,11 +12,9 @@ class SeekerReg extends Component {
       first:'',
       last:'',
       password:'',
-      picture:'',
+      picture_url:'',
       description:'',
       email: '',
-      gender: '',
-      rate:'',
       clicked:false
     }
     this.handleChangebySetState=this.handleChangebySetState.bind(this);
@@ -31,9 +29,9 @@ class SeekerReg extends Component {
   
   handleSubmitbyPost = (event) => {
     event.preventDefault();
-    const {first, last, password, picture, description, email, gender, rate} = this.state;
+    const {first, last, password, picture_url, description, email } = this.state;
     const name = first.concat(" ",last);
-    const data = { name, password, picture, description, email, gender, rate };
+    const data = { name, password, picture_url, description, email };
     const success = this.props.handleReg(data);
     this.setState({
       first:'',
@@ -133,9 +131,9 @@ class SeekerReg extends Component {
             />
             <br />
             <input 
-              name='picture'
+              name='picture_url'
               placeholder='Picture'
-              value={this.state.picture} 
+              value={this.state.picture_url} 
               onChange={this.handleChangebySetState} 
             />
             <br />
