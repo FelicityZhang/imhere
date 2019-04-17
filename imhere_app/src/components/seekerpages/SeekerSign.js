@@ -125,6 +125,19 @@ class SeekerSign extends Component {
             Enter
           </button>
         </form>
+        <div
+          id="errorMessage"
+          style={
+            this.state.clicked?(
+              {
+                right:"-20%",
+                opacity:"0"
+              }
+            ):(
+              {right:"34%"}
+            )
+          }
+        >{this.state.errorMessage}</div>
       </div>
     )
   }

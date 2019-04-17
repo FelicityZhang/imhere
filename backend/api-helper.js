@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:1234'
+const baseURL = 'https://imhereapp.herokuapp.com'
 
 export const LoignSeeker = (seekerLoginData) => {
     const opt ={

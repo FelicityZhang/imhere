@@ -1,4 +1,4 @@
-const url = 'http://localhost:1234'
+const url = 'https://imhereapp.herokuapp.com'
 
 
 export const seekerRegister = (registerData) => {

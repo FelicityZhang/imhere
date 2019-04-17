@@ -163,6 +163,7 @@ class App extends Component {
   async handleSeekerRegister(data) {
     const userData = await seekerRegister( data );
     console.log(userData)
+    this.getSeeker(data);
     this.setState({
       currentUser: decode(userData.jwt, { header: true })
     })
@@ -187,19 +188,11 @@ class App extends Component {
     this.setState({
       user:fetchData
     })
-    this.getSeekerInfo();
+    this.getSeekerInfo(fetchData.id);
   }
 
-  async getSeekerInfo(){
-    const {id} = this.state.user;
-    const opts = {
-      method: 'POST',
-      body: JSON.stringify({id}),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    const fetchData = await fetch(`${url}/seeker/status`, opts)
+  async getSeekerInfo(id){
+    const fetchData = await fetch(`${url}/seeker/status/${id}`)
       .then(resp => {
         return resp.json();
       })
@@ -211,7 +204,6 @@ class App extends Component {
         this.setState({requests:fetchData.requests});
       }
   }
-
   async handleGiverLogin(data) {
     const opts = {
       method: 'POST',
@@ -371,18 +363,18 @@ class App extends Component {
               keyword={this.state.searchKeyword}
             /> } />
           <Route
-            exact path='/seeker/:giverid'
-            render={ ( props ) => <RenderGiver { ...props } givers={this.state.allGivers} /> } />
-          <Route
-            path='/seeker/:giverid/request'
-            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={this.state.allGivers}/> } />
-          <Route
             path='/seeker/status'
             render={ ( props ) =>
               <SeekerStatus { ...props}
                 requests={this.state.requests} 
               /> }
           />
+          <Route
+            exact path='/seeker/:giverid'
+            render={ ( props ) => <RenderGiver { ...props } givers={this.state.allGivers} /> } />
+          <Route
+            path='/seeker/:giverid/request'
+            render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={this.state.allGivers}/> } />
           <Route
             path='/seeker/complete'
             render={ ( props ) => <SeekerThank { ...props } /> } />
