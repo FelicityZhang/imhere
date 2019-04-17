@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../Status.css'
 
-const url = 'http://localhost:1234'
-// const url = 'https://imhereapp.herokuapp.com'
+// const url = 'http://localhost:1234'
+const url = 'https://imhereapp.herokuapp.com'
 
 export default class GiverStatus extends Component {
     constructor(props){

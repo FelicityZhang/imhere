@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
-const url = 'http://localhost:1234'
-// const url ='https://imhereapp.herokuapp.com'
+// const url = 'http://localhost:1234'
+const url ='https://imhereapp.herokuapp.com'
 
 // /seeker/:giverid/request
 

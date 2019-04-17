@@ -34,9 +34,9 @@ import EditProfile from './components/EditProfile';
 const logo = require('./images/logo.gif');
 
 
-const url = 'http://localhost:1234'
+// const url = 'http://localhost:1234'
 
-// const url = 'https://imhereapp.herokuapp.com'
+const url = 'https://imhereapp.herokuapp.com'
 
 class App extends Component {
   constructor(props){
