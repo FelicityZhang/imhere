@@ -370,14 +370,15 @@ class App extends Component {
               /> }
           />
           <Route
+            path='/seeker/complete'
+            render={ ( props ) => <SeekerThank { ...props } /> } />
+          <Route
             exact path='/seeker/:giverid'
             render={ ( props ) => <RenderGiver { ...props } givers={this.state.allGivers} /> } />
           <Route
             path='/seeker/:giverid/request'
             render={ ( props ) => <Request { ...props } seeker_id={this.state.user.id} givers={this.state.allGivers}/> } />
-          <Route
-            path='/seeker/complete'
-            render={ ( props ) => <SeekerThank { ...props } /> } />
+          
 
           {/*Giver*/ }
           <Route 
