@@ -57,28 +57,68 @@ class App extends Component {
     this.handleSeekerRegister = this.handleSeekerRegister.bind( this )
     this.getSeeker = this.getSeeker.bind( this )
     this.getSeekerInfo = this.getSeekerInfo.bind(this);
+    this.seekerUpdateProfile = this.seekerUpdateProfile.bind(this);
 
 
     this.handleGiverLogin = this.handleGiverLogin.bind( this )
     this.handleGiverRegister = this.handleGiverRegister.bind( this )
     this.getGiver = this.getGiver.bind( this )
     this.getGiverInfo = this.getGiverInfo.bind(this);
+    this.giverUpdateProfile = this.giverUpdateProfile.bind(this);
 
     this.handleRequestDelete = this.handleRequestDelete.bind(this);
 
   }
 
+  async giverUpdateProfile(data){
+    console.log(data);
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/giver/update/${this.state.user.id}`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return e.message
+      })
+    this.getGiver({email:this.state.user.email});
+    return fetchData;
+  }
+
+  async seekerUpdateProfile(data){
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const fetchData = await fetch(`${url}/seeker/update/${this.state.user.id}`, opts)
+      .then(resp => {
+        return resp.json();
+      })
+      .catch(e=>{
+        return e.message
+      })
+    this.getSeeker({email:this.state.user.email});
+    return fetchData;
+  }
  
 
-  async handleRequestDelete(event) {
-   event.preventDefault();
-   console.log(event);
-   await fetch(`${url}/request/delete/:${event.target.key}`, {
+  async handleRequestDelete(id) {
+    console.log(id)
+   await fetch(`${url}/request/delete/${id}`, {
      method: 'DELETE'
    }).then(response => {
      this.getGiverInfo(this.state.user.id)
      return response.json();
    })
+   this.getGiverInfo(this.state.user.id);
   }
 
   async searchGiverBySkill(data){
@@ -200,6 +240,7 @@ class App extends Component {
   }
 
   async handleGiverRegister(data) {
+    console.log(data);
     const userData = await giverRegister( data );
     this.getGiver(data);
     this.setState({
@@ -297,6 +338,8 @@ class App extends Component {
             render={ ( props ) => <EditProfile 
               { ...props }
               user={this.state.user}
+              seekerUpdateProfile={(data)=>this.seekerUpdateProfile(data)}
+              giverUpdateProfile={(data)=>this.giverUpdateProfile(data)}
             /> } />
 
           {/*Seekers*/ }
@@ -340,7 +383,6 @@ class App extends Component {
                 requests={this.state.requests} 
               /> }
           />
-
           <Route
             path='/seeker/complete'
             render={ ( props ) => <SeekerThank { ...props } /> } />
@@ -377,7 +419,7 @@ class App extends Component {
             path='/giver/status'
             render={ ( props ) =>
               <GiverStatus { ...props}
-                requests={requests} 
+                requests={this.state.requests} 
                 handleDelete = {this.handleRequestDelete}
               /> }
           />

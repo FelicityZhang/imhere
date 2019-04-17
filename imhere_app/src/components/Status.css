@@ -15,7 +15,7 @@
     transition: height 0.5s;
 }
 #giverStatus>*>*>*{
-    border: 1px dotted black;
+    border: 1px solid black;
     margin: 15px 20px;
     background: #ffe6eb;
     color: black;
@@ -61,4 +61,12 @@
     font-size: 17px;
     padding: 5px;
     margin:05px;
+}
+#deleteButton{
+    background: #7cb2d1;
+    color:white;
+    font-size:20px;
+    border:none;
+    padding:10px;
+    margin:10px 0 -20px 0;
 }

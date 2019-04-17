@@ -6,7 +6,6 @@ const placeholder= require('../images/placeholder.png');
 
 class Profile extends Component {
   render() {
-      console.log(this.props)
     return (
       <div
         id="profile"
